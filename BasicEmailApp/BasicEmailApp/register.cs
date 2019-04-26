@@ -24,6 +24,9 @@ namespace BasicEmailApp
             if(!emailIsTaken && pwdIsValid)
             {
                 //TODO: insert account into DB.
+
+                //closes the sign up form after sign up is complete.
+                this.Close();
             }
         }
 
@@ -47,6 +50,7 @@ namespace BasicEmailApp
         {
             //TO-DO: if e-mail is taken, change the emMsg content, leave emailIsTaken as it is
             //if e-mail is available, change the value of emailIsValid to true and empty emMsg.
+            emailIsTaken = false;
         }
     }
 }

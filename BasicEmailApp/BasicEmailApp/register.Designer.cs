@@ -137,8 +137,11 @@
             this.Controls.Add(this.r_email);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "register";
+            this.Opacity = 0.9D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "sign up";
             this.Load += new System.EventHandler(this.register_Load);
             this.ResumeLayout(false);

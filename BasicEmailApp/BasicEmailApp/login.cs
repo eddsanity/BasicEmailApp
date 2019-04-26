@@ -19,10 +19,21 @@ namespace BasicEmailApp
 
         private void l_regButton_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //hides the login form, shows the register form.
-            this.Hide();
-            register r = new register();
-            r.ShowDialog();
+            //shows the register form.
+            register registerForm = new register();
+            registerForm.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            bool emailIsValid = true; //dummy value, should be replaced by a query that checks if email is valid.
+            bool pwdIsValid = true;   //dummy value, should be replaced by a query that checks if this password is the correct password for l_email.Text
+            if(emailIsValid && pwdIsValid)
+            {
+                this.Hide();
+                driver driverForm = new BasicEmailApp.driver();
+                driverForm.ShowDialog();
+            }
         }
     }
 }

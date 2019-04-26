@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.l_usrnameTextbox = new System.Windows.Forms.TextBox();
+            this.l_email = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.l_pwd = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.l_regButton = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
@@ -48,24 +48,25 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "sign in";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // l_usrnameTextbox
+            // l_email
             // 
-            this.l_usrnameTextbox.BackColor = System.Drawing.SystemColors.Window;
-            this.l_usrnameTextbox.Location = new System.Drawing.Point(44, 23);
-            this.l_usrnameTextbox.Name = "l_usrnameTextbox";
-            this.l_usrnameTextbox.Size = new System.Drawing.Size(164, 20);
-            this.l_usrnameTextbox.TabIndex = 1;
-            this.l_usrnameTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.l_email.BackColor = System.Drawing.SystemColors.Window;
+            this.l_email.Location = new System.Drawing.Point(44, 23);
+            this.l_email.Name = "l_email";
+            this.l_email.Size = new System.Drawing.Size(164, 20);
+            this.l_email.TabIndex = 1;
+            this.l_email.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(100, 7);
+            this.label1.Location = new System.Drawing.Point(110, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.Size = new System.Drawing.Size(31, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "username";
+            this.label1.Text = "email";
             // 
             // label2
             // 
@@ -76,15 +77,15 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "password";
             // 
-            // textBox1
+            // l_pwd
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox1.Location = new System.Drawing.Point(44, 74);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(164, 20);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.UseSystemPasswordChar = true;
+            this.l_pwd.BackColor = System.Drawing.SystemColors.Window;
+            this.l_pwd.Location = new System.Drawing.Point(44, 74);
+            this.l_pwd.Name = "l_pwd";
+            this.l_pwd.Size = new System.Drawing.Size(164, 20);
+            this.l_pwd.TabIndex = 3;
+            this.l_pwd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.l_pwd.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -117,9 +118,9 @@
             this.Controls.Add(this.l_regButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.l_pwd);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.l_usrnameTextbox);
+            this.Controls.Add(this.l_email);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
@@ -138,10 +139,10 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox l_usrnameTextbox;
+        private System.Windows.Forms.TextBox l_email;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox l_pwd;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel l_regButton;
     }
