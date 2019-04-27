@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace BasicEmailApp
 {
@@ -14,6 +15,10 @@ namespace BasicEmailApp
     {
         bool emailIsTaken = true;
         bool pwdIsValid = false;
+        bool usernameIsTaken = true;
+        int numberOfUsers;
+
+        string connectionString = "Data Source=EYAD;Initial Catalog=emailApp;Integrated Security=True";
         public register()
         {
             InitializeComponent();
@@ -21,13 +26,35 @@ namespace BasicEmailApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(!emailIsTaken && pwdIsValid)
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            if(conn.State == ConnectionState.Open)
             {
-                //TODO: insert account into DB.
+                if (!emailIsTaken && !usernameIsTaken && pwdIsValid)
+                {
+                    //get number of users for userID
+                    string countUserQuery = "select count(USERID) from [USER]";
+                    SqlCommand countCommand = new SqlCommand(countUserQuery, conn);
+                    numberOfUsers = Convert.ToInt16(countCommand.ExecuteScalar());
+                    countCommand.Dispose();
 
-                //closes the sign up form after sign up is complete.
-                this.Close();
+                    //insert into [USER]
+                    string insertQuery = "insert into [USER](USERID, FIRSTNAME, LASTNAME, USERNAME, EMAIL, PASSWORD) ";
+                    string insertArg = " values(" + numberOfUsers + ", '" + r_fname.Text + "', '" + r_lname.Text + "', '" + r_username.Text + "', '" + r_email.Text + "', '" + r_pwd.Text + "')";
+                    string finalQuery = insertQuery + insertArg;
+                    SqlCommand command = new SqlCommand(finalQuery, conn);
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Signed up successfully!", "Signed up", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //closes the sign up form after sign up is complete, returns to the sign in window.
+                    this.Close();
+                }
+                else if (usernameIsTaken)
+                    MessageBox.Show("Username is invalid, try another one.", "sign up failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (emailIsTaken)
+                    MessageBox.Show("E-mail is invalid, try another one.", "sign up failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
 
         private void r_pwd2_TextChanged(object sender, EventArgs e)
@@ -35,6 +62,7 @@ namespace BasicEmailApp
             if(r_pwd.Text != r_pwd2.Text)
             {
                 pwdMsg.Text = "Passwords don't match";
+                pwdIsValid = false;
             }
             else
             {
@@ -44,13 +72,64 @@ namespace BasicEmailApp
         }
 
         private void register_Load(object sender, EventArgs e)
-        {}
+        {
+        }
 
         private void r_email_Leave(object sender, EventArgs e)
         {
-            //TO-DO: if e-mail is taken, change the emMsg content, leave emailIsTaken as it is
-            //if e-mail is available, change the value of emailIsValid to true and empty emMsg.
-            emailIsTaken = false;
+            //check if e-mail is formatted correctly. Increment once when it finds a '@', a 2nd time when it finds a '.'
+            //basically checks for %@%.%
+            int d = 0;
+            foreach(char c in r_email.Text)
+            {
+                if (c == '@' || c == '.') d++;
+            }
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            if(conn.State == ConnectionState.Open)
+            {
+                string validate_email_query = "select count(EMAIL) from [USER] where EMAIL = '" + r_email.Text + "'";
+                SqlCommand validateCmd = new SqlCommand(validate_email_query, conn);
+                int email_exists = Convert.ToInt16(validateCmd.ExecuteScalar());
+                if (email_exists > 0 || r_email.Text == "" || d < 2)
+                {
+                    emailIsTaken = true;
+                    emMsg.ForeColor = Color.Red;
+                    emMsg.Text = "invalid e-mail!";
+                }
+                else
+                {
+                    emailIsTaken = false;
+                    emMsg.ForeColor = Color.Green;
+                    emMsg.Text = "e-mail OK!";
+                }
+            }
+            
+        }
+
+        private void r_username_Leave(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            if(conn.State == ConnectionState.Open)
+            {
+                string validate_username_query = "select count(USERNAME) from [USER] where USERNAME = '" + r_username.Text + "'";
+                SqlCommand validateCmd = new SqlCommand(validate_username_query, conn);
+                int username_count = Convert.ToInt16(validateCmd.ExecuteScalar());
+                if (username_count > 0 || r_username.Text == "")
+                {
+                    usernameIsTaken = true;
+                    usrMsg.ForeColor = Color.Red;
+                    usrMsg.Text = "invalid username!";
+                }
+                else
+                {
+                    usernameIsTaken = false;
+                    usrMsg.ForeColor = Color.Green;
+                    usrMsg.Text = "username OK!";
+                }
+            }
         }
     }
 }

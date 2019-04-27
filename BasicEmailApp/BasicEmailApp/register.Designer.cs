@@ -37,10 +37,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pwdMsg = new System.Windows.Forms.Label();
             this.emMsg = new System.Windows.Forms.Label();
-            this.r_firstname = new System.Windows.Forms.TextBox();
+            this.r_fname = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.r_lname = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.r_username = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.usrMsg = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -48,7 +51,7 @@
             this.button1.BackColor = System.Drawing.Color.Brown;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(36, 284);
+            this.button1.Location = new System.Drawing.Point(36, 324);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(154, 23);
             this.button1.TabIndex = 0;
@@ -59,7 +62,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(95, 120);
+            this.label1.Location = new System.Drawing.Point(95, 164);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 1;
@@ -68,7 +71,7 @@
             // r_email
             // 
             this.r_email.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.r_email.Location = new System.Drawing.Point(36, 136);
+            this.r_email.Location = new System.Drawing.Point(36, 180);
             this.r_email.Name = "r_email";
             this.r_email.Size = new System.Drawing.Size(154, 20);
             this.r_email.TabIndex = 2;
@@ -77,7 +80,7 @@
             // r_pwd
             // 
             this.r_pwd.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.r_pwd.Location = new System.Drawing.Point(36, 195);
+            this.r_pwd.Location = new System.Drawing.Point(36, 235);
             this.r_pwd.Name = "r_pwd";
             this.r_pwd.Size = new System.Drawing.Size(154, 20);
             this.r_pwd.TabIndex = 4;
@@ -86,7 +89,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(83, 179);
+            this.label2.Location = new System.Drawing.Point(83, 219);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 3;
@@ -95,7 +98,7 @@
             // r_pwd2
             // 
             this.r_pwd2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.r_pwd2.Location = new System.Drawing.Point(36, 248);
+            this.r_pwd2.Location = new System.Drawing.Point(36, 288);
             this.r_pwd2.Name = "r_pwd2";
             this.r_pwd2.Size = new System.Drawing.Size(154, 20);
             this.r_pwd2.TabIndex = 6;
@@ -105,7 +108,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(75, 232);
+            this.label3.Location = new System.Drawing.Point(75, 272);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 13);
             this.label3.TabIndex = 5;
@@ -115,7 +118,7 @@
             // 
             this.pwdMsg.AutoSize = true;
             this.pwdMsg.ForeColor = System.Drawing.Color.Red;
-            this.pwdMsg.Location = new System.Drawing.Point(33, 268);
+            this.pwdMsg.Location = new System.Drawing.Point(33, 308);
             this.pwdMsg.Name = "pwdMsg";
             this.pwdMsg.Size = new System.Drawing.Size(0, 13);
             this.pwdMsg.TabIndex = 7;
@@ -124,18 +127,18 @@
             // 
             this.emMsg.AutoSize = true;
             this.emMsg.ForeColor = System.Drawing.Color.Red;
-            this.emMsg.Location = new System.Drawing.Point(36, 159);
+            this.emMsg.Location = new System.Drawing.Point(34, 203);
             this.emMsg.Name = "emMsg";
             this.emMsg.Size = new System.Drawing.Size(0, 13);
             this.emMsg.TabIndex = 8;
             // 
-            // r_firstname
+            // r_fname
             // 
-            this.r_firstname.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.r_firstname.Location = new System.Drawing.Point(36, 26);
-            this.r_firstname.Name = "r_firstname";
-            this.r_firstname.Size = new System.Drawing.Size(154, 20);
-            this.r_firstname.TabIndex = 10;
+            this.r_fname.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.r_fname.Location = new System.Drawing.Point(36, 26);
+            this.r_fname.Name = "r_fname";
+            this.r_fname.Size = new System.Drawing.Size(154, 20);
+            this.r_fname.TabIndex = 10;
             // 
             // label4
             // 
@@ -146,32 +149,62 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "First Name";
             // 
-            // textBox1
+            // r_lname
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBox1.Location = new System.Drawing.Point(36, 79);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(154, 20);
-            this.textBox1.TabIndex = 12;
+            this.r_lname.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.r_lname.Location = new System.Drawing.Point(36, 78);
+            this.r_lname.Name = "r_lname";
+            this.r_lname.Size = new System.Drawing.Size(154, 20);
+            this.r_lname.TabIndex = 12;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(83, 63);
+            this.label5.Location = new System.Drawing.Point(83, 62);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 11;
             this.label5.Text = "Last Name";
+            // 
+            // r_username
+            // 
+            this.r_username.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.r_username.Location = new System.Drawing.Point(36, 128);
+            this.r_username.Name = "r_username";
+            this.r_username.Size = new System.Drawing.Size(154, 20);
+            this.r_username.TabIndex = 14;
+            this.r_username.Leave += new System.EventHandler(this.r_username_Leave);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(83, 112);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "username";
+            // 
+            // usrMsg
+            // 
+            this.usrMsg.AutoSize = true;
+            this.usrMsg.ForeColor = System.Drawing.Color.Red;
+            this.usrMsg.Location = new System.Drawing.Point(34, 151);
+            this.usrMsg.Name = "usrMsg";
+            this.usrMsg.Size = new System.Drawing.Size(0, 13);
+            this.usrMsg.TabIndex = 16;
             // 
             // register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(235, 318);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(235, 367);
+            this.Controls.Add(this.usrMsg);
+            this.Controls.Add(this.r_username);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.r_lname);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.r_firstname);
+            this.Controls.Add(this.r_fname);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.emMsg);
             this.Controls.Add(this.pwdMsg);
@@ -206,9 +239,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label pwdMsg;
         private System.Windows.Forms.Label emMsg;
-        private System.Windows.Forms.TextBox r_firstname;
+        private System.Windows.Forms.TextBox r_fname;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox r_lname;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox r_username;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label usrMsg;
     }
 }
