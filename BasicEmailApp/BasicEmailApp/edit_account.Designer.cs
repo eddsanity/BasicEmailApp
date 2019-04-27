@@ -56,6 +56,7 @@
             // 
             // basic_lastname
             // 
+            this.basic_lastname.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.basic_lastname.Location = new System.Drawing.Point(20, 80);
             this.basic_lastname.Name = "basic_lastname";
             this.basic_lastname.Size = new System.Drawing.Size(154, 20);
@@ -72,6 +73,7 @@
             // 
             // basic_firstname
             // 
+            this.basic_firstname.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.basic_firstname.Location = new System.Drawing.Point(20, 27);
             this.basic_firstname.Name = "basic_firstname";
             this.basic_firstname.Size = new System.Drawing.Size(154, 20);
@@ -106,6 +108,7 @@
             // 
             // password_nPwd2
             // 
+            this.password_nPwd2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.password_nPwd2.Location = new System.Drawing.Point(23, 82);
             this.password_nPwd2.Name = "password_nPwd2";
             this.password_nPwd2.Size = new System.Drawing.Size(154, 20);
@@ -123,6 +126,7 @@
             // 
             // password_nPwd
             // 
+            this.password_nPwd.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.password_nPwd.Location = new System.Drawing.Point(23, 29);
             this.password_nPwd.Name = "password_nPwd";
             this.password_nPwd.Size = new System.Drawing.Size(154, 20);
@@ -140,6 +144,7 @@
             // 
             // basic_email
             // 
+            this.basic_email.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.basic_email.Location = new System.Drawing.Point(20, 132);
             this.basic_email.Name = "basic_email";
             this.basic_email.Size = new System.Drawing.Size(154, 20);
@@ -169,6 +174,7 @@
             // 
             // password_oPwd
             // 
+            this.password_oPwd.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.password_oPwd.Location = new System.Drawing.Point(23, 132);
             this.password_oPwd.Name = "password_oPwd";
             this.password_oPwd.Size = new System.Drawing.Size(154, 20);
@@ -236,6 +242,7 @@
             // 
             // basic_pwd
             // 
+            this.basic_pwd.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.basic_pwd.Location = new System.Drawing.Point(23, 178);
             this.basic_pwd.Name = "basic_pwd";
             this.basic_pwd.Size = new System.Drawing.Size(154, 20);
@@ -274,6 +281,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "edit_account";
             this.Opacity = 0.9D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Account";
             this.Load += new System.EventHandler(this.edit_account_Load);
             this.tabControl1.ResumeLayout(false);

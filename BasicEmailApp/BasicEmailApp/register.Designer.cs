@@ -67,6 +67,7 @@
             // 
             // r_email
             // 
+            this.r_email.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.r_email.Location = new System.Drawing.Point(36, 136);
             this.r_email.Name = "r_email";
             this.r_email.Size = new System.Drawing.Size(154, 20);
@@ -75,6 +76,7 @@
             // 
             // r_pwd
             // 
+            this.r_pwd.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.r_pwd.Location = new System.Drawing.Point(36, 195);
             this.r_pwd.Name = "r_pwd";
             this.r_pwd.Size = new System.Drawing.Size(154, 20);
@@ -92,6 +94,7 @@
             // 
             // r_pwd2
             // 
+            this.r_pwd2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.r_pwd2.Location = new System.Drawing.Point(36, 248);
             this.r_pwd2.Name = "r_pwd2";
             this.r_pwd2.Size = new System.Drawing.Size(154, 20);
@@ -128,6 +131,7 @@
             // 
             // r_firstname
             // 
+            this.r_firstname.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.r_firstname.Location = new System.Drawing.Point(36, 26);
             this.r_firstname.Name = "r_firstname";
             this.r_firstname.Size = new System.Drawing.Size(154, 20);
@@ -144,6 +148,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.textBox1.Location = new System.Drawing.Point(36, 79);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(154, 20);

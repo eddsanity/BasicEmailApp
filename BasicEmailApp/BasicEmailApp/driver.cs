@@ -72,5 +72,11 @@ namespace BasicEmailApp
             edit_account editAccForm = new edit_account();
             editAccForm.ShowDialog();
         }
+
+        private void send_button_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            send_new sendForm = new send_new();
+            sendForm.ShowDialog();
+        }
     }
 }

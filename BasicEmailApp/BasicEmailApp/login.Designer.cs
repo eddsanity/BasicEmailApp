@@ -52,7 +52,7 @@
             // 
             // l_email
             // 
-            this.l_email.BackColor = System.Drawing.SystemColors.Window;
+            this.l_email.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.l_email.Location = new System.Drawing.Point(44, 23);
             this.l_email.Name = "l_email";
             this.l_email.Size = new System.Drawing.Size(164, 20);
@@ -79,7 +79,7 @@
             // 
             // l_pwd
             // 
-            this.l_pwd.BackColor = System.Drawing.SystemColors.Window;
+            this.l_pwd.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.l_pwd.Location = new System.Drawing.Point(44, 74);
             this.l_pwd.Name = "l_pwd";
             this.l_pwd.Size = new System.Drawing.Size(164, 20);

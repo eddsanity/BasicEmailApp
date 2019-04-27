@@ -187,6 +187,7 @@
             this.send_button.TabStop = true;
             this.send_button.Text = "send e-mail";
             this.send_button.VisitedLinkColor = System.Drawing.Color.Green;
+            this.send_button.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.send_button_LinkClicked);
             // 
             // linkLabel1
             // 
