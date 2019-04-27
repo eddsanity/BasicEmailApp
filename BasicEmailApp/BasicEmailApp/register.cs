@@ -91,8 +91,8 @@ namespace BasicEmailApp
             {
                 string validate_email_query = "select count(EMAIL) from [USER] where EMAIL = '" + r_email.Text + "'";
                 SqlCommand validateCmd = new SqlCommand(validate_email_query, conn);
-                int email_exists = Convert.ToInt16(validateCmd.ExecuteScalar());
-                if (email_exists > 0 || r_email.Text == "" || d < 2)
+                int email_checker = Convert.ToInt16(validateCmd.ExecuteScalar());
+                if (email_checker > 0 || r_email.Text == "" || d < 2)
                 {
                     emailIsTaken = true;
                     emMsg.ForeColor = Color.Red;
@@ -116,8 +116,8 @@ namespace BasicEmailApp
             {
                 string validate_username_query = "select count(USERNAME) from [USER] where USERNAME = '" + r_username.Text + "'";
                 SqlCommand validateCmd = new SqlCommand(validate_username_query, conn);
-                int username_count = Convert.ToInt16(validateCmd.ExecuteScalar());
-                if (username_count > 0 || r_username.Text == "")
+                int username_checker = Convert.ToInt16(validateCmd.ExecuteScalar());
+                if (username_checker > 0 || r_username.Text == "")
                 {
                     usernameIsTaken = true;
                     usrMsg.ForeColor = Color.Red;

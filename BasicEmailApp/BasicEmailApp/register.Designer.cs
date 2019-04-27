@@ -118,7 +118,7 @@
             // 
             this.pwdMsg.AutoSize = true;
             this.pwdMsg.ForeColor = System.Drawing.Color.Red;
-            this.pwdMsg.Location = new System.Drawing.Point(33, 308);
+            this.pwdMsg.Location = new System.Drawing.Point(34, 308);
             this.pwdMsg.Name = "pwdMsg";
             this.pwdMsg.Size = new System.Drawing.Size(0, 13);
             this.pwdMsg.TabIndex = 7;
