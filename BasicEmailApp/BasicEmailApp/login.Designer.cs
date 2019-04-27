@@ -99,6 +99,7 @@
             // l_regButton
             // 
             this.l_regButton.AutoSize = true;
+            this.l_regButton.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.l_regButton.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.l_regButton.Location = new System.Drawing.Point(165, 136);
             this.l_regButton.Name = "l_regButton";
@@ -131,6 +132,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "E-mail application - sign in";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,12 +141,12 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox l_email;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox l_pwd;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel l_regButton;
+        public System.Windows.Forms.TextBox l_email;
     }
 }
 

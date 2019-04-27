@@ -52,6 +52,12 @@
     <Compile Include="driver.Designer.cs">
       <DependentUpon>driver.cs</DependentUpon>
     </Compile>
+    <Compile Include="edit_account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="edit_account.Designer.cs">
+      <DependentUpon>edit_account.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     </Compile>
     <EmbeddedResource Include="driver.resx">
       <DependentUpon>driver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="edit_account.resx">
+      <DependentUpon>edit_account.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>

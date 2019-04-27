@@ -12,6 +12,7 @@ namespace BasicEmailApp
 {
     public partial class login : Form
     {
+        public string s_email = "";
         public login()
         {
             InitializeComponent();
@@ -30,10 +31,16 @@ namespace BasicEmailApp
             bool pwdIsValid = true;   //dummy value, should be replaced by a query that checks if this password is the correct password for l_email.Text
             if(emailIsValid && pwdIsValid)
             {
+                s_email = l_email.Text;
                 this.Hide();
                 driver driverForm = new BasicEmailApp.driver();
                 driverForm.ShowDialog();
             }
+        }
+
+        private void login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
