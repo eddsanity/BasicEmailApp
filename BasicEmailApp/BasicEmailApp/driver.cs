@@ -48,7 +48,7 @@ namespace BasicEmailApp
         {
             if (inbox_data_view.CurrentRow == null)
             {
-                status_label.Text = "--> Please select something to delete.";
+                status_label.Text = "select something to delete.";
             }
             else
             {
@@ -63,7 +63,7 @@ namespace BasicEmailApp
 
             //if(rowsDeleted > 0)
             //{
-            //  status_label.Text = "--> Deleted " + rowsDeleted.ToString() + "e-mails.";
+            //  status_label.Text = "Deleted " + rowsDeleted.ToString() + "e-mails.";
             //}
         }
 

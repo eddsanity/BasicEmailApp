@@ -39,7 +39,7 @@
             this.sep2 = new System.Windows.Forms.Label();
             this.sep3 = new System.Windows.Forms.Label();
             this.send_button = new System.Windows.Forms.LinkLabel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.edit_button = new System.Windows.Forms.LinkLabel();
             this.sep4 = new System.Windows.Forms.Label();
             this.logged_in_as = new System.Windows.Forms.Label();
             this.sep1 = new System.Windows.Forms.Label();
@@ -48,6 +48,17 @@
             this.dateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.delete_button = new System.Windows.Forms.LinkLabel();
             this.status_label = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.archive_tab = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.view_button = new System.Windows.Forms.LinkLabel();
+            this.archive_button = new System.Windows.Forms.LinkLabel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.reply_button = new System.Windows.Forms.LinkLabel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.forward_button = new System.Windows.Forms.LinkLabel();
+            this.label7 = new System.Windows.Forms.Label();
             this.tab_control.SuspendLayout();
             this.inbox_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inbox_data_view)).BeginInit();
@@ -59,6 +70,7 @@
             this.tab_control.Controls.Add(this.inbox_tab);
             this.tab_control.Controls.Add(this.mailing_list_tab);
             this.tab_control.Controls.Add(this.folders_tab);
+            this.tab_control.Controls.Add(this.archive_tab);
             this.tab_control.HotTrack = true;
             this.tab_control.Location = new System.Drawing.Point(1, 32);
             this.tab_control.Multiline = true;
@@ -72,7 +84,14 @@
             // 
             this.inbox_tab.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.inbox_tab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.inbox_tab.Controls.Add(this.status_label);
+            this.inbox_tab.Controls.Add(this.forward_button);
+            this.inbox_tab.Controls.Add(this.label7);
+            this.inbox_tab.Controls.Add(this.reply_button);
+            this.inbox_tab.Controls.Add(this.label6);
+            this.inbox_tab.Controls.Add(this.archive_button);
+            this.inbox_tab.Controls.Add(this.label5);
+            this.inbox_tab.Controls.Add(this.view_button);
+            this.inbox_tab.Controls.Add(this.label4);
             this.inbox_tab.Controls.Add(this.delete_button);
             this.inbox_tab.Controls.Add(this.inbox_data_view);
             this.inbox_tab.Location = new System.Drawing.Point(4, 4);
@@ -110,17 +129,17 @@
             // 
             // refresh_button
             // 
-            this.refresh_button.ActiveLinkColor = System.Drawing.Color.Red;
+            this.refresh_button.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.refresh_button.AutoSize = true;
             this.refresh_button.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.refresh_button.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.refresh_button.LinkColor = System.Drawing.Color.Green;
             this.refresh_button.Location = new System.Drawing.Point(462, 9);
             this.refresh_button.Name = "refresh_button";
             this.refresh_button.Size = new System.Drawing.Size(67, 13);
             this.refresh_button.TabIndex = 2;
             this.refresh_button.TabStop = true;
             this.refresh_button.Text = "refresh inbox";
-            this.refresh_button.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.refresh_button.VisitedLinkColor = System.Drawing.Color.Green;
             this.refresh_button.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // folders_tab
@@ -189,20 +208,20 @@
             this.send_button.VisitedLinkColor = System.Drawing.Color.Green;
             this.send_button.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.send_button_LinkClicked);
             // 
-            // linkLabel1
+            // edit_button
             // 
-            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel1.LinkColor = System.Drawing.Color.Green;
-            this.linkLabel1.Location = new System.Drawing.Point(643, 9);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(66, 13);
-            this.linkLabel1.TabIndex = 8;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "edit account";
-            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.Green;
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
+            this.edit_button.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.edit_button.AutoSize = true;
+            this.edit_button.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.edit_button.LinkColor = System.Drawing.Color.Green;
+            this.edit_button.Location = new System.Drawing.Point(643, 9);
+            this.edit_button.Name = "edit_button";
+            this.edit_button.Size = new System.Drawing.Size(66, 13);
+            this.edit_button.TabIndex = 8;
+            this.edit_button.TabStop = true;
+            this.edit_button.Text = "edit account";
+            this.edit_button.VisitedLinkColor = System.Drawing.Color.Green;
+            this.edit_button.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
             // 
             // sep4
             // 
@@ -269,10 +288,129 @@
             // status_label
             // 
             this.status_label.AutoSize = true;
-            this.status_label.Location = new System.Drawing.Point(80, 2);
+            this.status_label.Location = new System.Drawing.Point(730, 16);
             this.status_label.Name = "status_label";
             this.status_label.Size = new System.Drawing.Size(0, 13);
             this.status_label.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(715, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(9, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "|";
+            // 
+            // archive_tab
+            // 
+            this.archive_tab.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.archive_tab.Location = new System.Drawing.Point(4, 4);
+            this.archive_tab.Name = "archive_tab";
+            this.archive_tab.Size = new System.Drawing.Size(898, 545);
+            this.archive_tab.TabIndex = 3;
+            this.archive_tab.Text = "Archive";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(730, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "status:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(88, 2);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(9, 13);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "|";
+            // 
+            // view_button
+            // 
+            this.view_button.ActiveLinkColor = System.Drawing.Color.Red;
+            this.view_button.AutoSize = true;
+            this.view_button.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.view_button.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.view_button.Location = new System.Drawing.Point(103, 2);
+            this.view_button.Name = "view_button";
+            this.view_button.Size = new System.Drawing.Size(72, 13);
+            this.view_button.TabIndex = 16;
+            this.view_button.TabStop = true;
+            this.view_button.Text = "view selected";
+            this.view_button.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            // 
+            // archive_button
+            // 
+            this.archive_button.ActiveLinkColor = System.Drawing.Color.Red;
+            this.archive_button.AutoSize = true;
+            this.archive_button.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.archive_button.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.archive_button.Location = new System.Drawing.Point(194, 2);
+            this.archive_button.Name = "archive_button";
+            this.archive_button.Size = new System.Drawing.Size(85, 13);
+            this.archive_button.TabIndex = 18;
+            this.archive_button.TabStop = true;
+            this.archive_button.Text = "archive selected";
+            this.archive_button.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(179, 2);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(9, 13);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "|";
+            // 
+            // reply_button
+            // 
+            this.reply_button.ActiveLinkColor = System.Drawing.Color.Red;
+            this.reply_button.AutoSize = true;
+            this.reply_button.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.reply_button.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.reply_button.Location = new System.Drawing.Point(297, 2);
+            this.reply_button.Name = "reply_button";
+            this.reply_button.Size = new System.Drawing.Size(84, 13);
+            this.reply_button.TabIndex = 20;
+            this.reply_button.TabStop = true;
+            this.reply_button.Text = "reply to selected";
+            this.reply_button.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(282, 2);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(9, 13);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "|";
+            // 
+            // forward_button
+            // 
+            this.forward_button.ActiveLinkColor = System.Drawing.Color.Red;
+            this.forward_button.AutoSize = true;
+            this.forward_button.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.forward_button.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.forward_button.Location = new System.Drawing.Point(401, 2);
+            this.forward_button.Name = "forward_button";
+            this.forward_button.Size = new System.Drawing.Size(85, 13);
+            this.forward_button.TabIndex = 22;
+            this.forward_button.TabStop = true;
+            this.forward_button.Text = "forward selected";
+            this.forward_button.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(386, 2);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(9, 13);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "|";
             // 
             // driver
             // 
@@ -280,10 +418,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(910, 603);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.status_label);
             this.Controls.Add(this.sep1);
             this.Controls.Add(this.logged_in_as);
             this.Controls.Add(this.sep4);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.edit_button);
             this.Controls.Add(this.send_button);
             this.Controls.Add(this.sep3);
             this.Controls.Add(this.sep2);
@@ -320,7 +461,7 @@
         private System.Windows.Forms.Label sep2;
         private System.Windows.Forms.Label sep3;
         private System.Windows.Forms.LinkLabel send_button;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel edit_button;
         private System.Windows.Forms.Label sep4;
         private System.Windows.Forms.Label logged_in_as;
         private System.Windows.Forms.Label sep1;
@@ -329,5 +470,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateColumn;
         private System.Windows.Forms.LinkLabel delete_button;
         private System.Windows.Forms.Label status_label;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TabPage archive_tab;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.LinkLabel forward_button;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.LinkLabel reply_button;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.LinkLabel archive_button;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.LinkLabel view_button;
+        private System.Windows.Forms.Label label4;
     }
 }
