@@ -45,10 +45,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lb = new System.Windows.Forms.Label();
             this.basic_pwd = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
+            this.lb1 = new System.Windows.Forms.Label();
+            this.lb2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -114,6 +117,7 @@
             this.password_nPwd2.Size = new System.Drawing.Size(154, 20);
             this.password_nPwd2.TabIndex = 19;
             this.password_nPwd2.UseSystemPasswordChar = true;
+            this.password_nPwd2.Leave += new System.EventHandler(this.password_nPwd2_Leave);
             // 
             // label3
             // 
@@ -175,7 +179,7 @@
             // password_oPwd
             // 
             this.password_oPwd.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.password_oPwd.Location = new System.Drawing.Point(23, 132);
+            this.password_oPwd.Location = new System.Drawing.Point(23, 136);
             this.password_oPwd.Name = "password_oPwd";
             this.password_oPwd.Size = new System.Drawing.Size(154, 20);
             this.password_oPwd.TabIndex = 27;
@@ -184,7 +188,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(65, 116);
+            this.label6.Location = new System.Drawing.Point(65, 120);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 13);
             this.label6.TabIndex = 26;
@@ -205,6 +209,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.tabPage1.Controls.Add(this.lb);
             this.tabPage1.Controls.Add(this.basic_pwd);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.basic_email);
@@ -222,23 +227,14 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Basic Info";
             // 
-            // tabPage2
+            // lb
             // 
-            this.tabPage2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.password_oPwd);
-            this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.password_nPwd);
-            this.tabPage2.Controls.Add(this.pwdMsg);
-            this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.password_nPwd2);
-            this.tabPage2.Location = new System.Drawing.Point(23, 4);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(204, 252);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Password";
+            this.lb.AutoSize = true;
+            this.lb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lb.Location = new System.Drawing.Point(57, 201);
+            this.lb.Name = "lb";
+            this.lb.Size = new System.Drawing.Size(0, 13);
+            this.lb.TabIndex = 31;
             // 
             // basic_pwd
             // 
@@ -258,6 +254,26 @@
             this.label7.TabIndex = 29;
             this.label7.Text = "password";
             // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.tabPage2.Controls.Add(this.lb2);
+            this.tabPage2.Controls.Add(this.lb1);
+            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.password_oPwd);
+            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.password_nPwd);
+            this.tabPage2.Controls.Add(this.pwdMsg);
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.password_nPwd2);
+            this.tabPage2.Location = new System.Drawing.Point(23, 4);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(204, 252);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Password";
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Brown;
@@ -270,6 +286,24 @@
             this.button2.Text = "update";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // lb1
+            // 
+            this.lb1.AutoSize = true;
+            this.lb1.ForeColor = System.Drawing.Color.Red;
+            this.lb1.Location = new System.Drawing.Point(20, 105);
+            this.lb1.Name = "lb1";
+            this.lb1.Size = new System.Drawing.Size(0, 13);
+            this.lb1.TabIndex = 30;
+            // 
+            // lb2
+            // 
+            this.lb2.AutoSize = true;
+            this.lb2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lb2.Location = new System.Drawing.Point(62, 200);
+            this.lb2.Name = "lb2";
+            this.lb2.Size = new System.Drawing.Size(0, 13);
+            this.lb2.TabIndex = 31;
             // 
             // edit_account
             // 
@@ -316,5 +350,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lb;
+        private System.Windows.Forms.Label lb1;
+        private System.Windows.Forms.Label lb2;
     }
 }

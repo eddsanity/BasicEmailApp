@@ -50,6 +50,7 @@ namespace BasicEmailApp
                     MessageBox.Show("Login failed, check your credentials.", "login failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            conn.Close();
         }
 
         private void login_Load(object sender, EventArgs e)

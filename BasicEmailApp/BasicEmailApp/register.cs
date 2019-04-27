@@ -54,6 +54,7 @@ namespace BasicEmailApp
                 else if (emailIsTaken)
                     MessageBox.Show("E-mail is invalid, try another one.", "sign up failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            conn.Close();
             
         }
 
@@ -105,7 +106,7 @@ namespace BasicEmailApp
                     emMsg.Text = "e-mail OK!";
                 }
             }
-            
+            conn.Close();
         }
 
         private void r_username_Leave(object sender, EventArgs e)
@@ -130,6 +131,7 @@ namespace BasicEmailApp
                     usrMsg.Text = "username OK!";
                 }
             }
+            conn.Close();
         }
     }
 }
