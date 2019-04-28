@@ -18,7 +18,7 @@ namespace BasicEmailApp
         bool usernameIsTaken = true;
         int numberOfUsers;
 
-        string connectionString = "Data Source=EYAD;Initial Catalog=emailApp;Integrated Security=True";
+        string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=emailApp;Integrated Security=True";
         public register()
         {
             InitializeComponent();
@@ -32,15 +32,9 @@ namespace BasicEmailApp
             {
                 if (!emailIsTaken && !usernameIsTaken && pwdIsValid)
                 {
-                    //get number of users for userID
-                    string countUserQuery = "select count(USERID) from [USER]";
-                    SqlCommand countCommand = new SqlCommand(countUserQuery, conn);
-                    numberOfUsers = Convert.ToInt16(countCommand.ExecuteScalar());
-                    countCommand.Dispose();
-
                     //insert into [USER]
-                    string insertQuery = "insert into [USER](USERID, FIRSTNAME, LASTNAME, USERNAME, EMAIL, PASSWORD) ";
-                    string insertArg = " values(" + numberOfUsers + ", '" + r_fname.Text + "', '" + r_lname.Text + "', '" + r_username.Text + "', '" + r_email.Text + "', '" + r_pwd.Text + "')";
+                    string insertQuery = "insert into [USER](FIRSTNAME, LASTNAME, USERNAME, EMAIL, PASSWORD) ";
+                    string insertArg = " values('" + r_fname.Text + "', '" + r_lname.Text + "', '" + r_username.Text + "', '" + r_email.Text + "', '" + r_pwd.Text + "')";
                     string finalQuery = insertQuery + insertArg;
                     SqlCommand command = new SqlCommand(finalQuery, conn);
                     command.ExecuteNonQuery();

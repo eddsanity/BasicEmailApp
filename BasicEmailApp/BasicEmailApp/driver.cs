@@ -16,12 +16,23 @@ namespace BasicEmailApp
         //gets the e-mail used after successfully logging in and saves it in the driver for future use.
         static Form loginForm = Application.OpenForms["login"];
         string g_user_email = ((login)loginForm).s_email;
-        string connectionString = "Data Source=EYAD;Initial Catalog=emailApp;Integrated Security=True";
+        string g_user_id;
+        string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=emailApp;Integrated Security=True";
         public driver()
         {
             InitializeComponent();
+            // get userID from email
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            if (conn.State == ConnectionState.Open)
+            {
+                string user_id_query = "select USERID from [USER] where EMAIL = '" + g_user_email + "'";
+                SqlCommand validateCmd = new SqlCommand(user_id_query, conn);
+                g_user_id = Convert.ToString(validateCmd.ExecuteScalar());
+            }
+            conn.Close();
         }
-
+   
         private void driver_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
@@ -34,11 +45,10 @@ namespace BasicEmailApp
             if (conn.State == ConnectionState.Open)
             {
                 //get table of all e-mails sent to this user
-                string get_emails_to_account = "select * from EMAIL inner join [USER] ";
-                string get_condition = "on EMAIL.RECEIVERID IN(select USERID from[USER] where [USER].EMAIL = '" + g_user_email + "' OR [USER].USERNAME = '" + g_user_email + "') AND [USER].USERID = EMAIL.RECEIVERID";
+                string get_emails_to_account = "select * from EMAIL where EMAIL.RECEIVERID = " + g_user_id;
 
                 //to get the sender name and display the table properly
-                string show_emails_with_sender = "select [USER].FIRSTNAME as [Sent by], [BODY] as [e-mail body], [DATE] as [Date] from [USER] inner join (" + get_emails_to_account + get_condition + ") as Q";
+                string show_emails_with_sender = "select [USER].FIRSTNAME as [Sent by], [BODY] as [e-mail body], [DATE] as [Date] from [USER] inner join (" + get_emails_to_account + ") as Q";
                 string show_condition = " on [USER].USERID = Q.SENDERID order by [DATE] DESC";
 
                 SqlDataAdapter sqlAdpt = new SqlDataAdapter(show_emails_with_sender + show_condition, conn);
