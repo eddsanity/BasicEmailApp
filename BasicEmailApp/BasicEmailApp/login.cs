@@ -15,7 +15,7 @@ namespace BasicEmailApp
     {
         public string s_email = "";
 
-        string connectionString = "Data Source=EYAD;Initial Catalog=emailApp;Integrated Security=True";
+        string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=emailApp;Integrated Security=True";
         public login()
         {
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace BasicEmailApp
             if(conn.State == ConnectionState.Open)
             {
                 //check if an account with this e-mail and this password exist
-                string check_account = "select count(EMAIL) from [USER] where (EMAIL = '" + l_email.Text + "' OR USERNAME = '" + l_email.Text + "') AND PASSWORD = '" + l_pwd.Text + "'";
+                string check_account = "select count(EMAIL) from [USER] where (EMAIL = '" + l_email.Text + "') AND PASSWORD = '" + l_pwd.Text + "'";
                 SqlCommand validateCmd = new SqlCommand(check_account, conn);
                 int account_checker = Convert.ToInt16(validateCmd.ExecuteScalar());
                 if(account_checker == 1)
