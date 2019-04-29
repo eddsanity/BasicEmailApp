@@ -16,7 +16,7 @@ namespace BasicEmailApp
         //gets the e-mail used after successfully logging in and saves it in the driver for future use.
         static Form loginForm = Application.OpenForms["login"];
         string g_user_email = ((login)loginForm).s_email;
-        string connectionString = "Data Source=EYAD;Initial Catalog=emailApp;Integrated Security=True";
+        string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=emailApp;Integrated Security=True";
         public edit_account()
         {
             InitializeComponent();
