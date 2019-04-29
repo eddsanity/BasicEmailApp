@@ -78,6 +78,12 @@
     <Compile Include="send_new.Designer.cs">
       <DependentUpon>send_new.cs</DependentUpon>
     </Compile>
+    <Compile Include="view_email.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view_email.Designer.cs">
+      <DependentUpon>view_email.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="driver.resx">
       <DependentUpon>driver.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="send_new.resx">
       <DependentUpon>send_new.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view_email.resx">
+      <DependentUpon>view_email.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

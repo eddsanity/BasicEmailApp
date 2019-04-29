@@ -18,7 +18,7 @@ namespace BasicEmailApp
         bool usernameIsTaken = true;
         int numberOfUsers;
 
-        string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=emailApp;Integrated Security=True";
+        string connectionString = "Data Source=DESKTOP-A32LPMS;Initial Catalog=emailApp;Integrated Security=True";
         public register()
         {
             InitializeComponent();

@@ -40,6 +40,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.delete_button = new System.Windows.Forms.LinkLabel();
             this.inbox_data_view = new System.Windows.Forms.DataGridView();
+            this.Sender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mailing_list_tab = new System.Windows.Forms.TabPage();
             this.folders_tab = new System.Windows.Forms.TabPage();
             this.archive_tab = new System.Windows.Forms.TabPage();
@@ -56,9 +59,6 @@
             this.status_label = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.Sender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tab_control.SuspendLayout();
             this.inbox_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inbox_data_view)).BeginInit();
@@ -183,6 +183,7 @@
             this.view_button.TabStop = true;
             this.view_button.Text = "view selected";
             this.view_button.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.view_button.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.view_button_LinkClicked);
             // 
             // label4
             // 
@@ -227,6 +228,30 @@
             this.inbox_data_view.Size = new System.Drawing.Size(898, 527);
             this.inbox_data_view.TabIndex = 0;
             this.inbox_data_view.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.inbox_data_view_UserDeletingRow);
+            // 
+            // Sender
+            // 
+            this.Sender.DataPropertyName = "Sent by";
+            this.Sender.HeaderText = "Sent by";
+            this.Sender.Name = "Sender";
+            this.Sender.ReadOnly = true;
+            this.Sender.Width = 120;
+            // 
+            // Subject
+            // 
+            this.Subject.DataPropertyName = "Subject";
+            this.Subject.HeaderText = "Subject";
+            this.Subject.Name = "Subject";
+            this.Subject.ReadOnly = true;
+            this.Subject.Width = 650;
+            // 
+            // DATE
+            // 
+            this.DATE.DataPropertyName = "DATE";
+            this.DATE.HeaderText = "Date";
+            this.DATE.Name = "DATE";
+            this.DATE.ReadOnly = true;
+            this.DATE.Width = 107;
             // 
             // mailing_list_tab
             // 
@@ -396,30 +421,6 @@
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 14;
             this.label3.Text = "status:";
-            // 
-            // Sender
-            // 
-            this.Sender.DataPropertyName = "Sent by";
-            this.Sender.HeaderText = "Sent by";
-            this.Sender.Name = "Sender";
-            this.Sender.ReadOnly = true;
-            this.Sender.Width = 120;
-            // 
-            // Subject
-            // 
-            this.Subject.DataPropertyName = "Subject";
-            this.Subject.HeaderText = "Subject";
-            this.Subject.Name = "Subject";
-            this.Subject.ReadOnly = true;
-            this.Subject.Width = 650;
-            // 
-            // DATE
-            // 
-            this.DATE.DataPropertyName = "DATE";
-            this.DATE.HeaderText = "Date";
-            this.DATE.Name = "DATE";
-            this.DATE.ReadOnly = true;
-            this.DATE.Width = 107;
             // 
             // driver
             // 

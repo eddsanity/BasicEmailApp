@@ -15,9 +15,9 @@ namespace BasicEmailApp
     {
         //gets the e-mail used after successfully logging in and saves it in the driver for future use.
         static Form loginForm = Application.OpenForms["login"];
-        string g_user_email = ((login)loginForm).s_email;
+        public string g_user_email = ((login)loginForm).s_email;
         string g_user_id;
-        string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=emailApp;Integrated Security=True";
+        string connectionString = "Data Source=DESKTOP-A32LPMS;Initial Catalog=emailApp;Integrated Security=True";
         public driver()
         {
             InitializeComponent();
@@ -48,7 +48,7 @@ namespace BasicEmailApp
                 string get_emails_to_account = "select * from EMAIL where EMAIL.RECEIVERID = " + g_user_id;
 
                 //to get the sender name and display the table properly
-                string show_emails_with_sender = "select [USER].FIRSTNAME as [Sent by], [SUBJECT] as [Subject], [DATE] as [Date] from [USER] inner join (" + get_emails_to_account + ") as Q";
+                string show_emails_with_sender = "select Q.EMAILID , [USER].FIRSTNAME as [Sent by], [SUBJECT] as [Subject], [DATE] as [Date] from [USER] inner join (" + get_emails_to_account + ") as Q";
                 string show_condition = " on [USER].USERID = Q.SENDERID order by [DATE] DESC";
 
                 SqlDataAdapter sqlAdpt = new SqlDataAdapter(show_emails_with_sender + show_condition, conn);
@@ -56,9 +56,9 @@ namespace BasicEmailApp
                 //inbox_data_table has all the rows from executing show_emails_with_sender + show_condition
                 DataTable inbox_data_table = new DataTable();
                 sqlAdpt.Fill(inbox_data_table);
-
                 inbox_data_view.DataSource = inbox_data_table;
-
+                inbox_data_view.Columns["EMAILID"].Visible = false;
+                logged_in_as.Text = "logged in as <" + g_user_email + ">";
             }
             conn.Close();
         }
@@ -89,25 +89,22 @@ namespace BasicEmailApp
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
             if (inbox_data_view.CurrentRow == null)
             {
-                status_label.Text = "select something to delete.";
+                status_label.Text = "select Email to delete.";
             }
             else
             {
-                string selected_sender = inbox_data_view.CurrentRow.Cells["Sender"].Value.ToString();
-                string selected_email = inbox_data_view.CurrentRow.Cells["Subject"].Value.ToString();
+                string selected_email = inbox_data_view.CurrentRow.Cells["EMAILID"].Value.ToString();
+                string delete_selected_query = "delete from EMAIL where EMAILID =" + selected_email;
+                SqlCommand validateCmd = new SqlCommand(delete_selected_query, conn);
+                validateCmd.ExecuteNonQuery();
+                status_label.Text = "delete successful.";
+                refreshInbox();
             }
-            //TODO: Delete query to delete the emails with the fitting sender and email
-            string delete_selected_query = "";
-
-            //TODO: Execute query
-            //int rowsDeleted = access.execute(delete_selected_query);
-
-            //if(rowsDeleted > 0)
-            //{
-            //  status_label.Text = "Deleted " + rowsDeleted.ToString() + "e-mails.";
-            //}
+            conn.Close();
         }
 
         private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
@@ -125,6 +122,20 @@ namespace BasicEmailApp
         private void inbox_data_view_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             //TODO: delete row functionality
+        }
+
+        private void view_button_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (inbox_data_view.CurrentRow == null)
+            {
+                status_label.Text = "select Email to view.";
+            }
+            else
+            {
+                string selected_email = inbox_data_view.CurrentRow.Cells["EMAILID"].Value.ToString();
+                view_email View = new view_email(selected_email);
+                View.ShowDialog();
+            }
         }
     }
 }
