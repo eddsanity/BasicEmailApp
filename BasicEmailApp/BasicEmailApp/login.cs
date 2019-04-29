@@ -15,7 +15,7 @@ namespace BasicEmailApp
     {
         public string s_email = "";
 
-        string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=emailApp;Integrated Security=True";
+        string connectionString = "Data Source=EYAD;Initial Catalog=emailApp;Integrated Security=True";
         public login()
         {
             InitializeComponent();

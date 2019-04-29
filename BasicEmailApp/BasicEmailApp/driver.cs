@@ -17,7 +17,7 @@ namespace BasicEmailApp
         static Form loginForm = Application.OpenForms["login"];
         string g_user_email = ((login)loginForm).s_email;
         string g_user_id;
-        string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=emailApp;Integrated Security=True";
+        string connectionString = "Data Source=EYAD;Initial Catalog=emailApp;Integrated Security=True";
         public driver()
         {
             InitializeComponent();
@@ -48,7 +48,7 @@ namespace BasicEmailApp
                 string get_emails_to_account = "select * from EMAIL where EMAIL.RECEIVERID = " + g_user_id;
 
                 //to get the sender name and display the table properly
-                string show_emails_with_sender = "select [USER].FIRSTNAME as [Sent by], [BODY] as [e-mail body], [DATE] as [Date] from [USER] inner join (" + get_emails_to_account + ") as Q";
+                string show_emails_with_sender = "select [USER].FIRSTNAME as [Sent by], [SUBJECT] as [Subject], [DATE] as [Date] from [USER] inner join (" + get_emails_to_account + ") as Q";
                 string show_condition = " on [USER].USERID = Q.SENDERID order by [DATE] DESC";
 
                 SqlDataAdapter sqlAdpt = new SqlDataAdapter(show_emails_with_sender + show_condition, conn);
@@ -95,8 +95,8 @@ namespace BasicEmailApp
             }
             else
             {
-                string selected_sender = inbox_data_view.CurrentRow.Cells["FIRSTNAME"].Value.ToString();
-                string selected_email = inbox_data_view.CurrentRow.Cells["BODY"].Value.ToString();
+                string selected_sender = inbox_data_view.CurrentRow.Cells["Sender"].Value.ToString();
+                string selected_email = inbox_data_view.CurrentRow.Cells["Subject"].Value.ToString();
             }
             //TODO: Delete query to delete the emails with the fitting sender and email
             string delete_selected_query = "";

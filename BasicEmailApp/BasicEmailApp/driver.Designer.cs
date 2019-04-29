@@ -56,8 +56,8 @@
             this.status_label = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.FIRSTNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BODY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tab_control.SuspendLayout();
             this.inbox_tab.SuspendLayout();
@@ -216,8 +216,8 @@
             this.inbox_data_view.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.inbox_data_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.inbox_data_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FIRSTNAME,
-            this.BODY,
+            this.Sender,
+            this.Subject,
             this.DATE});
             this.inbox_data_view.Location = new System.Drawing.Point(0, 18);
             this.inbox_data_view.Name = "inbox_data_view";
@@ -397,21 +397,21 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "status:";
             // 
-            // FIRSTNAME
+            // Sender
             // 
-            this.FIRSTNAME.DataPropertyName = "Sent by";
-            this.FIRSTNAME.HeaderText = "Sent by";
-            this.FIRSTNAME.Name = "FIRSTNAME";
-            this.FIRSTNAME.ReadOnly = true;
-            this.FIRSTNAME.Width = 120;
+            this.Sender.DataPropertyName = "Sent by";
+            this.Sender.HeaderText = "Sent by";
+            this.Sender.Name = "Sender";
+            this.Sender.ReadOnly = true;
+            this.Sender.Width = 120;
             // 
-            // BODY
+            // Subject
             // 
-            this.BODY.DataPropertyName = "e-mail body";
-            this.BODY.HeaderText = "E-mail body";
-            this.BODY.Name = "BODY";
-            this.BODY.ReadOnly = true;
-            this.BODY.Width = 650;
+            this.Subject.DataPropertyName = "Subject";
+            this.Subject.HeaderText = "Subject";
+            this.Subject.Name = "Subject";
+            this.Subject.ReadOnly = true;
+            this.Subject.Width = 650;
             // 
             // DATE
             // 
@@ -487,8 +487,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.LinkLabel view_button;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FIRSTNAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BODY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Subject;
         private System.Windows.Forms.DataGridViewTextBoxColumn DATE;
     }
 }
