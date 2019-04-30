@@ -17,12 +17,16 @@ namespace BasicEmailApp
         static Form loginForm = Application.OpenForms["login"];
         string g_user_email = ((login)loginForm).s_email;
         string g_user_id;
-        string connectionString = "Data Source=EYAD;Initial Catalog=emailApp;Integrated Security=True";
-        public send_new()
+        string connectionString = "Data Source=DESKTOP-QF9IM65\\TESTSQL;Initial Catalog=EmailProject;Integrated Security=True";
+        public send_new(string sender_email = "", string sender_body = "")
         {
             InitializeComponent();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
+
+            receiver_email.Text = sender_email;
+            message_body.Text = sender_body;
+
             if (conn.State == ConnectionState.Open)
             {
                 // get userID from email

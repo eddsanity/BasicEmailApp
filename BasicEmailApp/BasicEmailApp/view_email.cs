@@ -15,7 +15,7 @@ namespace BasicEmailApp
 {
     public partial class view_email : Form
     {
-        string connectionString = "Data Source=EYAD;Initial Catalog=emailApp;Integrated Security=True";
+        string connectionString = "Data Source=DESKTOP-QF9IM65\\TESTSQL;Initial Catalog=EmailProject;Integrated Security=True";
         string Body;
         string Subject;
         string SentBy;
