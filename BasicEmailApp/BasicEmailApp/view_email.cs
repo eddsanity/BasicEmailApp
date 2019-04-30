@@ -21,6 +21,7 @@ namespace BasicEmailApp
         string SentBy;
         string SenderEmail;
 
+        //TODO: query to change the value of emailHasAttachments based on the existence of attachments linked to this e-mail
         bool emailHasAttachments = false;
         
         public view_email(string id)

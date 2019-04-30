@@ -89,6 +89,7 @@ namespace BasicEmailApp
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             if (inbox_data_view.CurrentRow == null)

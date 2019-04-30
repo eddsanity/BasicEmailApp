@@ -39,7 +39,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 45);
+            this.label1.Location = new System.Drawing.Point(9, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 0;
@@ -49,17 +49,17 @@
             // 
             this.view_body.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.view_body.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.view_body.Location = new System.Drawing.Point(12, 61);
+            this.view_body.Location = new System.Drawing.Point(0, 37);
             this.view_body.Name = "view_body";
             this.view_body.ReadOnly = true;
-            this.view_body.Size = new System.Drawing.Size(828, 447);
+            this.view_body.Size = new System.Drawing.Size(852, 471);
             this.view_body.TabIndex = 2;
             this.view_body.Text = "";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 18);
+            this.label4.Location = new System.Drawing.Point(22, 4);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 6;
@@ -68,7 +68,7 @@
             // view_from
             // 
             this.view_from.AutoSize = true;
-            this.view_from.Location = new System.Drawing.Point(64, 18);
+            this.view_from.Location = new System.Drawing.Point(64, 4);
             this.view_from.Name = "view_from";
             this.view_from.Size = new System.Drawing.Size(0, 13);
             this.view_from.TabIndex = 8;
@@ -76,7 +76,7 @@
             // view_subject
             // 
             this.view_subject.AutoSize = true;
-            this.view_subject.Location = new System.Drawing.Point(62, 45);
+            this.view_subject.Location = new System.Drawing.Point(62, 21);
             this.view_subject.Name = "view_subject";
             this.view_subject.Size = new System.Drawing.Size(0, 13);
             this.view_subject.TabIndex = 9;
