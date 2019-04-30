@@ -20,6 +20,7 @@ namespace BasicEmailApp
         string Subject;
         string SentBy;
         string SenderEmail;
+        string Date;
 
         //TODO: query to change the value of emailHasAttachments based on the existence of attachments linked to this e-mail
         bool emailHasAttachments = false;
@@ -41,6 +42,11 @@ namespace BasicEmailApp
                 comm = new SqlCommand(query, conn);
                 Body = Convert.ToString(comm.ExecuteScalar());
 
+                //get e-mail's date
+                query = "select [DATE] from [EMAIL] where EMAILID = " + id;
+                comm = new SqlCommand(query, conn);
+                Date = Convert.ToString(comm.ExecuteScalar());
+
                 //get sender's e-mail
                 query = "select EMAIL from [USER] where USERID = (select SENDERID from EMAIL where EMAILID ='" + id + "')";
                 comm = new SqlCommand(query, conn);
@@ -55,6 +61,7 @@ namespace BasicEmailApp
                 view_body.Text = Body;
                 view_subject.Text = Subject;
                 view_from.Text = SentBy + " <" + SenderEmail + ">";
+                view_date.Text = Date;
 
                 this.Text = this.Text + Subject + " from " + SentBy;
 

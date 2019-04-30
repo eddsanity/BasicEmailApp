@@ -47,9 +47,6 @@
             this.folders_tab = new System.Windows.Forms.TabPage();
             this.archive_tab = new System.Windows.Forms.TabPage();
             this.refresh_button = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.sorting_option = new System.Windows.Forms.ComboBox();
-            this.sep2 = new System.Windows.Forms.Label();
             this.sep3 = new System.Windows.Forms.Label();
             this.send_button = new System.Windows.Forms.LinkLabel();
             this.edit_button = new System.Windows.Forms.LinkLabel();
@@ -59,9 +56,24 @@
             this.status_label = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.archive_data_view = new System.Windows.Forms.DataGridView();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.view_archived = new System.Windows.Forms.LinkLabel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.delete_archived = new System.Windows.Forms.LinkLabel();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tab_control.SuspendLayout();
             this.inbox_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inbox_data_view)).BeginInit();
+            this.archive_tab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.archive_data_view)).BeginInit();
             this.SuspendLayout();
             // 
             // tab_control
@@ -225,9 +237,10 @@
             this.inbox_data_view.ReadOnly = true;
             this.inbox_data_view.RowHeadersWidth = 20;
             this.inbox_data_view.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.inbox_data_view.Size = new System.Drawing.Size(898, 527);
+            this.inbox_data_view.Size = new System.Drawing.Size(900, 527);
             this.inbox_data_view.TabIndex = 0;
-            this.inbox_data_view.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.inbox_data_view_UserDeletingRow);
+            this.inbox_data_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.inbox_data_view_CellClick);
+            //this.inbox_data_view.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.inbox_data_view_UserDeletingRow);
             // 
             // Sender
             // 
@@ -275,6 +288,16 @@
             // archive_tab
             // 
             this.archive_tab.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.archive_tab.Controls.Add(this.linkLabel1);
+            this.archive_tab.Controls.Add(this.archive_data_view);
+            this.archive_tab.Controls.Add(this.label8);
+            this.archive_tab.Controls.Add(this.view_archived);
+            this.archive_tab.Controls.Add(this.linkLabel2);
+            this.archive_tab.Controls.Add(this.delete_archived);
+            this.archive_tab.Controls.Add(this.label9);
+            this.archive_tab.Controls.Add(this.label11);
+            this.archive_tab.Controls.Add(this.linkLabel3);
+            this.archive_tab.Controls.Add(this.label10);
             this.archive_tab.Location = new System.Drawing.Point(4, 4);
             this.archive_tab.Name = "archive_tab";
             this.archive_tab.Size = new System.Drawing.Size(898, 545);
@@ -287,7 +310,7 @@
             this.refresh_button.AutoSize = true;
             this.refresh_button.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.refresh_button.LinkColor = System.Drawing.Color.Green;
-            this.refresh_button.Location = new System.Drawing.Point(462, 9);
+            this.refresh_button.Location = new System.Drawing.Point(268, 9);
             this.refresh_button.Name = "refresh_button";
             this.refresh_button.Size = new System.Drawing.Size(67, 13);
             this.refresh_button.TabIndex = 2;
@@ -296,43 +319,10 @@
             this.refresh_button.VisitedLinkColor = System.Drawing.Color.Green;
             this.refresh_button.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(269, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Sort by inbox: ";
-            // 
-            // sorting_option
-            // 
-            this.sorting_option.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.sorting_option.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sorting_option.FormattingEnabled = true;
-            this.sorting_option.Items.AddRange(new object[] {
-            "Oldest",
-            "Most Recent",
-            "Sender"});
-            this.sorting_option.Location = new System.Drawing.Point(340, 6);
-            this.sorting_option.Name = "sorting_option";
-            this.sorting_option.Size = new System.Drawing.Size(102, 21);
-            this.sorting_option.TabIndex = 4;
-            this.sorting_option.Text = "Most Recent";
-            // 
-            // sep2
-            // 
-            this.sep2.AutoSize = true;
-            this.sep2.Location = new System.Drawing.Point(448, 9);
-            this.sep2.Name = "sep2";
-            this.sep2.Size = new System.Drawing.Size(9, 13);
-            this.sep2.TabIndex = 5;
-            this.sep2.Text = "|";
-            // 
             // sep3
             // 
             this.sep3.AutoSize = true;
-            this.sep3.Location = new System.Drawing.Point(532, 9);
+            this.sep3.Location = new System.Drawing.Point(338, 9);
             this.sep3.Name = "sep3";
             this.sep3.Size = new System.Drawing.Size(9, 13);
             this.sep3.TabIndex = 6;
@@ -344,7 +334,7 @@
             this.send_button.AutoSize = true;
             this.send_button.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.send_button.LinkColor = System.Drawing.Color.Green;
-            this.send_button.Location = new System.Drawing.Point(552, 9);
+            this.send_button.Location = new System.Drawing.Point(358, 9);
             this.send_button.Name = "send_button";
             this.send_button.Size = new System.Drawing.Size(60, 13);
             this.send_button.TabIndex = 7;
@@ -359,7 +349,7 @@
             this.edit_button.AutoSize = true;
             this.edit_button.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.edit_button.LinkColor = System.Drawing.Color.Green;
-            this.edit_button.Location = new System.Drawing.Point(643, 9);
+            this.edit_button.Location = new System.Drawing.Point(449, 9);
             this.edit_button.Name = "edit_button";
             this.edit_button.Size = new System.Drawing.Size(66, 13);
             this.edit_button.TabIndex = 8;
@@ -371,7 +361,7 @@
             // sep4
             // 
             this.sep4.AutoSize = true;
-            this.sep4.Location = new System.Drawing.Point(618, 9);
+            this.sep4.Location = new System.Drawing.Point(424, 9);
             this.sep4.Name = "sep4";
             this.sep4.Size = new System.Drawing.Size(9, 13);
             this.sep4.TabIndex = 9;
@@ -399,7 +389,7 @@
             // status_label
             // 
             this.status_label.AutoSize = true;
-            this.status_label.Location = new System.Drawing.Point(730, 16);
+            this.status_label.Location = new System.Drawing.Point(575, 9);
             this.status_label.Name = "status_label";
             this.status_label.Size = new System.Drawing.Size(0, 13);
             this.status_label.TabIndex = 12;
@@ -407,7 +397,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(715, 9);
+            this.label2.Location = new System.Drawing.Point(521, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(9, 13);
             this.label2.TabIndex = 13;
@@ -416,11 +406,163 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(730, 3);
+            this.label3.Location = new System.Drawing.Point(536, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 14;
             this.label3.Text = "status:";
+            // 
+            // archive_data_view
+            // 
+            this.archive_data_view.AllowUserToAddRows = false;
+            this.archive_data_view.AllowUserToResizeColumns = false;
+            this.archive_data_view.AllowUserToResizeRows = false;
+            this.archive_data_view.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.archive_data_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.archive_data_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.archive_data_view.Location = new System.Drawing.Point(0, 18);
+            this.archive_data_view.Name = "archive_data_view";
+            this.archive_data_view.ReadOnly = true;
+            this.archive_data_view.RowHeadersWidth = 20;
+            this.archive_data_view.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.archive_data_view.Size = new System.Drawing.Size(900, 527);
+            this.archive_data_view.TabIndex = 15;
+            this.archive_data_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.archive_data_view_CellClick);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.Red;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.linkLabel1.Location = new System.Drawing.Point(401, 2);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(85, 13);
+            this.linkLabel1.TabIndex = 31;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "forward selected";
+            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(386, 2);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(9, 13);
+            this.label8.TabIndex = 30;
+            this.label8.Text = "|";
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.ActiveLinkColor = System.Drawing.Color.Red;
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.linkLabel2.Location = new System.Drawing.Point(297, 2);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(84, 13);
+            this.linkLabel2.TabIndex = 29;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "reply to selected";
+            this.linkLabel2.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(282, 2);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(9, 13);
+            this.label9.TabIndex = 28;
+            this.label9.Text = "|";
+            // 
+            // linkLabel3
+            // 
+            this.linkLabel3.ActiveLinkColor = System.Drawing.Color.Red;
+            this.linkLabel3.AutoSize = true;
+            this.linkLabel3.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel3.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.linkLabel3.Location = new System.Drawing.Point(187, 2);
+            this.linkLabel3.Name = "linkLabel3";
+            this.linkLabel3.Size = new System.Drawing.Size(97, 13);
+            this.linkLabel3.TabIndex = 27;
+            this.linkLabel3.TabStop = true;
+            this.linkLabel3.Text = "unarchive selected";
+            this.linkLabel3.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(179, 2);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(9, 13);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "|";
+            // 
+            // view_archived
+            // 
+            this.view_archived.ActiveLinkColor = System.Drawing.Color.Red;
+            this.view_archived.AutoSize = true;
+            this.view_archived.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.view_archived.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.view_archived.Location = new System.Drawing.Point(103, 2);
+            this.view_archived.Name = "view_archived";
+            this.view_archived.Size = new System.Drawing.Size(72, 13);
+            this.view_archived.TabIndex = 25;
+            this.view_archived.TabStop = true;
+            this.view_archived.Text = "view selected";
+            this.view_archived.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.view_archived.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.view_archived_LinkClicked);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(88, 2);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(9, 13);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "|";
+            // 
+            // delete_archived
+            // 
+            this.delete_archived.ActiveLinkColor = System.Drawing.Color.Red;
+            this.delete_archived.AutoSize = true;
+            this.delete_archived.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.delete_archived.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.delete_archived.Location = new System.Drawing.Point(3, 2);
+            this.delete_archived.Name = "delete_archived";
+            this.delete_archived.Size = new System.Drawing.Size(79, 13);
+            this.delete_archived.TabIndex = 23;
+            this.delete_archived.TabStop = true;
+            this.delete_archived.Text = "delete selected";
+            this.delete_archived.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.delete_archived.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.delete_archived_LinkClicked);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Sent by";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Sent by";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Subject";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Subject";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 650;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Date";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Date";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 108;
             // 
             // driver
             // 
@@ -437,9 +579,6 @@
             this.Controls.Add(this.edit_button);
             this.Controls.Add(this.send_button);
             this.Controls.Add(this.sep3);
-            this.Controls.Add(this.sep2);
-            this.Controls.Add(this.sorting_option);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.refresh_button);
             this.Controls.Add(this.tab_control);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -453,6 +592,9 @@
             this.inbox_tab.ResumeLayout(false);
             this.inbox_tab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inbox_data_view)).EndInit();
+            this.archive_tab.ResumeLayout(false);
+            this.archive_tab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.archive_data_view)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -466,9 +608,6 @@
         private System.Windows.Forms.DataGridView inbox_data_view;
         private System.Windows.Forms.LinkLabel refresh_button;
         private System.Windows.Forms.TabPage folders_tab;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox sorting_option;
-        private System.Windows.Forms.Label sep2;
         private System.Windows.Forms.Label sep3;
         private System.Windows.Forms.LinkLabel send_button;
         private System.Windows.Forms.LinkLabel edit_button;
@@ -491,5 +630,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Sender;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subject;
         private System.Windows.Forms.DataGridViewTextBoxColumn DATE;
+        private System.Windows.Forms.DataGridView archive_data_view;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.LinkLabel view_archived;
+        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel delete_archived;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.LinkLabel linkLabel3;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }

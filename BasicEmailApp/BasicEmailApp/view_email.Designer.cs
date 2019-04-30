@@ -34,6 +34,8 @@
             this.view_from = new System.Windows.Forms.Label();
             this.view_subject = new System.Windows.Forms.Label();
             this.download_attachments = new System.Windows.Forms.LinkLabel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.view_date = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -49,6 +51,7 @@
             // 
             this.view_body.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.view_body.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.view_body.Cursor = System.Windows.Forms.Cursors.Default;
             this.view_body.Location = new System.Drawing.Point(0, 37);
             this.view_body.Name = "view_body";
             this.view_body.ReadOnly = true;
@@ -96,12 +99,31 @@
             this.download_attachments.Text = "Download attachments";
             this.download_attachments.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(459, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Date : ";
+            // 
+            // view_date
+            // 
+            this.view_date.AutoSize = true;
+            this.view_date.Location = new System.Drawing.Point(498, 4);
+            this.view_date.Name = "view_date";
+            this.view_date.Size = new System.Drawing.Size(0, 13);
+            this.view_date.TabIndex = 21;
+            // 
             // view_email
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(852, 526);
+            this.Controls.Add(this.view_date);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.download_attachments);
             this.Controls.Add(this.view_subject);
             this.Controls.Add(this.view_from);
@@ -128,5 +150,7 @@
         private System.Windows.Forms.Label view_from;
         private System.Windows.Forms.Label view_subject;
         private System.Windows.Forms.LinkLabel download_attachments;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label view_date;
     }
 }
