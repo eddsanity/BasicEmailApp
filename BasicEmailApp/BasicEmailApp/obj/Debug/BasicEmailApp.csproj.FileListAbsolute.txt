@@ -13,3 +13,17 @@ C:\Users\Fady\Desktop\Database\BasicEmailApp-master\BasicEmailApp\BasicEmailApp\
 C:\Users\Fady\Desktop\Database\BasicEmailApp-master\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.exe
 C:\Users\Fady\Desktop\Database\BasicEmailApp-master\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.pdb
 C:\Users\Fady\Desktop\Database\BasicEmailApp-master\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.view_email.resources
+C:\Users\Eyadd\Desktop\BasicEmailApp-Repo\BasicEmailApp\BasicEmailApp\bin\Debug\BasicEmailApp.exe.config
+C:\Users\Eyadd\Desktop\BasicEmailApp-Repo\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.exe
+C:\Users\Eyadd\Desktop\BasicEmailApp-Repo\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.pdb
+C:\Users\Eyadd\Desktop\BasicEmailApp-Repo\BasicEmailApp\BasicEmailApp\bin\Debug\BasicEmailApp.exe
+C:\Users\Eyadd\Desktop\BasicEmailApp-Repo\BasicEmailApp\BasicEmailApp\bin\Debug\BasicEmailApp.pdb
+C:\Users\Eyadd\Desktop\BasicEmailApp-Repo\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.csprojResolveAssemblyReference.cache
+C:\Users\Eyadd\Desktop\BasicEmailApp-Repo\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.driver.resources
+C:\Users\Eyadd\Desktop\BasicEmailApp-Repo\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.edit_account.resources
+C:\Users\Eyadd\Desktop\BasicEmailApp-Repo\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.login.resources
+C:\Users\Eyadd\Desktop\BasicEmailApp-Repo\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.Properties.Resources.resources
+C:\Users\Eyadd\Desktop\BasicEmailApp-Repo\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.register.resources
+C:\Users\Eyadd\Desktop\BasicEmailApp-Repo\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.send_new.resources
+C:\Users\Eyadd\Desktop\BasicEmailApp-Repo\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.view_email.resources
+C:\Users\Eyadd\Desktop\BasicEmailApp-Repo\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.csproj.GenerateResource.Cache

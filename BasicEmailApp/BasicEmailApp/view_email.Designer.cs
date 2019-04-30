@@ -29,102 +29,92 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.view_body = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.view_from = new System.Windows.Forms.Label();
+            this.view_subject = new System.Windows.Forms.Label();
+            this.download_attachments = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 81);
+            this.label1.Location = new System.Drawing.Point(9, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Subject :";
             // 
-            // label2
+            // view_body
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 131);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Email :";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 159);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(828, 391);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Location = new System.Drawing.Point(64, 81);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(721, 42);
-            this.richTextBox2.TabIndex = 3;
-            this.richTextBox2.Text = "";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 49);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Sent by :";
-            // 
-            // richTextBox3
-            // 
-            this.richTextBox3.Location = new System.Drawing.Point(64, 49);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.ReadOnly = true;
-            this.richTextBox3.Size = new System.Drawing.Size(225, 26);
-            this.richTextBox3.TabIndex = 5;
-            this.richTextBox3.Text = "";
+            this.view_body.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.view_body.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.view_body.Location = new System.Drawing.Point(12, 61);
+            this.view_body.Name = "view_body";
+            this.view_body.ReadOnly = true;
+            this.view_body.Size = new System.Drawing.Size(828, 447);
+            this.view_body.TabIndex = 2;
+            this.view_body.Text = "";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 17);
+            this.label4.Location = new System.Drawing.Point(22, 18);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "From :";
             // 
-            // richTextBox4
+            // view_from
             // 
-            this.richTextBox4.Location = new System.Drawing.Point(64, 17);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.ReadOnly = true;
-            this.richTextBox4.Size = new System.Drawing.Size(225, 26);
-            this.richTextBox4.TabIndex = 7;
-            this.richTextBox4.Text = "";
+            this.view_from.AutoSize = true;
+            this.view_from.Location = new System.Drawing.Point(64, 18);
+            this.view_from.Name = "view_from";
+            this.view_from.Size = new System.Drawing.Size(0, 13);
+            this.view_from.TabIndex = 8;
+            // 
+            // view_subject
+            // 
+            this.view_subject.AutoSize = true;
+            this.view_subject.Location = new System.Drawing.Point(62, 45);
+            this.view_subject.Name = "view_subject";
+            this.view_subject.Size = new System.Drawing.Size(0, 13);
+            this.view_subject.TabIndex = 9;
+            // 
+            // download_attachments
+            // 
+            this.download_attachments.ActiveLinkColor = System.Drawing.Color.Red;
+            this.download_attachments.AutoSize = true;
+            this.download_attachments.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.download_attachments.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.download_attachments.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.download_attachments.Location = new System.Drawing.Point(12, 511);
+            this.download_attachments.Name = "download_attachments";
+            this.download_attachments.Size = new System.Drawing.Size(136, 13);
+            this.download_attachments.TabIndex = 19;
+            this.download_attachments.TabStop = true;
+            this.download_attachments.Text = "Download attachments";
+            this.download_attachments.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             // 
             // view_email
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(852, 562);
-            this.Controls.Add(this.richTextBox4);
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.ClientSize = new System.Drawing.Size(852, 526);
+            this.Controls.Add(this.download_attachments);
+            this.Controls.Add(this.view_subject);
+            this.Controls.Add(this.view_from);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.richTextBox3);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.view_body);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "view_email";
-            this.Text = "Form1";
+            this.Opacity = 0.9D;
+            this.ShowInTaskbar = false;
+            this.Text = "viewing ";
+            this.TopMost = true;
+            this.Load += new System.EventHandler(this.view_email_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,12 +123,10 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.RichTextBox view_body;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.RichTextBox richTextBox4;
+        private System.Windows.Forms.Label view_from;
+        private System.Windows.Forms.Label view_subject;
+        private System.Windows.Forms.LinkLabel download_attachments;
     }
 }

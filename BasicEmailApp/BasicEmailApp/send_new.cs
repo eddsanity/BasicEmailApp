@@ -17,7 +17,7 @@ namespace BasicEmailApp
         static Form loginForm = Application.OpenForms["login"];
         string g_user_email = ((login)loginForm).s_email;
         string g_user_id;
-        string connectionString = "Data Source=DESKTOP-A32LPMS;Initial Catalog=emailApp;Integrated Security=True";
+        string connectionString = "Data Source=EYAD;Initial Catalog=emailApp;Integrated Security=True";
         public send_new()
         {
             InitializeComponent();
