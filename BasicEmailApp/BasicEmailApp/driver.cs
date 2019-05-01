@@ -18,6 +18,7 @@ namespace BasicEmailApp
         public string g_user_email = ((login)loginForm).s_email;
         string g_user_id;
         string connectionString = ((login)loginForm).connectionString;
+        bool closed_by_logout=false;
         public driver()
         {
             InitializeComponent();
@@ -35,7 +36,11 @@ namespace BasicEmailApp
    
         private void driver_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            if (closed_by_logout == false)
+            {
+                Application.Exit();
+            }
+            closed_by_logout = false;
         }
 
         public void refreshInbox()
@@ -61,7 +66,8 @@ namespace BasicEmailApp
                 inbox_data_view.Columns["SENDERID"].Visible = false;
                 inbox_data_view.Columns["BODY"].Visible = false;
                 logged_in_as.Text = "logged in as <" + g_user_email + ">";
-
+                if (inbox_data_view.CurrentRow != null)
+                    inbox_data_view.CurrentRow.Selected = true;
 
                 //updates the archived tab
 
@@ -77,6 +83,8 @@ namespace BasicEmailApp
                 archive_data_view.Columns["EMAILID"].Visible = false;
                 archive_data_view.Columns["SENDERID"].Visible = false;
                 archive_data_view.Columns["BODY"].Visible = false;
+                if (archive_data_view.CurrentRow != null)
+                    archive_data_view.CurrentRow.Selected = true;
                 //updates the mailinglist tab
 
                 string show_mailinglists = "select NAMEMAILINGLIST as NAME , LISTID from MAILINGLIST where USERID =" + g_user_id;
@@ -108,7 +116,7 @@ namespace BasicEmailApp
             //loads data into inbox_grid_view
             refreshInbox();
             
-            archive_data_view.MultiSelect = false;
+           
             //TODO: SQL querIES to load all the data needed for all tabs
             //[DONE] TODO: Load messages and their senders into the inbox_data_view and sort them from most recent to oldest
             //TODO: Load folders in their respective way in the Folders tab
@@ -182,7 +190,8 @@ namespace BasicEmailApp
         private void inbox_data_view_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //selects the entire row instead of individual cells
-            inbox_data_view.CurrentRow.Selected = true;
+            if(inbox_data_view.CurrentRow!=null)
+                inbox_data_view.CurrentRow.Selected = true;
         }
 
 
@@ -197,11 +206,21 @@ namespace BasicEmailApp
             }
             else
             {
-                string selected_email = archive_data_view.CurrentRow.Cells["EMAILID"].Value.ToString();
-                string delete_selected_query = "delete from EMAIL where EMAILID =" + selected_email;
-                SqlCommand validateCmd = new SqlCommand(delete_selected_query, conn);
-                validateCmd.ExecuteNonQuery();
-                status_label.Text = "delete successful.";
+                if (archive_data_view.SelectedRows.Count > 0)
+                {
+                    for (int i = 0; i < archive_data_view.SelectedRows.Count; i++)
+                    {
+                        string selected_email = archive_data_view.SelectedRows[i].Cells["EMAILID"].Value.ToString();
+                        string delete_selected_query = "delete from EMAIL where EMAILID =" + selected_email;
+                        SqlCommand comm = new SqlCommand(delete_selected_query, conn);
+                        comm.ExecuteNonQuery();
+                    }
+                    status_label.Text = "delete successful.";
+                    refreshInbox();
+                    if (inbox_data_view.CurrentRow != null)
+                        inbox_data_view.CurrentRow.Selected = true;
+
+                }
                 refreshInbox();
             }
             conn.Close();
@@ -223,7 +242,8 @@ namespace BasicEmailApp
 
         private void archive_data_view_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            archive_data_view.CurrentRow.Selected = true; 
+            if (archive_data_view.CurrentRow != null)
+                archive_data_view.CurrentRow.Selected = true; 
         }
 
         private void archive_button_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -374,8 +394,17 @@ namespace BasicEmailApp
 
         private void mailinglist_data_view_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //selects the entire row instead of individual cells
-            mailinglist_data_view.CurrentRow.Selected = true;
+            if (mailinglist_data_view.CurrentRow != null)
+                mailinglist_data_view.CurrentRow.Selected = true;
+        }
+
+        private void linkLabel7_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            closed_by_logout = true;
+            ((login)loginForm).Show();
+            ((login)loginForm).l_email.Text = "";
+            ((login)loginForm).set_pwd_to_null();
+            this.Close();
         }
     }
 }

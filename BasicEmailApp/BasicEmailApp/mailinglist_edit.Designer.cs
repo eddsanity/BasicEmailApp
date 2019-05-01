@@ -31,13 +31,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.newname = new System.Windows.Forms.TextBox();
             this.users_in_mailinglist = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.email = new System.Windows.Forms.TextBox();
             this.update_basic_info = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.user_msg = new System.Windows.Forms.Label();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.users_in_mailinglist)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +67,7 @@
             this.users_in_mailinglist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.users_in_mailinglist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4});
-            this.users_in_mailinglist.Location = new System.Drawing.Point(12, 104);
+            this.users_in_mailinglist.Location = new System.Drawing.Point(12, 115);
             this.users_in_mailinglist.Name = "users_in_mailinglist";
             this.users_in_mailinglist.ReadOnly = true;
             this.users_in_mailinglist.RowHeadersWidth = 20;
@@ -75,6 +75,14 @@
             this.users_in_mailinglist.Size = new System.Drawing.Size(485, 344);
             this.users_in_mailinglist.TabIndex = 2;
             this.users_in_mailinglist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.users_in_mailinglist_CellClick);
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Email";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 463;
             // 
             // label2
             // 
@@ -124,7 +132,7 @@
             this.button2.BackColor = System.Drawing.Color.Brown;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(170, 454);
+            this.button2.Location = new System.Drawing.Point(172, 468);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(157, 23);
             this.button2.TabIndex = 16;
@@ -136,24 +144,16 @@
             // 
             this.user_msg.AutoSize = true;
             this.user_msg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.user_msg.Location = new System.Drawing.Point(12, 134);
+            this.user_msg.Location = new System.Drawing.Point(12, 101);
             this.user_msg.Name = "user_msg";
             this.user_msg.Size = new System.Drawing.Size(0, 13);
             this.user_msg.TabIndex = 18;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Email";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Email";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 463;
             // 
             // mailinglist_edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(509, 489);
+            this.ClientSize = new System.Drawing.Size(509, 503);
             this.Controls.Add(this.user_msg);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);

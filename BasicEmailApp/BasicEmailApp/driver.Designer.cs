@@ -40,10 +40,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.delete_button = new System.Windows.Forms.LinkLabel();
             this.inbox_data_view = new System.Windows.Forms.DataGridView();
+            this.Sender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mailing_list_tab = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.mailinglist_data_view = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
@@ -51,6 +55,9 @@
             this.archive_tab = new System.Windows.Forms.TabPage();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.archive_data_view = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label8 = new System.Windows.Forms.Label();
             this.view_archived = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
@@ -69,13 +76,8 @@
             this.status_label = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.Sender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label13 = new System.Windows.Forms.Label();
+            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
             this.tab_control.SuspendLayout();
             this.inbox_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inbox_data_view)).BeginInit();
@@ -253,6 +255,30 @@
             this.inbox_data_view.TabIndex = 0;
             this.inbox_data_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.inbox_data_view_CellClick);
             // 
+            // Sender
+            // 
+            this.Sender.DataPropertyName = "Sent by";
+            this.Sender.HeaderText = "Sent by";
+            this.Sender.Name = "Sender";
+            this.Sender.ReadOnly = true;
+            this.Sender.Width = 120;
+            // 
+            // Subject
+            // 
+            this.Subject.DataPropertyName = "Subject";
+            this.Subject.HeaderText = "Subject";
+            this.Subject.Name = "Subject";
+            this.Subject.ReadOnly = true;
+            this.Subject.Width = 650;
+            // 
+            // DATE
+            // 
+            this.DATE.DataPropertyName = "DATE";
+            this.DATE.HeaderText = "Date";
+            this.DATE.Name = "DATE";
+            this.DATE.ReadOnly = true;
+            this.DATE.Width = 104;
+            // 
             // mailing_list_tab
             // 
             this.mailing_list_tab.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -305,6 +331,14 @@
             this.mailinglist_data_view.TabIndex = 3;
             this.mailinglist_data_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mailinglist_data_view_CellClick);
             // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 890;
+            // 
             // linkLabel6
             // 
             this.linkLabel6.AutoSize = true;
@@ -352,7 +386,7 @@
             this.folders_tab.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.folders_tab.Location = new System.Drawing.Point(4, 4);
             this.folders_tab.Name = "folders_tab";
-            this.folders_tab.Size = new System.Drawing.Size(898, 545);
+            this.folders_tab.Size = new System.Drawing.Size(913, 545);
             this.folders_tab.TabIndex = 2;
             this.folders_tab.Text = "Folders";
             // 
@@ -409,6 +443,30 @@
             this.archive_data_view.Size = new System.Drawing.Size(913, 527);
             this.archive_data_view.TabIndex = 15;
             this.archive_data_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.archive_data_view_CellClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Sent by";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Sent by";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Subject";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Subject";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 650;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Date";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Date";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 104;
             // 
             // label8
             // 
@@ -512,7 +570,7 @@
             this.refresh_button.AutoSize = true;
             this.refresh_button.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.refresh_button.LinkColor = System.Drawing.Color.Green;
-            this.refresh_button.Location = new System.Drawing.Point(268, 9);
+            this.refresh_button.Location = new System.Drawing.Point(257, 9);
             this.refresh_button.Name = "refresh_button";
             this.refresh_button.Size = new System.Drawing.Size(67, 13);
             this.refresh_button.TabIndex = 2;
@@ -524,7 +582,7 @@
             // sep3
             // 
             this.sep3.AutoSize = true;
-            this.sep3.Location = new System.Drawing.Point(338, 9);
+            this.sep3.Location = new System.Drawing.Point(327, 9);
             this.sep3.Name = "sep3";
             this.sep3.Size = new System.Drawing.Size(9, 13);
             this.sep3.TabIndex = 6;
@@ -536,7 +594,7 @@
             this.send_button.AutoSize = true;
             this.send_button.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.send_button.LinkColor = System.Drawing.Color.Green;
-            this.send_button.Location = new System.Drawing.Point(358, 9);
+            this.send_button.Location = new System.Drawing.Point(347, 9);
             this.send_button.Name = "send_button";
             this.send_button.Size = new System.Drawing.Size(60, 13);
             this.send_button.TabIndex = 7;
@@ -551,7 +609,7 @@
             this.edit_button.AutoSize = true;
             this.edit_button.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.edit_button.LinkColor = System.Drawing.Color.Green;
-            this.edit_button.Location = new System.Drawing.Point(449, 9);
+            this.edit_button.Location = new System.Drawing.Point(438, 9);
             this.edit_button.Name = "edit_button";
             this.edit_button.Size = new System.Drawing.Size(66, 13);
             this.edit_button.TabIndex = 8;
@@ -563,7 +621,7 @@
             // sep4
             // 
             this.sep4.AutoSize = true;
-            this.sep4.Location = new System.Drawing.Point(424, 9);
+            this.sep4.Location = new System.Drawing.Point(413, 9);
             this.sep4.Name = "sep4";
             this.sep4.Size = new System.Drawing.Size(9, 13);
             this.sep4.TabIndex = 9;
@@ -591,7 +649,7 @@
             // status_label
             // 
             this.status_label.AutoSize = true;
-            this.status_label.Location = new System.Drawing.Point(575, 9);
+            this.status_label.Location = new System.Drawing.Point(621, 9);
             this.status_label.Name = "status_label";
             this.status_label.Size = new System.Drawing.Size(0, 13);
             this.status_label.TabIndex = 12;
@@ -599,7 +657,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(521, 9);
+            this.label2.Location = new System.Drawing.Point(510, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(9, 13);
             this.label2.TabIndex = 13;
@@ -608,67 +666,35 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(536, 9);
+            this.label3.Location = new System.Drawing.Point(585, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 14;
             this.label3.Text = "status:";
             // 
-            // Sender
+            // label13
             // 
-            this.Sender.DataPropertyName = "Sent by";
-            this.Sender.HeaderText = "Sent by";
-            this.Sender.Name = "Sender";
-            this.Sender.ReadOnly = true;
-            this.Sender.Width = 120;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(570, 9);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(9, 13);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "|";
             // 
-            // Subject
+            // linkLabel7
             // 
-            this.Subject.DataPropertyName = "Subject";
-            this.Subject.HeaderText = "Subject";
-            this.Subject.Name = "Subject";
-            this.Subject.ReadOnly = true;
-            this.Subject.Width = 650;
-            // 
-            // DATE
-            // 
-            this.DATE.DataPropertyName = "DATE";
-            this.DATE.HeaderText = "Date";
-            this.DATE.Name = "DATE";
-            this.DATE.ReadOnly = true;
-            this.DATE.Width = 104;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Sent by";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Sent by";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Subject";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Subject";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 650;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Date";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Date";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 104;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 890;
+            this.linkLabel7.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.linkLabel7.AutoSize = true;
+            this.linkLabel7.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel7.LinkColor = System.Drawing.Color.Green;
+            this.linkLabel7.Location = new System.Drawing.Point(525, 9);
+            this.linkLabel7.Name = "linkLabel7";
+            this.linkLabel7.Size = new System.Drawing.Size(39, 13);
+            this.linkLabel7.TabIndex = 16;
+            this.linkLabel7.TabStop = true;
+            this.linkLabel7.Text = "log out";
+            this.linkLabel7.VisitedLinkColor = System.Drawing.Color.Green;
+            this.linkLabel7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel7_LinkClicked);
             // 
             // driver
             // 
@@ -677,6 +703,8 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(924, 603);
+            this.Controls.Add(this.linkLabel7);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.status_label);
@@ -760,5 +788,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.LinkLabel linkLabel7;
     }
 }
