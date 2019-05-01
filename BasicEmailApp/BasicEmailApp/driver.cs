@@ -15,9 +15,9 @@ namespace BasicEmailApp
     {
         //gets the e-mail used after successfully logging in and saves it in the driver for future use.
         static Form loginForm = Application.OpenForms["login"];
-        string connectionString = ((login)loginForm).connectionString;
         public string g_user_email = ((login)loginForm).s_email;
         string g_user_id;
+        string connectionString = ((login)loginForm).connectionString;
         public driver()
         {
             InitializeComponent();
@@ -77,6 +77,16 @@ namespace BasicEmailApp
                 archive_data_view.Columns["EMAILID"].Visible = false;
                 archive_data_view.Columns["SENDERID"].Visible = false;
                 archive_data_view.Columns["BODY"].Visible = false;
+                //updates the mailinglist tab
+
+                string show_mailinglists = "select NAMEMAILINGLIST as NAME , LISTID from MAILINGLIST where USERID =" + g_user_id;
+                SqlDataAdapter MailinglistSqlAdpt = new SqlDataAdapter(show_mailinglists, conn);
+                DataTable mailinglist_data_table = new DataTable();
+                MailinglistSqlAdpt.Fill(mailinglist_data_table);
+                mailinglist_data_view.DataSource = mailinglist_data_table;
+                mailinglist_data_view.Columns["LISTID"].Visible = false;
+                if (mailinglist_data_view.CurrentRow != null)
+                    mailinglist_data_view.CurrentRow.Selected = true;
             }
             conn.Close();
         }
@@ -97,7 +107,7 @@ namespace BasicEmailApp
             this.Text = this.Text + " | " + g_user_email;
             //loads data into inbox_grid_view
             refreshInbox();
-            inbox_data_view.MultiSelect = false;
+            
             archive_data_view.MultiSelect = false;
             //TODO: SQL querIES to load all the data needed for all tabs
             //[DONE] TODO: Load messages and their senders into the inbox_data_view and sort them from most recent to oldest
@@ -118,12 +128,27 @@ namespace BasicEmailApp
             }
             else
             {
-                string selected_email = inbox_data_view.CurrentRow.Cells["EMAILID"].Value.ToString();
+                if (inbox_data_view.SelectedRows.Count > 0)
+                {
+                    for (int i = 0; i < inbox_data_view.SelectedRows.Count; i++)
+                    {
+                        string selected_email = inbox_data_view.SelectedRows[i].Cells["EMAILID"].Value.ToString();
+                        string delete_selected_query = "delete from EMAIL where EMAILID =" + selected_email;
+                        SqlCommand comm = new SqlCommand(delete_selected_query, conn);
+                        comm.ExecuteNonQuery();
+                    }
+                    status_label.Text = "delete successful.";
+                    refreshInbox();
+                    if (inbox_data_view.CurrentRow != null)
+                        inbox_data_view.CurrentRow.Selected = true;
+
+                }
+                /*string selected_email = inbox_data_view.CurrentRow.Cells["EMAILID"].Value.ToString();
                 string delete_selected_query = "delete from EMAIL where EMAILID =" + selected_email;
                 SqlCommand validateCmd = new SqlCommand(delete_selected_query, conn);
                 validateCmd.ExecuteNonQuery();
                 status_label.Text = "delete successful.";
-                refreshInbox();
+                refreshInbox();*/
             }
             conn.Close();
         }
@@ -293,6 +318,64 @@ namespace BasicEmailApp
             string sender_body = archive_data_view.SelectedRows[0].Cells["BODY"].Value.ToString();
             send_new sendForm = new send_new("", sender_body);
             sendForm.ShowDialog();
+        }
+
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            if (mailinglist_data_view.CurrentRow == null)
+            {
+                status_label.Text = "select Mailing List to delete.";
+            }
+            else
+            {
+                if (mailinglist_data_view.SelectedRows.Count > 0)
+                {
+                    for (int i = 0; i < mailinglist_data_view.SelectedRows.Count; i++)
+                    {
+                        string selected_email = mailinglist_data_view.SelectedRows[i].Cells["LISTID"].Value.ToString();
+                        string delete_all_users = "delete from MAILINGLISTUSERS where LISTID = " + selected_email;
+                        string delete_selected_query = "delete from MAILINGLIST where LISTID =" + selected_email;
+                        SqlCommand comm = new SqlCommand(delete_all_users, conn);
+                        comm.ExecuteNonQuery();
+                        comm = new SqlCommand(delete_selected_query, conn);
+                        comm.ExecuteNonQuery();
+                    }
+                    status_label.Text = "delete successful.";
+                    refreshInbox();
+                    if (inbox_data_view.CurrentRow != null)
+                        inbox_data_view.CurrentRow.Selected = true;
+
+                }
+            }
+            conn.Close();
+        }
+
+        private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            mailinglist_create create = new mailinglist_create(g_user_id);
+            create.ShowDialog();
+        }
+
+        private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (mailinglist_data_view.CurrentRow == null)
+            {
+                status_label.Text = "select Mailing List to edit.";
+            }
+            else
+            {
+                string selected_mailinglist = mailinglist_data_view.CurrentRow.Cells["LISTID"].Value.ToString();
+                mailinglist_edit edit = new mailinglist_edit(g_user_id, selected_mailinglist);
+                edit.ShowDialog();
+            }
+        }
+
+        private void mailinglist_data_view_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //selects the entire row instead of individual cells
+            mailinglist_data_view.CurrentRow.Selected = true;
         }
     }
 }
