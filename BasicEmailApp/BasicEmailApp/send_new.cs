@@ -17,7 +17,7 @@ namespace BasicEmailApp
         static Form loginForm = Application.OpenForms["login"];
         string g_user_email = ((login)loginForm).s_email;
         string g_user_id;
-        string connectionString = "Data Source=DESKTOP-QF9IM65\\TESTSQL;Initial Catalog=EmailProject;Integrated Security=True";
+        string connectionString = ((login)loginForm).connectionString;
         public send_new(string sender_email = "", string sender_body = "")
         {
             InitializeComponent();
@@ -48,8 +48,8 @@ namespace BasicEmailApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string send_query = "insert into EMAIL(SENDERID, SUBJECT, BODY, DATE, RECEIVERID) " +
-                                "values (" + g_user_id + ", '" + subject.Text + "', '" + message_body.Text + "', GETDATE(), ";
+            string send_query = "insert into EMAIL(SENDERID, SUBJECT, BODY, DATE, ARCHIVED, RECEIVERID) " +
+                                "values (" + g_user_id + ", '" + subject.Text + "', '" + message_body.Text + "', GETDATE(), 0, ";
 
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();

@@ -18,7 +18,8 @@ namespace BasicEmailApp
         bool usernameIsTaken = true;
         int numberOfUsers;
 
-        string connectionString = "Data Source=DESKTOP-QF9IM65\\TESTSQL;Initial Catalog=EmailProject;Integrated Security=True";
+        static Form loginForm = Application.OpenForms["login"];
+        string connectionString = ((login)loginForm).connectionString;
         public register()
         {
             InitializeComponent();

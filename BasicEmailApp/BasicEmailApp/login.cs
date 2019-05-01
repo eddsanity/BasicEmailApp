@@ -14,11 +14,12 @@ namespace BasicEmailApp
     public partial class login : Form
     {
         public string s_email = "";
-
-        string connectionString = "Data Source=DESKTOP-QF9IM65\\TESTSQL;Initial Catalog=EmailProject;Integrated Security=True";
+        string serverName = "localhost\\SQLEXPRESS";
+        public string connectionString;
         public login()
         {
             InitializeComponent();
+            connectionString = "Data Source=" + serverName + ";Initial Catalog=emailApp;Integrated Security=True";
         }
 
         private void l_regButton_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
