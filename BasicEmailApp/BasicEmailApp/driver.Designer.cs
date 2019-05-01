@@ -40,14 +40,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.delete_button = new System.Windows.Forms.LinkLabel();
             this.inbox_data_view = new System.Windows.Forms.DataGridView();
-            this.Sender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mailing_list_tab = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.mailinglist_data_view = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
@@ -55,9 +51,6 @@
             this.archive_tab = new System.Windows.Forms.TabPage();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.archive_data_view = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label8 = new System.Windows.Forms.Label();
             this.view_archived = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
@@ -76,6 +69,13 @@
             this.status_label = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.Sender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tab_control.SuspendLayout();
             this.inbox_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inbox_data_view)).BeginInit();
@@ -97,7 +97,7 @@
             this.tab_control.Multiline = true;
             this.tab_control.Name = "tab_control";
             this.tab_control.SelectedIndex = 0;
-            this.tab_control.Size = new System.Drawing.Size(906, 571);
+            this.tab_control.Size = new System.Drawing.Size(921, 571);
             this.tab_control.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tab_control.TabIndex = 0;
             // 
@@ -118,7 +118,7 @@
             this.inbox_tab.Location = new System.Drawing.Point(4, 4);
             this.inbox_tab.Name = "inbox_tab";
             this.inbox_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.inbox_tab.Size = new System.Drawing.Size(898, 545);
+            this.inbox_tab.Size = new System.Drawing.Size(913, 545);
             this.inbox_tab.TabIndex = 0;
             this.inbox_tab.Text = "Inbox";
             // 
@@ -249,33 +249,9 @@
             this.inbox_data_view.ReadOnly = true;
             this.inbox_data_view.RowHeadersWidth = 20;
             this.inbox_data_view.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.inbox_data_view.Size = new System.Drawing.Size(900, 527);
+            this.inbox_data_view.Size = new System.Drawing.Size(913, 527);
             this.inbox_data_view.TabIndex = 0;
             this.inbox_data_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.inbox_data_view_CellClick);
-            // 
-            // Sender
-            // 
-            this.Sender.DataPropertyName = "Sent by";
-            this.Sender.HeaderText = "Sent by";
-            this.Sender.Name = "Sender";
-            this.Sender.ReadOnly = true;
-            this.Sender.Width = 120;
-            // 
-            // Subject
-            // 
-            this.Subject.DataPropertyName = "Subject";
-            this.Subject.HeaderText = "Subject";
-            this.Subject.Name = "Subject";
-            this.Subject.ReadOnly = true;
-            this.Subject.Width = 650;
-            // 
-            // DATE
-            // 
-            this.DATE.DataPropertyName = "DATE";
-            this.DATE.HeaderText = "Date";
-            this.DATE.Name = "DATE";
-            this.DATE.ReadOnly = true;
-            this.DATE.Width = 107;
             // 
             // mailing_list_tab
             // 
@@ -289,7 +265,7 @@
             this.mailing_list_tab.Location = new System.Drawing.Point(4, 4);
             this.mailing_list_tab.Name = "mailing_list_tab";
             this.mailing_list_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.mailing_list_tab.Size = new System.Drawing.Size(898, 545);
+            this.mailing_list_tab.Size = new System.Drawing.Size(913, 545);
             this.mailing_list_tab.TabIndex = 1;
             this.mailing_list_tab.Text = "Mailing List";
             // 
@@ -325,17 +301,9 @@
             this.mailinglist_data_view.ReadOnly = true;
             this.mailinglist_data_view.RowHeadersWidth = 20;
             this.mailinglist_data_view.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.mailinglist_data_view.Size = new System.Drawing.Size(900, 527);
+            this.mailinglist_data_view.Size = new System.Drawing.Size(913, 527);
             this.mailinglist_data_view.TabIndex = 3;
             this.mailinglist_data_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mailinglist_data_view_CellClick);
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 870;
             // 
             // linkLabel6
             // 
@@ -403,7 +371,7 @@
             this.archive_tab.Controls.Add(this.label10);
             this.archive_tab.Location = new System.Drawing.Point(4, 4);
             this.archive_tab.Name = "archive_tab";
-            this.archive_tab.Size = new System.Drawing.Size(898, 545);
+            this.archive_tab.Size = new System.Drawing.Size(913, 545);
             this.archive_tab.TabIndex = 3;
             this.archive_tab.Text = "Archive";
             // 
@@ -433,38 +401,14 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
-            this.archive_data_view.Location = new System.Drawing.Point(-3, 18);
+            this.archive_data_view.Location = new System.Drawing.Point(0, 18);
             this.archive_data_view.Name = "archive_data_view";
             this.archive_data_view.ReadOnly = true;
             this.archive_data_view.RowHeadersWidth = 20;
             this.archive_data_view.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.archive_data_view.Size = new System.Drawing.Size(900, 527);
+            this.archive_data_view.Size = new System.Drawing.Size(913, 527);
             this.archive_data_view.TabIndex = 15;
             this.archive_data_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.archive_data_view_CellClick);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Sent by";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Sent by";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Subject";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Subject";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 650;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Date";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Date";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 108;
             // 
             // label8
             // 
@@ -670,13 +614,69 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "status:";
             // 
+            // Sender
+            // 
+            this.Sender.DataPropertyName = "Sent by";
+            this.Sender.HeaderText = "Sent by";
+            this.Sender.Name = "Sender";
+            this.Sender.ReadOnly = true;
+            this.Sender.Width = 120;
+            // 
+            // Subject
+            // 
+            this.Subject.DataPropertyName = "Subject";
+            this.Subject.HeaderText = "Subject";
+            this.Subject.Name = "Subject";
+            this.Subject.ReadOnly = true;
+            this.Subject.Width = 650;
+            // 
+            // DATE
+            // 
+            this.DATE.DataPropertyName = "DATE";
+            this.DATE.HeaderText = "Date";
+            this.DATE.Name = "DATE";
+            this.DATE.ReadOnly = true;
+            this.DATE.Width = 104;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Sent by";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Sent by";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Subject";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Subject";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 650;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Date";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Date";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 104;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 890;
+            // 
             // driver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(909, 603);
+            this.ClientSize = new System.Drawing.Size(924, 603);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.status_label);
@@ -737,9 +737,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.LinkLabel view_button;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sender;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Subject;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DATE;
         private System.Windows.Forms.DataGridView archive_data_view;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label8;
@@ -750,15 +747,18 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.LinkLabel linkLabel6;
         private System.Windows.Forms.LinkLabel linkLabel5;
         private System.Windows.Forms.LinkLabel linkLabel4;
         private System.Windows.Forms.DataGridView mailinglist_data_view;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Subject;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DATE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }
