@@ -27,3 +27,18 @@ C:\Users\Eyadd\Desktop\BasicEmailApp-Repo\BasicEmailApp\BasicEmailApp\obj\Debug\
 C:\Users\Eyadd\Desktop\BasicEmailApp-Repo\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.send_new.resources
 C:\Users\Eyadd\Desktop\BasicEmailApp-Repo\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.view_email.resources
 C:\Users\Eyadd\Desktop\BasicEmailApp-Repo\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.csproj.GenerateResource.Cache
+D:\programing\Database1 Project\BasicEmailApp\BasicEmailApp\BasicEmailApp\bin\Debug\BasicEmailApp.exe.config
+D:\programing\Database1 Project\BasicEmailApp\BasicEmailApp\BasicEmailApp\bin\Debug\BasicEmailApp.exe
+D:\programing\Database1 Project\BasicEmailApp\BasicEmailApp\BasicEmailApp\bin\Debug\BasicEmailApp.pdb
+D:\programing\Database1 Project\BasicEmailApp\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.csprojAssemblyReference.cache
+D:\programing\Database1 Project\BasicEmailApp\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.driver.resources
+D:\programing\Database1 Project\BasicEmailApp\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.edit_account.resources
+D:\programing\Database1 Project\BasicEmailApp\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.login.resources
+D:\programing\Database1 Project\BasicEmailApp\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.Properties.Resources.resources
+D:\programing\Database1 Project\BasicEmailApp\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.register.resources
+D:\programing\Database1 Project\BasicEmailApp\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.send_new.resources
+D:\programing\Database1 Project\BasicEmailApp\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.view_email.resources
+D:\programing\Database1 Project\BasicEmailApp\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.csproj.GenerateResource.cache
+D:\programing\Database1 Project\BasicEmailApp\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.csproj.CoreCompileInputs.cache
+D:\programing\Database1 Project\BasicEmailApp\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.exe
+D:\programing\Database1 Project\BasicEmailApp\BasicEmailApp\BasicEmailApp\obj\Debug\BasicEmailApp.pdb
