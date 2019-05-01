@@ -37,7 +37,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 24);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 13);
             this.label1.TabIndex = 0;
@@ -45,7 +45,8 @@
             // 
             // mailinglist_name
             // 
-            this.mailinglist_name.Location = new System.Drawing.Point(15, 49);
+            this.mailinglist_name.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.mailinglist_name.Location = new System.Drawing.Point(12, 25);
             this.mailinglist_name.Name = "mailinglist_name";
             this.mailinglist_name.Size = new System.Drawing.Size(290, 20);
             this.mailinglist_name.TabIndex = 1;
@@ -55,9 +56,9 @@
             this.button2.BackColor = System.Drawing.Color.Brown;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(81, 88);
+            this.button2.Location = new System.Drawing.Point(12, 51);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(164, 23);
+            this.button2.Size = new System.Drawing.Size(290, 23);
             this.button2.TabIndex = 5;
             this.button2.Text = "Create";
             this.button2.UseVisualStyleBackColor = false;
@@ -76,12 +77,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(317, 126);
+            this.ClientSize = new System.Drawing.Size(317, 86);
             this.Controls.Add(this.mailinglist_msg);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.mailinglist_name);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "mailinglist_create";
+            this.Opacity = 0.9D;
             this.Text = "Create Mailing List";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -14,7 +14,7 @@ namespace BasicEmailApp
     public partial class login : Form
     {
         public string s_email = "";
-        string serverName = "localhost\\SQLEXPRESS";
+        string serverName = "eyad";
         public string connectionString;
         public login()
         {

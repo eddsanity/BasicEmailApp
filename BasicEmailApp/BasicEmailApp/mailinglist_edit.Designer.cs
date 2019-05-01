@@ -31,20 +31,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.newname = new System.Windows.Forms.TextBox();
             this.users_in_mailinglist = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.email = new System.Windows.Forms.TextBox();
             this.update_basic_info = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.user_msg = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.users_in_mailinglist)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 17);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 13);
             this.label1.TabIndex = 0;
@@ -52,7 +52,8 @@
             // 
             // newname
             // 
-            this.newname.Location = new System.Drawing.Point(15, 33);
+            this.newname.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.newname.Location = new System.Drawing.Point(12, 25);
             this.newname.Name = "newname";
             this.newname.Size = new System.Drawing.Size(482, 20);
             this.newname.TabIndex = 1;
@@ -66,27 +67,19 @@
             this.users_in_mailinglist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.users_in_mailinglist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4});
-            this.users_in_mailinglist.Location = new System.Drawing.Point(12, 153);
+            this.users_in_mailinglist.Location = new System.Drawing.Point(12, 104);
             this.users_in_mailinglist.Name = "users_in_mailinglist";
             this.users_in_mailinglist.ReadOnly = true;
             this.users_in_mailinglist.RowHeadersWidth = 20;
             this.users_in_mailinglist.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.users_in_mailinglist.Size = new System.Drawing.Size(485, 295);
+            this.users_in_mailinglist.Size = new System.Drawing.Size(485, 344);
             this.users_in_mailinglist.TabIndex = 2;
             this.users_in_mailinglist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.users_in_mailinglist_CellClick);
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Email";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Email";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 460;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 67);
+            this.label2.Location = new System.Drawing.Point(12, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 3;
@@ -94,7 +87,8 @@
             // 
             // email
             // 
-            this.email.Location = new System.Drawing.Point(56, 67);
+            this.email.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.email.Location = new System.Drawing.Point(53, 49);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(441, 20);
             this.email.TabIndex = 4;
@@ -104,7 +98,7 @@
             this.update_basic_info.BackColor = System.Drawing.Color.Brown;
             this.update_basic_info.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.update_basic_info.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.update_basic_info.Location = new System.Drawing.Point(12, 108);
+            this.update_basic_info.Location = new System.Drawing.Point(12, 75);
             this.update_basic_info.Name = "update_basic_info";
             this.update_basic_info.Size = new System.Drawing.Size(122, 23);
             this.update_basic_info.TabIndex = 14;
@@ -117,7 +111,7 @@
             this.button1.BackColor = System.Drawing.Color.Brown;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(368, 108);
+            this.button1.Location = new System.Drawing.Point(365, 75);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(129, 23);
             this.button1.TabIndex = 15;
@@ -147,6 +141,14 @@
             this.user_msg.Size = new System.Drawing.Size(0, 13);
             this.user_msg.TabIndex = 18;
             // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Email";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 463;
+            // 
             // mailinglist_edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -161,7 +163,9 @@
             this.Controls.Add(this.users_in_mailinglist);
             this.Controls.Add(this.newname);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "mailinglist_edit";
+            this.Opacity = 0.9D;
             this.Text = "Edit Mailing List";
             this.Load += new System.EventHandler(this.mailinglist_edit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.users_in_mailinglist)).EndInit();

@@ -44,7 +44,10 @@
             this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mailing_list_tab = new System.Windows.Forms.TabPage();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.mailinglist_data_view = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
@@ -73,9 +76,6 @@
             this.status_label = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tab_control.SuspendLayout();
             this.inbox_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inbox_data_view)).BeginInit();
@@ -293,6 +293,24 @@
             this.mailing_list_tab.TabIndex = 1;
             this.mailing_list_tab.Text = "Mailing List";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(103, 3);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(9, 13);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "|";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(45, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(9, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "|";
+            // 
             // mailinglist_data_view
             // 
             this.mailinglist_data_view.AllowUserToAddRows = false;
@@ -311,37 +329,54 @@
             this.mailinglist_data_view.TabIndex = 3;
             this.mailinglist_data_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mailinglist_data_view_CellClick);
             // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 870;
+            // 
             // linkLabel6
             // 
             this.linkLabel6.AutoSize = true;
+            this.linkLabel6.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel6.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.linkLabel6.Location = new System.Drawing.Point(118, 3);
             this.linkLabel6.Name = "linkLabel6";
             this.linkLabel6.Size = new System.Drawing.Size(24, 13);
             this.linkLabel6.TabIndex = 2;
             this.linkLabel6.TabStop = true;
             this.linkLabel6.Text = "edit";
+            this.linkLabel6.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
             // 
             // linkLabel5
             // 
             this.linkLabel5.AutoSize = true;
+            this.linkLabel5.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel5.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.linkLabel5.Location = new System.Drawing.Point(60, 3);
             this.linkLabel5.Name = "linkLabel5";
             this.linkLabel5.Size = new System.Drawing.Size(37, 13);
             this.linkLabel5.TabIndex = 1;
             this.linkLabel5.TabStop = true;
             this.linkLabel5.Text = "create";
+            this.linkLabel5.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel5_LinkClicked);
             // 
             // linkLabel4
             // 
             this.linkLabel4.AutoSize = true;
+            this.linkLabel4.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel4.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.linkLabel4.Location = new System.Drawing.Point(3, 3);
             this.linkLabel4.Name = "linkLabel4";
             this.linkLabel4.Size = new System.Drawing.Size(36, 13);
             this.linkLabel4.TabIndex = 0;
             this.linkLabel4.TabStop = true;
             this.linkLabel4.Text = "delete";
+            this.linkLabel4.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
             // 
             // folders_tab
@@ -634,32 +669,6 @@
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 14;
             this.label3.Text = "status:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(9, 13);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "|";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(103, 3);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(9, 13);
-            this.label12.TabIndex = 17;
-            this.label12.Text = "|";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 870;
             // 
             // driver
             // 
