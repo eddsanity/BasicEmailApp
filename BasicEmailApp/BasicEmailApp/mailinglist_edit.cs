@@ -132,8 +132,8 @@ namespace BasicEmailApp
 
         private void users_in_mailinglist_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //selects the entire row instead of individual cells
-            users_in_mailinglist.CurrentRow.Selected = true;
+            if (users_in_mailinglist.CurrentRow != null)
+                users_in_mailinglist.CurrentRow.Selected = true;
         }
     }
 }

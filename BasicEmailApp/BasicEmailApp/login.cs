@@ -14,7 +14,7 @@ namespace BasicEmailApp
     public partial class login : Form
     {
         public string s_email = "";
-        string serverName = "eyad";
+        string serverName = "DESKTOP-A32LPMS";
         public string connectionString;
         public login()
         {
@@ -53,7 +53,10 @@ namespace BasicEmailApp
             }
             conn.Close();
         }
-
+        public void set_pwd_to_null ()
+        {
+            l_pwd.Text = "";
+        }
         private void login_Load(object sender, EventArgs e)
         {
 
