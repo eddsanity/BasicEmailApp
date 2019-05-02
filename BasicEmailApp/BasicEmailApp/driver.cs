@@ -95,6 +95,14 @@ namespace BasicEmailApp
                 mailinglist_data_view.Columns["LISTID"].Visible = false;
                 if (mailinglist_data_view.CurrentRow != null)
                     mailinglist_data_view.CurrentRow.Selected = true;
+
+                // show the names of the folder 
+                string show_folders = "SELECT [FOLDERID], [NAMEFOLDER] AS [Folder name] FROM [FOLDER] WHERE USERID = " + g_user_id;
+                SqlDataAdapter foldSqlAdpt = new SqlDataAdapter(show_folders, conn);
+                DataTable folder_data_table = new DataTable();
+                foldSqlAdpt.Fill(folder_data_table);
+                folder_data_view.DataSource = folder_data_table;
+                folder_data_view.Columns["FOLDERID"].Visible = false;
             }
             conn.Close();
         }
@@ -405,6 +413,34 @@ namespace BasicEmailApp
             ((login)loginForm).l_email.Text = "";
             ((login)loginForm).set_pwd_to_null();
             this.Close();
+        }
+
+        private void folder_data_view_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void linkLabel8_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            add_folder add_folder_form = new add_folder(g_user_id);
+            add_folder_form.ShowDialog();
+            refreshInbox();
+        }
+
+        private void linkLabel8_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (folder_data_view.SelectedRows == null) return;
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            for (int i = 0; i < folder_data_view.SelectedRows.Count; i++)
+            {
+                string folder_id = folder_data_view.SelectedRows[i].Cells["FOLDERID"].Value.ToString();
+                string delete_folder_query = "DELETE FROM [FOLDER] WHERE [FOLDERID] = " + folder_id;
+                SqlCommand ValidateCmd = new SqlCommand(delete_folder_query, conn);
+                ValidateCmd.ExecuteNonQuery();
+            }
+            conn.Close();
+            refreshInbox();
         }
     }
 }
