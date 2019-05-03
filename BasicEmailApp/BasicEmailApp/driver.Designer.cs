@@ -83,6 +83,10 @@
             this.add_folder_button = new System.Windows.Forms.LinkLabel();
             this.delete_selected_folder_button = new System.Windows.Forms.LinkLabel();
             this.label14 = new System.Windows.Forms.Label();
+            this.linkLabel8 = new System.Windows.Forms.LinkLabel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.add_to_folder_button = new System.Windows.Forms.LinkLabel();
+            this.label16 = new System.Windows.Forms.Label();
             this.tab_control.SuspendLayout();
             this.inbox_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inbox_data_view)).BeginInit();
@@ -115,6 +119,8 @@
             // 
             this.inbox_tab.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.inbox_tab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.inbox_tab.Controls.Add(this.add_to_folder_button);
+            this.inbox_tab.Controls.Add(this.label16);
             this.inbox_tab.Controls.Add(this.forward_button);
             this.inbox_tab.Controls.Add(this.label7);
             this.inbox_tab.Controls.Add(this.reply_button);
@@ -410,6 +416,8 @@
             // folders_tab
             // 
             this.folders_tab.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.folders_tab.Controls.Add(this.label15);
+            this.folders_tab.Controls.Add(this.linkLabel8);
             this.folders_tab.Controls.Add(this.label14);
             this.folders_tab.Controls.Add(this.delete_selected_folder_button);
             this.folders_tab.Controls.Add(this.add_folder_button);
@@ -819,6 +827,58 @@
             this.label14.TabIndex = 19;
             this.label14.Text = "|";
             // 
+            // linkLabel8
+            // 
+            this.linkLabel8.ActiveLinkColor = System.Drawing.Color.Red;
+            this.linkLabel8.AutoSize = true;
+            this.linkLabel8.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel8.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.linkLabel8.Location = new System.Drawing.Point(264, 9);
+            this.linkLabel8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.linkLabel8.Name = "linkLabel8";
+            this.linkLabel8.Size = new System.Drawing.Size(83, 20);
+            this.linkLabel8.TabIndex = 20;
+            this.linkLabel8.TabStop = true;
+            this.linkLabel8.Text = "view folder";
+            this.linkLabel8.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.linkLabel8.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel8_LinkClicked_2);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(242, 9);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(14, 20);
+            this.label15.TabIndex = 21;
+            this.label15.Text = "|";
+            // 
+            // add_to_folder_button
+            // 
+            this.add_to_folder_button.ActiveLinkColor = System.Drawing.Color.Red;
+            this.add_to_folder_button.AutoSize = true;
+            this.add_to_folder_button.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.add_to_folder_button.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.add_to_folder_button.Location = new System.Drawing.Point(758, 3);
+            this.add_to_folder_button.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.add_to_folder_button.Name = "add_to_folder_button";
+            this.add_to_folder_button.Size = new System.Drawing.Size(98, 20);
+            this.add_to_folder_button.TabIndex = 24;
+            this.add_to_folder_button.TabStop = true;
+            this.add_to_folder_button.Text = "add to folder";
+            this.add_to_folder_button.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.add_to_folder_button.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel9_LinkClicked);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(736, 3);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(14, 20);
+            this.label16.TabIndex = 23;
+            this.label16.Text = "|";
+            // 
             // driver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -922,5 +982,9 @@
         private System.Windows.Forms.LinkLabel add_folder_button;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.LinkLabel delete_selected_folder_button;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.LinkLabel linkLabel8;
+        private System.Windows.Forms.LinkLabel add_to_folder_button;
+        private System.Windows.Forms.Label label16;
     }
 }

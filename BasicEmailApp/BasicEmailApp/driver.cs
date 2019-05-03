@@ -417,7 +417,7 @@ namespace BasicEmailApp
 
         private void folder_data_view_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            folder_data_view.CurrentRow.Selected = true;
         }
 
         private void linkLabel8_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -441,6 +441,22 @@ namespace BasicEmailApp
             }
             conn.Close();
             refreshInbox();
+        }
+
+        private void linkLabel8_LinkClicked_2(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (folder_data_view.SelectedRows.Count != 1) return;
+            string folder_id = folder_data_view.SelectedRows[0].Cells["FOLDERID"].Value.ToString();
+            folder_email folder_email_form = new folder_email(folder_id);
+            folder_email_form.ShowDialog();
+        }
+
+        private void linkLabel9_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (inbox_data_view.SelectedRows.Count != 1) return;
+            string email_id = inbox_data_view.SelectedRows[0].Cells["EMAILID"].Value.ToString();
+            choose_folder folder_form = new choose_folder(email_id);
+            folder_form.ShowDialog();
         }
     }
 }
