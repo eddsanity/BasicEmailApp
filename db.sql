@@ -1,5 +1,3 @@
-
-use EmailProject
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2017                    */
 /* Created on:     4/27/2019 7:23:19 PM                         */
