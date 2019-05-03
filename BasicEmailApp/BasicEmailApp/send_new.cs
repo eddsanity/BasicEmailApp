@@ -21,6 +21,7 @@ namespace BasicEmailApp
         public send_new(string sender_email = "", string sender_body = "")
         {
             InitializeComponent();
+
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
 
@@ -70,6 +71,23 @@ namespace BasicEmailApp
                     // send to receiver email
                     SqlCommand command = new SqlCommand(send_query + receiver_user_id + ");", conn);
                     command.ExecuteNonQuery();
+                    // get EmailID
+                    string latest_email_query = "select EMAILID from EMAIL where SENDERID=" + g_user_id +
+                                                " and DATE = (select max(DATE) from Email" +
+                                                " where SENDERID=" + g_user_id + ")";
+                    SqlCommand EmailIDCmd = new SqlCommand(latest_email_query, conn);
+                    string email_id = Convert.ToString(EmailIDCmd.ExecuteScalar());
+
+                    foreach (DataGridViewRow attachment_row in attachments_data_view.Rows)
+                    {
+                        string type = attachment_row.Cells["Type"].Value.ToString();
+                        string url = attachment_row.Cells["URL"].Value.ToString();
+                        string attachment_query = "insert into ATTACHMENT(EMAILID, TYPE, URL) " +
+                                                  "values(" + email_id + ", '" + type + "', '" + url + "')";
+                        SqlCommand add_attachement_command = new SqlCommand(attachment_query, conn);
+                        add_attachement_command.ExecuteNonQuery();
+                    }
+
                     MessageBox.Show("Email sent.", "done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // close send window
                     this.Close();
@@ -102,6 +120,31 @@ namespace BasicEmailApp
             }
 
             conn.Close();
+        }
+
+        private void add_attachment_button_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            new_attachment attachForm = new new_attachment();
+            attachForm.ShowDialog();
+        }
+
+        public void add_attachment(string type, string url)
+        {
+            attachments_data_view.Rows.Add(type, url);
+        }
+
+        private void delete_attachment_button_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (attachments_data_view.SelectedRows == null) return;
+            foreach (DataGridViewRow row in attachments_data_view.SelectedRows)
+            {
+                attachments_data_view.Rows.RemoveAt(row.Index);
+            }
+        }
+
+        private void mailing_list_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
