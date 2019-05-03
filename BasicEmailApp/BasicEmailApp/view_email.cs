@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Net;
 
 namespace BasicEmailApp
 {
@@ -22,9 +23,6 @@ namespace BasicEmailApp
         string SentBy;
         string SenderEmail;
         string Date;
-
-        //TODO: query to change the value of emailHasAttachments based on the existence of attachments linked to this e-mail
-        bool emailHasAttachments = false;
         
         public view_email(string id)
         {
@@ -58,6 +56,12 @@ namespace BasicEmailApp
                 comm = new SqlCommand(query, conn);
                 SentBy = Convert.ToString(comm.ExecuteScalar());
 
+                // get attachments
+                query = "select TYPE as Type, URL from ATTACHMENT where EMAILID = " + id;
+                SqlDataAdapter sqlAdpt = new SqlDataAdapter(query, conn);
+                DataTable attachments_data_table = new DataTable();
+                sqlAdpt.Fill(attachments_data_table);
+                attachments_data_view.DataSource = attachments_data_table;
 
                 view_body.Text = Body;
                 view_subject.Text = Subject;
@@ -65,24 +69,26 @@ namespace BasicEmailApp
                 view_date.Text = Date;
 
                 this.Text = this.Text + Subject + " from " + SentBy;
-
-                if(!emailHasAttachments)
-                {
-                    download_attachments.Enabled = false;
-                }
-                else
-                {
-                    download_attachments.Enabled = true;
-                    
-                    //TODO: functionality to download attachments (i.e. download every URL in every attachment linked to this e-mail)
-                }
             }
             
         }
 
-        private void view_email_Load(object sender, EventArgs e)
+        private void download_attachment_button_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            WebClient client = new WebClient();
+            string user_path = System.Environment.GetEnvironmentVariable("USERPROFILE");
+            foreach (DataGridViewRow attachment_row in attachments_data_view.SelectedRows)
+            {
+                string url = attachment_row.Cells["URL"].Value.ToString();
+                string filename = url.Split('/').Last();
+                try
+                {
+                    client.DownloadFile(url, user_path + "\\Downloads\\" + filename);
+                } catch(System.Net.WebException)
+                {
+                    MessageBox.Show("Invalid URL " + url, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

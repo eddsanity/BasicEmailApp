@@ -16,7 +16,6 @@ namespace BasicEmailApp
         bool emailIsTaken = true;
         bool pwdIsValid = false;
         bool usernameIsTaken = true;
-        int numberOfUsers;
 
         static Form loginForm = Application.OpenForms["login"];
         string connectionString = ((login)loginForm).connectionString;
