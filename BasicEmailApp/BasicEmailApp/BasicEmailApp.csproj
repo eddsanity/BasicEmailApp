@@ -52,6 +52,12 @@
     <Compile Include="add_folder.Designer.cs">
       <DependentUpon>add_folder.cs</DependentUpon>
     </Compile>
+    <Compile Include="choose_folder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="choose_folder.Designer.cs">
+      <DependentUpon>choose_folder.cs</DependentUpon>
+    </Compile>
     <Compile Include="driver.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,12 @@
     </Compile>
     <Compile Include="edit_account.Designer.cs">
       <DependentUpon>edit_account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="folder_email.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="folder_email.Designer.cs">
+      <DependentUpon>folder_email.cs</DependentUpon>
     </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
@@ -105,11 +117,17 @@
     <EmbeddedResource Include="add_folder.resx">
       <DependentUpon>add_folder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="choose_folder.resx">
+      <DependentUpon>choose_folder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="driver.resx">
       <DependentUpon>driver.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="edit_account.resx">
       <DependentUpon>edit_account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folder_email.resx">
+      <DependentUpon>folder_email.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
