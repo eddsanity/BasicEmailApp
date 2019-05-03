@@ -458,5 +458,13 @@ namespace BasicEmailApp
             choose_folder folder_form = new choose_folder(email_id);
             folder_form.ShowDialog();
         }
+
+        private void linkLabel9_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (archive_data_view.SelectedRows.Count != 1) return;
+            string email_id = archive_data_view.SelectedRows[0].Cells["EMAILID"].Value.ToString();
+            choose_folder folder_form = new choose_folder(email_id);
+            folder_form.ShowDialog();
+        }
     }
 }
