@@ -32,7 +32,6 @@
             this.inbox_tab = new System.Windows.Forms.TabPage();
             this.search_bar = new System.Windows.Forms.TextBox();
             this.search = new System.Windows.Forms.LinkLabel();
-            this.label18 = new System.Windows.Forms.Label();
             this.add_to_folder_button = new System.Windows.Forms.LinkLabel();
             this.label16 = new System.Windows.Forms.Label();
             this.forward_button = new System.Windows.Forms.LinkLabel();
@@ -87,7 +86,10 @@
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.label10 = new System.Windows.Forms.Label();
             this.Sent_tab = new System.Windows.Forms.TabPage();
+            this.search_bar5 = new System.Windows.Forms.TextBox();
+            this.search5 = new System.Windows.Forms.LinkLabel();
             this.linkLabel11 = new System.Windows.Forms.LinkLabel();
+            this.label18 = new System.Windows.Forms.Label();
             this.linkLabel10 = new System.Windows.Forms.LinkLabel();
             this.sent_data_view = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -105,8 +107,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.linkLabel7 = new System.Windows.Forms.LinkLabel();
-            this.search_bar5 = new System.Windows.Forms.TextBox();
-            this.search5 = new System.Windows.Forms.LinkLabel();
+            this.generateR = new System.Windows.Forms.LinkLabel();
             this.tab_control.SuspendLayout();
             this.inbox_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inbox_data_view)).BeginInit();
@@ -183,16 +184,6 @@
             this.search.Text = "search";
             this.search.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.search.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.search_LinkClicked);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(123, 9);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(9, 13);
-            this.label18.TabIndex = 32;
-            this.label18.Text = "|";
             // 
             // add_to_folder_button
             // 
@@ -869,6 +860,28 @@
             this.Sent_tab.UseVisualStyleBackColor = true;
             this.Sent_tab.Click += new System.EventHandler(this.sent_data_view_Click);
             // 
+            // search_bar5
+            // 
+            this.search_bar5.Location = new System.Drawing.Point(718, 6);
+            this.search_bar5.Name = "search_bar5";
+            this.search_bar5.Size = new System.Drawing.Size(174, 20);
+            this.search_bar5.TabIndex = 29;
+            // 
+            // search5
+            // 
+            this.search5.ActiveLinkColor = System.Drawing.Color.Red;
+            this.search5.AutoSize = true;
+            this.search5.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.search5.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.search5.Location = new System.Drawing.Point(673, 8);
+            this.search5.Name = "search5";
+            this.search5.Size = new System.Drawing.Size(39, 13);
+            this.search5.TabIndex = 28;
+            this.search5.TabStop = true;
+            this.search5.Text = "search";
+            this.search5.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.search5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.search5_LinkClicked);
+            // 
             // linkLabel11
             // 
             this.linkLabel11.ActiveLinkColor = System.Drawing.Color.Red;
@@ -884,6 +897,16 @@
             this.linkLabel11.Text = "forward selected";
             this.linkLabel11.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.linkLabel11.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel11_LinkClicked);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(123, 9);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(9, 13);
+            this.label18.TabIndex = 32;
+            this.label18.Text = "|";
             // 
             // linkLabel10
             // 
@@ -1079,27 +1102,18 @@
             this.linkLabel7.VisitedLinkColor = System.Drawing.Color.Green;
             this.linkLabel7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel7_LinkClicked);
             // 
-            // search_bar5
+            // generateR
             // 
-            this.search_bar5.Location = new System.Drawing.Point(718, 6);
-            this.search_bar5.Name = "search_bar5";
-            this.search_bar5.Size = new System.Drawing.Size(174, 20);
-            this.search_bar5.TabIndex = 29;
-            // 
-            // search5
-            // 
-            this.search5.ActiveLinkColor = System.Drawing.Color.Red;
-            this.search5.AutoSize = true;
-            this.search5.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.search5.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.search5.Location = new System.Drawing.Point(673, 8);
-            this.search5.Name = "search5";
-            this.search5.Size = new System.Drawing.Size(39, 13);
-            this.search5.TabIndex = 28;
-            this.search5.TabStop = true;
-            this.search5.Text = "search";
-            this.search5.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.search5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.search5_LinkClicked);
+            this.generateR.AutoSize = true;
+            this.generateR.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.generateR.Location = new System.Drawing.Point(816, 9);
+            this.generateR.Name = "generateR";
+            this.generateR.Size = new System.Drawing.Size(81, 13);
+            this.generateR.TabIndex = 18;
+            this.generateR.TabStop = true;
+            this.generateR.Text = "Generate report";
+            this.generateR.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.generateR.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.generateR_LinkClicked);
             // 
             // driver
             // 
@@ -1108,6 +1122,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(909, 604);
+            this.Controls.Add(this.generateR);
             this.Controls.Add(this.linkLabel7);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label3);
@@ -1230,5 +1245,6 @@
         private System.Windows.Forms.LinkLabel linkLabel11;
         private System.Windows.Forms.TextBox search_bar5;
         private System.Windows.Forms.LinkLabel search5;
+        private System.Windows.Forms.LinkLabel generateR;
     }
 }

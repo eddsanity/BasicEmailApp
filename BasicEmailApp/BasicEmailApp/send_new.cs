@@ -50,6 +50,8 @@ namespace BasicEmailApp
 
         private void button1_Click(object sender, EventArgs e)
         {
+            subject.Text = subject.Text.Replace("'", "''");
+            message_body.Text = message_body.Text.Replace("'", "''");
             string send_query = "insert into EMAIL(SENDERID, SUBJECT, BODY, DATE, ARCHIVED, RECEIVERID) " +
                                 "values (" + g_user_id + ", '" + subject.Text + "', '" + message_body.Text + "', GETDATE(), 0, ";
 
@@ -65,6 +67,8 @@ namespace BasicEmailApp
                 bool receiverEmailValid = (receiver_user_id.Length != 0);
                 if (!receiverEmailValid)
                 {
+                    subject.Text = subject.Text.Replace("''", "'");
+                    message_body.Text = message_body.Text.Replace("''", "'");
                     MessageBox.Show("Invalid receiver email.", "failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
@@ -88,7 +92,8 @@ namespace BasicEmailApp
                         SqlCommand add_attachement_command = new SqlCommand(attachment_query, conn);
                         add_attachement_command.ExecuteNonQuery();
                     }
-
+                    subject.Text = subject.Text.Replace("''", "'");
+                    message_body.Text = message_body.Text.Replace("''", "'");
                     MessageBox.Show("Email sent.", "done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // close send window
                     ((driver)driverForm).refreshInbox();
@@ -115,6 +120,8 @@ namespace BasicEmailApp
                         SqlCommand command = new SqlCommand(send_query + receiver_user_id + ");", conn);
                         command.ExecuteNonQuery();
                     }
+                    subject.Text = subject.Text.Replace("''", "'");
+                    message_body.Text = message_body.Text.Replace("''", "'");
                     MessageBox.Show("Email sent to '" + mailing_list.Text + "' mailing list.", "done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // close send window
                     ((driver)driverForm).refreshInbox();

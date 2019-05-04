@@ -48,7 +48,7 @@ namespace BasicEmailApp
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            string user_email = email.Text;
+            string user_email = email.Text.Replace("'", "''");
             string check = "select count(EMAIL) from [USER] where (EMAIL = '" + user_email + "')";
             SqlCommand comm = new SqlCommand(check, conn);
             int check1 = Convert.ToInt16(comm.ExecuteScalar());
@@ -119,6 +119,7 @@ namespace BasicEmailApp
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
+            newname.Text = newname.Text.Replace("'", "''");
             if (newname.Text != "")
             {
                 string change_name = "update MAILINGLIST set NAMEMAILINGLIST = '" + newname.Text + "' where LISTID =" + Listid;

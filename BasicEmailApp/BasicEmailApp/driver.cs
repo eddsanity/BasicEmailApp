@@ -18,7 +18,7 @@ namespace BasicEmailApp
         public string g_user_email = ((login)loginForm).s_email;
         string g_user_id;
         string connectionString = ((login)loginForm).connectionString;
-        bool closed_by_logout=false;
+        bool closed_by_logout = false;
         public driver()
         {
             InitializeComponent();
@@ -27,13 +27,14 @@ namespace BasicEmailApp
             conn.Open();
             if (conn.State == ConnectionState.Open)
             {
+                g_user_email = g_user_email.Replace("'", "''");
                 string user_id_query = "select USERID from [USER] where EMAIL = '" + g_user_email + "'";
                 SqlCommand validateCmd = new SqlCommand(user_id_query, conn);
                 g_user_id = Convert.ToString(validateCmd.ExecuteScalar());
             }
             conn.Close();
         }
-   
+
         private void driver_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (closed_by_logout == false)
@@ -137,8 +138,8 @@ namespace BasicEmailApp
             this.Text = this.Text + " | " + g_user_email;
             //loads data into inbox_grid_view
             refreshInbox();
-            
-           
+
+
             //TODO: SQL querIES to load all the data needed for all tabs
             //[DONE] TODO: Load messages and their senders into the inbox_data_view and sort them from most recent to oldest
             //TODO: Load folders in their respective way in the Folders tab
@@ -212,7 +213,7 @@ namespace BasicEmailApp
         private void inbox_data_view_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //selects the entire row instead of individual cells
-            if(inbox_data_view.CurrentRow!=null)
+            if (inbox_data_view.CurrentRow != null)
                 inbox_data_view.CurrentRow.Selected = true;
         }
 
@@ -265,13 +266,13 @@ namespace BasicEmailApp
         private void archive_data_view_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (archive_data_view.CurrentRow != null)
-                archive_data_view.CurrentRow.Selected = true; 
+                archive_data_view.CurrentRow.Selected = true;
         }
 
         private void archive_button_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (inbox_data_view.CurrentRow == null) return;
-            
+
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             if (inbox_data_view.SelectedRows.Count > 0)
@@ -282,7 +283,7 @@ namespace BasicEmailApp
                     string update_query_selected = "UPDATE [EMAIL] SET ARCHIVED = 1 WHERE EMAILID = " + selected_email;
                     SqlCommand validateCmd = new SqlCommand(update_query_selected, conn);
                     validateCmd.ExecuteNonQuery();
-                    
+
                 }
                 refreshInbox();
             }
@@ -497,7 +498,7 @@ namespace BasicEmailApp
             refreshInbox();
         }
 
-        
+
         private void linkLabel11_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (sent_data_view.SelectedRows.Count != 1) return;
@@ -524,6 +525,7 @@ namespace BasicEmailApp
             {
                 SqlConnection conn = new SqlConnection(connectionString);
                 conn.Open();
+                search_bar.Text = search_bar.Text.Replace("'", "''");
                 //get table of all e-mails sent to this user THAT ARE NOT ARCHIVED
                 string get_emails_to_account = "select * from EMAIL where EMAIL.RECEIVERID = " + g_user_id + " AND EMAIL.ARCHIVED = 0";
 
@@ -543,6 +545,7 @@ namespace BasicEmailApp
                 logged_in_as.Text = "logged in as <" + g_user_email + ">";
                 if (inbox_data_view.CurrentRow != null)
                     inbox_data_view.CurrentRow.Selected = true;
+                search_bar.Text = search_bar.Text.Replace("''", "'");
                 conn.Close();
             }
             else refreshInbox();
@@ -554,6 +557,7 @@ namespace BasicEmailApp
             {
                 SqlConnection conn = new SqlConnection(connectionString);
                 conn.Open();
+                search_bar2.Text = search_bar2.Text.Replace("'", "''");
                 string show_mailinglists = "select NAMEMAILINGLIST as NAME , LISTID from MAILINGLIST where USERID =" + g_user_id + "and NAMEMAILINGLIST ='" + search_bar2.Text + "'";
                 SqlDataAdapter MailinglistSqlAdpt = new SqlDataAdapter(show_mailinglists, conn);
                 DataTable mailinglist_data_table = new DataTable();
@@ -562,6 +566,7 @@ namespace BasicEmailApp
                 mailinglist_data_view.Columns["LISTID"].Visible = false;
                 if (mailinglist_data_view.CurrentRow != null)
                     mailinglist_data_view.CurrentRow.Selected = true;
+                search_bar2.Text = search_bar2.Text.Replace("''", "'");
                 conn.Close();
             }
             else refreshInbox();
@@ -573,6 +578,7 @@ namespace BasicEmailApp
             {
                 SqlConnection conn = new SqlConnection(connectionString);
                 conn.Open();
+                search_bar3.Text = search_bar3.Text.Replace("'", "''");
                 // show the names of the folder 
                 string show_folders = "SELECT [FOLDERID], [NAMEFOLDER] AS [Folder name] FROM [FOLDER] WHERE USERID = " + g_user_id + "and [NAMEFOLDER] ='" + search_bar3.Text + "'";
                 SqlDataAdapter foldSqlAdpt = new SqlDataAdapter(show_folders, conn);
@@ -580,6 +586,7 @@ namespace BasicEmailApp
                 foldSqlAdpt.Fill(folder_data_table);
                 folder_data_view.DataSource = folder_data_table;
                 folder_data_view.Columns["FOLDERID"].Visible = false;
+                search_bar3.Text = search_bar3.Text.Replace("''", "'");
                 conn.Close();
             }
             else refreshInbox();
@@ -591,6 +598,7 @@ namespace BasicEmailApp
             {
                 SqlConnection conn = new SqlConnection(connectionString);
                 conn.Open();
+                search_bar4.Text = search_bar4.Text.Replace("'", "''");
                 //all e-mails sent to this user THAT ARE ARCHIVED
                 string get_emails_to_account = "select * from EMAIL where EMAIL.RECEIVERID = " + g_user_id + " AND EMAIL.ARCHIVED = 1";
                 string show_emails_with_sender = "select Q.BODY, Q.SENDERID, Q.EMAILID , [USER].FIRSTNAME as [Sent by], [SUBJECT] as [Subject], [DATE] as [Date] from [USER] inner join (" + get_emails_to_account + ") as Q";
@@ -605,6 +613,7 @@ namespace BasicEmailApp
                 archive_data_view.Columns["BODY"].Visible = false;
                 if (archive_data_view.CurrentRow != null)
                     archive_data_view.CurrentRow.Selected = true;
+                search_bar4.Text = search_bar4.Text.Replace("''", "'");
                 conn.Close();
             }
             else refreshInbox();
@@ -616,6 +625,7 @@ namespace BasicEmailApp
             {
                 SqlConnection conn = new SqlConnection(connectionString);
                 conn.Open();
+                search_bar5.Text = search_bar5.Text.Replace("'", "''");
                 string get_emails_to_account = "select * from EMAIL where EMAIL.SENDERID = " + g_user_id;
                 string show_emails_with_sender = "select Q.BODY, Q.EMAILID, [USER].FIRSTNAME as [Sent to], [SUBJECT] as [Subject], [DATE] as [Date] from [USER] inner join (" + get_emails_to_account + ") as Q";
                 string show_condition = " on [USER].USERID = Q.RECEIVERID and ([USER].FIRSTNAME = '" + search_bar5.Text + "' or [SUBJECT] = '" + search_bar5.Text + "' or [USER].EMAIL = '" + search_bar5.Text + "') order by [DATE] DESC";
@@ -625,6 +635,7 @@ namespace BasicEmailApp
                 sent_data_view.DataSource = sent_data_table;
                 sent_data_view.Columns["EMAILID"].Visible = false;
                 sent_data_view.Columns["BODY"].Visible = false;
+                search_bar5.Text = search_bar5.Text.Replace("''", "'");
                 conn.Close();
             }
             else refreshInbox();
@@ -640,6 +651,12 @@ namespace BasicEmailApp
         {
             if (sent_data_view.CurrentRow != null)
                 sent_data_view.CurrentRow.Selected = true;
+        }
+
+        private void generateR_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            user_report us = new user_report();
+            us.ShowDialog();
         }
     }
 }

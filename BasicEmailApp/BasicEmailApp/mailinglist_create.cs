@@ -27,11 +27,13 @@ namespace BasicEmailApp
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            if(conn.State == ConnectionState.Open)
+            mailinglist_name.Text = mailinglist_name.Text.Replace("'", "''");
+            if (conn.State == ConnectionState.Open)
             {
                 string add_mailing_list = "insert into MAILINGLIST(USERID , NAMEMAILINGLIST) values(" + g_user_id + ", '" + mailinglist_name.Text + "')";
                 SqlCommand comm = new SqlCommand(add_mailing_list, conn);
                 comm.ExecuteNonQuery();
+                mailinglist_name.Text = mailinglist_name.Text.Replace("''", "'");
                 mailinglist_msg.Text = "Successfully created!";
                 ((driver)driverForm).refreshInbox();
             }

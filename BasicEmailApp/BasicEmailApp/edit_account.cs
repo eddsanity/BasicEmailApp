@@ -26,10 +26,10 @@ namespace BasicEmailApp
             conn.Open();
             if (conn.State == ConnectionState.Open)
             {
-                string user_id_query = "select USERID from [USER] where EMAIL = '" + g_user_email + "'" ;
+                string user_id_query = "select USERID from [USER] where EMAIL = '" + g_user_email + "'";
                 SqlCommand validateCmd = new SqlCommand(user_id_query, conn);
                 g_user_id = Convert.ToString(validateCmd.ExecuteScalar());
-                
+
             }
             conn.Close();
         }
@@ -39,23 +39,26 @@ namespace BasicEmailApp
             basic_email.Text = g_user_email;
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            if(conn.State == ConnectionState.Open)
+            if (conn.State == ConnectionState.Open)
             {
-                string load_query = "select FIRSTNAME from [USER] where (USERID = " + g_user_id +")";
+                string load_query = "select FIRSTNAME from [USER] where (USERID = " + g_user_id + ")";
                 SqlCommand loadCmd = new SqlCommand(load_query, conn);
                 basic_firstname.Text = loadCmd.ExecuteScalar().ToString();
                 load_query = "select LASTNAME from [USER] where (USERID = " + g_user_id + ")";
                 loadCmd = new SqlCommand(load_query, conn);
                 basic_lastname.Text = loadCmd.ExecuteScalar().ToString();
             }
-            
+
         }
 
         private void update_basic_info_Click(object sender, EventArgs e)
         {
-
+            basic_pwd.Text = basic_pwd.Text.Replace("'", "''");
+            basic_firstname.Text = basic_firstname.Text.Replace("'", "''");
+            basic_lastname.Text = basic_lastname.Text.Replace("'", "''");
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
+            bool invalidChar = false;
             if (conn.State == ConnectionState.Open)
             {
                 string check_account = "select count(EMAIL) from [USER] where (USERID = " + g_user_id + ") AND PASSWORD = '" + basic_pwd.Text + "'";
@@ -65,14 +68,18 @@ namespace BasicEmailApp
                 foreach (char c in basic_email.Text)
                 {
                     if (c == '@' || c == '.') d++;
+                    if (c < 'a' && c > 'z' && c != '_' && c != '@' && c != '.') invalidChar = true;
                 }
-                if (account_checker == 1 && d >= 2)
+                if (account_checker == 1 && d >= 2 && !invalidChar)
                 {
                     string update_query = "update [USER] set FIRSTNAME = '" + basic_firstname.Text + "', LASTNAME = '" + basic_lastname.Text + "', EMAIL = '" + basic_email.Text + "' ";
                     string condition = "where (USERID = " + g_user_id + ") AND PASSWORD = '" + basic_pwd.Text + "';";
                     SqlCommand updateCmd = new SqlCommand(update_query + condition, conn);
                     updateCmd.ExecuteNonQuery();
                     g_user_email = basic_email.Text;
+                    basic_pwd.Text = basic_pwd.Text.Replace("''", "'");
+                    basic_firstname.Text = basic_firstname.Text.Replace("''", "'");
+                    basic_lastname.Text = basic_lastname.Text.Replace("''", "'");
                     lb.Text = "Changes saved!";
                     ((login)loginForm).s_email = g_user_email;
                     ((driver)driverForm).g_user_email = g_user_email;
@@ -80,12 +87,20 @@ namespace BasicEmailApp
                 }
                 else
                 {
-                    if (d < 2)
+                    if (d < 2 || invalidChar)
                     {
+                        basic_pwd.Text = basic_pwd.Text.Replace("''", "'");
+                        basic_firstname.Text = basic_firstname.Text.Replace("''", "'");
+                        basic_lastname.Text = basic_lastname.Text.Replace("''", "'");
+                        basic_email.Text = basic_email.Text.Replace("''", "'");
                         MessageBox.Show("Invalid Email", "update failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     if (account_checker != 1)
                     {
+                        basic_pwd.Text = basic_pwd.Text.Replace("''", "'");
+                        basic_firstname.Text = basic_firstname.Text.Replace("''", "'");
+                        basic_lastname.Text = basic_lastname.Text.Replace("''", "'");
+                        basic_email.Text = basic_email.Text.Replace("''", "'");
                         lb.Text = "";
                         MessageBox.Show("Wrong password", "update failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -122,7 +137,8 @@ namespace BasicEmailApp
 
                 }
 
-            } else
+            }
+            else
                 MessageBox.Show("Passwords don't match", "update failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             conn.Close();
         }

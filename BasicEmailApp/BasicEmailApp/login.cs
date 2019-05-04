@@ -33,14 +33,18 @@ namespace BasicEmailApp
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            if(conn.State == ConnectionState.Open)
+            l_email.Text = l_email.Text.Replace("'", "''");
+            l_pwd.Text = l_pwd.Text.Replace("'", "''");
+            if (conn.State == ConnectionState.Open)
             {
                 //check if an account with this e-mail and this password exist
                 string check_account = "select count(EMAIL) from [USER] where (EMAIL = '" + l_email.Text + "') AND PASSWORD = '" + l_pwd.Text + "'";
                 SqlCommand validateCmd = new SqlCommand(check_account, conn);
                 int account_checker = Convert.ToInt16(validateCmd.ExecuteScalar());
-                if(account_checker == 1)
+                if (account_checker == 1)
                 {
+                    l_email.Text = l_email.Text.Replace("''", "'");
+                    l_pwd.Text = l_pwd.Text.Replace("''", "'");
                     s_email = l_email.Text;
                     this.Hide();
                     driver driverForm = new driver();
@@ -48,18 +52,26 @@ namespace BasicEmailApp
                 }
                 else
                 {
+                    l_email.Text = l_email.Text.Replace("''", "'");
+                    l_pwd.Text = l_pwd.Text.Replace("''", "'");
                     MessageBox.Show("Login failed, check your credentials.", "login failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             conn.Close();
         }
-        public void set_pwd_to_null ()
+        public void set_pwd_to_null()
         {
             l_pwd.Text = "";
         }
         private void login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void generateR_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            system_report sr = new system_report();
+            sr.ShowDialog();
         }
     }
 }

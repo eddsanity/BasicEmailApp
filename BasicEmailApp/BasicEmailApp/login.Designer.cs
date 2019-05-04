@@ -35,6 +35,7 @@
             this.l_pwd = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.l_regButton = new System.Windows.Forms.LinkLabel();
+            this.generateR = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // button1
@@ -110,12 +111,26 @@
             this.l_regButton.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.l_regButton.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.l_regButton_LinkClicked);
             // 
+            // generateR
+            // 
+            this.generateR.AutoSize = true;
+            this.generateR.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.generateR.Location = new System.Drawing.Point(165, 161);
+            this.generateR.Name = "generateR";
+            this.generateR.Size = new System.Drawing.Size(81, 13);
+            this.generateR.TabIndex = 8;
+            this.generateR.TabStop = true;
+            this.generateR.Text = "Generate report";
+            this.generateR.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.generateR.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.generateR_LinkClicked);
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(256, 169);
+            this.ClientSize = new System.Drawing.Size(256, 184);
+            this.Controls.Add(this.generateR);
             this.Controls.Add(this.l_regButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -131,7 +146,6 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "E-mail application - sign in";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -147,6 +161,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel l_regButton;
         public System.Windows.Forms.TextBox l_email;
+        private System.Windows.Forms.LinkLabel generateR;
     }
 }
 
