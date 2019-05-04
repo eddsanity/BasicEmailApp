@@ -38,66 +38,98 @@ namespace BasicEmailApp
             conn.Open();
             if (conn.State == ConnectionState.Open)
             {
-                int totalu, temp2;
-                double avg;
-                string temp;
-                string get_avg_users = "select count(USERID) as num from [USER]";
-                string get_temail = "select count(EMAILID) from EMAIL where SENDERID = '" + g_user_id + "'";
-                string get_temailr = "select count(EMAILID) from EMAIL where RECEIVERID = '" + g_user_id + "'";
-                string get_tmailinglist = "select count(LISTID) from MAILINGLIST where USERID = '" + g_user_id + "'"; ;
-                string get_tfolder = "select count(FOLDERID) from FOLDER where USERID = '" + g_user_id + "'";
-                string get_tattachment = "select count(ATTACHMENTID) from ATTACHMENT a, EMAIL e, [USER] u where e.SENDERID=u.USERID and e.EMAILID=a.EMAILID";
-                SqlCommand comm = new SqlCommand(get_avg_users, conn);
-                temp = Convert.ToString(comm.ExecuteScalar());
-                totalu = Convert.ToInt32(temp);
-                comm = new SqlCommand(get_temail, conn);
-                temail.Text = Convert.ToString(comm.ExecuteScalar());
-                temp2 = Convert.ToInt32(temail.Text);
-                avg = (double)temp2 / (double)totalu;
-                aemail.Text = avg.ToString();
+                SqlCommand comm;
+                string get;
 
-                comm = new SqlCommand(get_tmailinglist, conn);
-                tmailinglist.Text = Convert.ToString(comm.ExecuteScalar());
-                temp2 = Convert.ToInt32(tmailinglist.Text);
-                avg = (double)temp2 / (double)totalu;
-                amailinglist.Text = avg.ToString();
+                get = "select count(EMAILID) from EMAIL e , [USER] u where SENDERID = " + g_user_id + " and RECEIVERID  = u.USERID and u.EMAIL  like '%@gmail.com%' ";
+                comm = new SqlCommand(get, conn);
+                label9.Text = Convert.ToString(comm.ExecuteScalar());
+                get = "select count(EMAILID) from EMAIL e , [USER] u where SENDERID = " + g_user_id + " and RECEIVERID = u.USERID and u.EMAIL like '%@hotmail.com%' ";
+                comm = new SqlCommand(get, conn);
+                label23.Text = Convert.ToString(comm.ExecuteScalar());
+                get = "select count(EMAILID) from EMAIL e , [USER] u where SENDERID = " + g_user_id + "and RECEIVERID  = u.USERID and u.EMAIL  like '%@yahoo.com%' ";
+                comm = new SqlCommand(get, conn);
+                label28.Text = Convert.ToString(comm.ExecuteScalar());
+                get = "select count(EMAILID) from EMAIL e , [USER] u where SENDERID = " + g_user_id + " and RECEIVERID  = u.USERID and u.EMAIL  like '%@live.com%' ";
+                comm = new SqlCommand(get, conn);
+                label33.Text = Convert.ToString(comm.ExecuteScalar());
+                get = "select count(EMAILID) from EMAIL e , [USER] u where SENDERID = " + g_user_id + " and RECEIVERID  = u.USERID and u.EMAIL  like '%@outlook.com%' ";
+                comm = new SqlCommand(get, conn);
+                label38.Text = Convert.ToString(comm.ExecuteScalar());
 
-                comm = new SqlCommand(get_tfolder, conn);
-                tfolder.Text = Convert.ToString(comm.ExecuteScalar());
-                temp2 = Convert.ToInt32(tfolder.Text);
-                avg = (double)temp2 / (double)totalu;
-                afolder.Text = avg.ToString();
+                get = "select count(EMAILID) from EMAIL e , [USER] u where RECEIVERID = " + g_user_id + " and SENDERID  = u.USERID and u.EMAIL like '%@gmail.com%' ";
+                comm = new SqlCommand(get, conn);
+                label10.Text = Convert.ToString(comm.ExecuteScalar());
+                get = "select count(EMAILID) from EMAIL e , [USER] u where RECEIVERID = " + g_user_id + " and SENDERID  = u.USERID and u.EMAIL like '%@hotmail.com%' ";
+                comm = new SqlCommand(get, conn);
+                label22.Text = Convert.ToString(comm.ExecuteScalar());
+                get = "select count(EMAILID) from EMAIL e , [USER] u where RECEIVERID = " + g_user_id + " and SENDERID  = u.USERID and u.EMAIL like '%@yahoo.com%' ";
+                comm = new SqlCommand(get, conn);
+                label27.Text = Convert.ToString(comm.ExecuteScalar());
+                get = "select count(EMAILID) from EMAIL e , [USER] u where RECEIVERID = " + g_user_id + " and SENDERID  = u.USERID and u.EMAIL like '%@live.com%' ";
+                comm = new SqlCommand(get, conn);
+                label32.Text = Convert.ToString(comm.ExecuteScalar());
+                get = "select count(EMAILID) from EMAIL e , [USER] u where RECEIVERID = USERID and u.EMAIL like '%@outlook.com%' ";
+                comm = new SqlCommand(get, conn);
+                label37.Text = Convert.ToString(comm.ExecuteScalar());
 
-                comm = new SqlCommand(get_tattachment, conn);
-                tattachment.Text = Convert.ToString(comm.ExecuteScalar());
-                temp2 = Convert.ToInt32(tattachment.Text);
-                avg = (double)temp2 / (double)totalu;
-                aattachment.Text = avg.ToString();
+                get = "select count(ATTACHMENTID) from ATTACHMENT a , EMAIL e , [USER] u where a.EMAILID = e.EMAILID and SENDERID =" + g_user_id + "and RECEIVERID = u.[USERID] and u.EMAIL like '%@gmail.com%'";
+                comm = new SqlCommand(get, conn);
+                label18.Text = Convert.ToString(comm.ExecuteScalar());
+                get = "select count(ATTACHMENTID) from ATTACHMENT a , EMAIL e , [USER] u where a.EMAILID = e.EMAILID and SENDERID =" + g_user_id + "and RECEIVERID = u.[USERID] and u.EMAIL like '%@hotmail.com%'";
+                comm = new SqlCommand(get, conn);
+                label19.Text = Convert.ToString(comm.ExecuteScalar());
+                get = "select count(ATTACHMENTID) from ATTACHMENT a , EMAIL e , [USER] u where a.EMAILID = e.EMAILID and SENDERID =" + g_user_id + "and RECEIVERID = u.[USERID] and u.EMAIL like '%@yahoo.com%'";
+                comm = new SqlCommand(get, conn);
+                label24.Text = Convert.ToString(comm.ExecuteScalar());
+                get = "select count(ATTACHMENTID) from ATTACHMENT a , EMAIL e , [USER] u where a.EMAILID = e.EMAILID and SENDERID =" + g_user_id + "and RECEIVERID = u.[USERID] and u.EMAIL like '%@live.com%'";
+                comm = new SqlCommand(get, conn);
+                label29.Text = Convert.ToString(comm.ExecuteScalar());
+                get = "select count(ATTACHMENTID) from ATTACHMENT a , EMAIL e , [USER] u where a.EMAILID = e.EMAILID and SENDERID =" + g_user_id + "and RECEIVERID = u.[USERID] and u.EMAIL like '%@outlook.com%'";
+                comm = new SqlCommand(get, conn);
+                label34.Text = Convert.ToString(comm.ExecuteScalar());
 
-                comm = new SqlCommand(get_temailr, conn);
-                temailr.Text = Convert.ToString(comm.ExecuteScalar());
-                temp2 = Convert.ToInt32(temailr.Text);
-                avg = (double)temp2 / (double)totalu;
-                aemailr.Text = avg.ToString();
+                get = "select count(ATTACHMENTID) from ATTACHMENT a , EMAIL e , [USER] u where a.EMAILID = e.EMAILID and RECEIVERID =" + g_user_id + "and SENDERID = u.[USERID] and u.EMAIL like '%@gmail.com%'";
+                comm = new SqlCommand(get, conn);
+                label18.Text += " / " + Convert.ToString(comm.ExecuteScalar());
+                get = "select count(ATTACHMENTID) from ATTACHMENT a , EMAIL e , [USER] u where a.EMAILID = e.EMAILID and RECEIVERID =" + g_user_id + "and SENDERID = u.[USERID] and u.EMAIL like '%@hotmail.com%'";
+                comm = new SqlCommand(get, conn);
+                label19.Text += " / " + Convert.ToString(comm.ExecuteScalar());
+                get = "select count(ATTACHMENTID) from ATTACHMENT a , EMAIL e , [USER] u where a.EMAILID = e.EMAILID and RECEIVERID =" + g_user_id + "and SENDERID = u.[USERID] and u.EMAIL like '%@yahoo.com%'";
+                comm = new SqlCommand(get, conn);
+                label24.Text += " / " + Convert.ToString(comm.ExecuteScalar());
+                get = "select count(ATTACHMENTID) from ATTACHMENT a , EMAIL e , [USER] u where a.EMAILID = e.EMAILID and RECEIVERID =" + g_user_id + "and SENDERID = u.[USERID] and u.EMAIL like '%@live.com%'";
+                comm = new SqlCommand(get, conn);
+                label29.Text += " / " + Convert.ToString(comm.ExecuteScalar());
+                get = "select count(ATTACHMENTID) from ATTACHMENT a , EMAIL e , [USER] u where a.EMAILID = e.EMAILID and RECEIVERID =" + g_user_id + "and SENDERID = u.[USERID] and u.EMAIL like '%@outlook.com%'";
+                comm = new SqlCommand(get, conn);
+                label34.Text += " / " + Convert.ToString(comm.ExecuteScalar());
+
+                get = "select count(EMAILID) from EMAIL e where SENDERID = " + g_user_id;
+                comm = new SqlCommand(get, conn);
+                label40.Text = Convert.ToString(comm.ExecuteScalar());
+
+                get = "select count(EMAILID) from EMAIL e where RECEIVERID = " + g_user_id;
+                comm = new SqlCommand(get, conn);
+                label42.Text = Convert.ToString(comm.ExecuteScalar());
+
+                get = "select count(LISTID) from MAILINGLIST where USERID =" + g_user_id;
+                comm = new SqlCommand(get, conn);
+                label44.Text = Convert.ToString(comm.ExecuteScalar());
+
+                get = "select count(FOLDERID) from FOLDER where USERID =" + g_user_id;
+                comm = new SqlCommand(get, conn);
+                label46.Text = Convert.ToString(comm.ExecuteScalar());
+
+                get = "select count(ATTACHMENTID) from ATTACHMENT a , EMAIL e , [USER] u where a.EMAILID = e.EMAILID and (e.SENDERID = " + g_user_id + " or e.RECEIVERID = " + g_user_id + ")";
+                comm = new SqlCommand(get, conn);
+                label48.Text = Convert.ToString(comm.ExecuteScalar());
+
             }
+            conn.Close();
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }
