@@ -26,10 +26,12 @@ namespace BasicEmailApp
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
+            folder_name.Text = folder_name.Text.Replace("'", "''");
             string add_folder_query = "INSERT INTO [FOLDER] (NAMEFOLDER, USERID) VALUES ('" + folder_name.Text + "'," + g_user_id + ");";
             SqlCommand validateCmd = new SqlCommand(add_folder_query, conn);
             validateCmd.ExecuteNonQuery();
             conn.Close();
+            folder_name.Text = folder_name.Text.Replace("''", "'");
             MessageBox.Show("Folder added successfully");
             Close();
         }

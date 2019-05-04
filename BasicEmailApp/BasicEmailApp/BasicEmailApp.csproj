@@ -114,6 +114,18 @@
     <Compile Include="send_new.Designer.cs">
       <DependentUpon>send_new.cs</DependentUpon>
     </Compile>
+    <Compile Include="system_report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="system_report.Designer.cs">
+      <DependentUpon>system_report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="user_report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user_report.Designer.cs">
+      <DependentUpon>user_report.cs</DependentUpon>
+    </Compile>
     <Compile Include="view_email.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +173,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="send_new.resx">
       <DependentUpon>send_new.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="system_report.resx">
+      <DependentUpon>system_report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_report.resx">
+      <DependentUpon>user_report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view_email.resx">
       <DependentUpon>view_email.cs</DependentUpon>
