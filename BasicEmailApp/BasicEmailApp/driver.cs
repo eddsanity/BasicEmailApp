@@ -103,6 +103,8 @@ namespace BasicEmailApp
                 foldSqlAdpt.Fill(folder_data_table);
                 folder_data_view.DataSource = folder_data_table;
                 folder_data_view.Columns["FOLDERID"].Visible = false;
+                if (folder_data_view.CurrentRow != null)
+                    folder_data_view.CurrentRow.Selected = true;
 
                 get_emails_to_account = "select * from EMAIL where EMAIL.SENDERID = " + g_user_id;
                 show_emails_with_sender = "select Q.BODY, Q.EMAILID, [USER].FIRSTNAME as [Sent to], [SUBJECT] as [Subject], [DATE] as [Date] from [USER] inner join (" + get_emails_to_account + ") as Q";
@@ -113,6 +115,8 @@ namespace BasicEmailApp
                 sent_data_view.DataSource = sent_data_table;
                 sent_data_view.Columns["EMAILID"].Visible = false;
                 sent_data_view.Columns["BODY"].Visible = false;
+                if (sent_data_view.CurrentRow != null)
+                    sent_data_view.CurrentRow.Selected = true;
             }
             conn.Close();
         }
@@ -493,11 +497,7 @@ namespace BasicEmailApp
             refreshInbox();
         }
 
-        private void label18_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void linkLabel11_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (sent_data_view.SelectedRows.Count != 1) return;
@@ -608,6 +608,38 @@ namespace BasicEmailApp
                 conn.Close();
             }
             else refreshInbox();
+        }
+
+        private void search5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (search_bar5.Text != "")
+            {
+                SqlConnection conn = new SqlConnection(connectionString);
+                conn.Open();
+                string get_emails_to_account = "select * from EMAIL where EMAIL.SENDERID = " + g_user_id;
+                string show_emails_with_sender = "select Q.BODY, Q.EMAILID, [USER].FIRSTNAME as [Sent to], [SUBJECT] as [Subject], [DATE] as [Date] from [USER] inner join (" + get_emails_to_account + ") as Q";
+                string show_condition = " on [USER].USERID = Q.RECEIVERID and ([USER].FIRSTNAME = '" + search_bar5.Text + "' or [SUBJECT] = '" + search_bar5.Text + "' or [USER].EMAIL = '" + search_bar5.Text + "') order by [DATE] DESC";
+                SqlDataAdapter sentSqlAdpt = new SqlDataAdapter(show_emails_with_sender + show_condition, conn);
+                DataTable sent_data_table = new DataTable();
+                sentSqlAdpt.Fill(sent_data_table);
+                sent_data_view.DataSource = sent_data_table;
+                sent_data_view.Columns["EMAILID"].Visible = false;
+                sent_data_view.Columns["BODY"].Visible = false;
+                conn.Close();
+            }
+            else refreshInbox();
+        }
+
+        private void sent_data_view_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (sent_data_view.CurrentRow != null)
+                sent_data_view.CurrentRow.Selected = true;
+        }
+
+        private void sent_data_view_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (sent_data_view.CurrentRow != null)
+                sent_data_view.CurrentRow.Selected = true;
         }
     }
 }

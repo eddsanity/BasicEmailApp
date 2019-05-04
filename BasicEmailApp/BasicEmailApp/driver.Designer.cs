@@ -87,6 +87,7 @@
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.label10 = new System.Windows.Forms.Label();
             this.Sent_tab = new System.Windows.Forms.TabPage();
+            this.linkLabel11 = new System.Windows.Forms.LinkLabel();
             this.linkLabel10 = new System.Windows.Forms.LinkLabel();
             this.sent_data_view = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -104,8 +105,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.linkLabel7 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel11 = new System.Windows.Forms.LinkLabel();
-            this.label18 = new System.Windows.Forms.Label();
+            this.search_bar5 = new System.Windows.Forms.TextBox();
+            this.search5 = new System.Windows.Forms.LinkLabel();
             this.tab_control.SuspendLayout();
             this.inbox_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inbox_data_view)).BeginInit();
@@ -142,7 +143,6 @@
             this.inbox_tab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.inbox_tab.Controls.Add(this.search_bar);
             this.inbox_tab.Controls.Add(this.search);
-            this.inbox_tab.Controls.Add(this.label18);
             this.inbox_tab.Controls.Add(this.add_to_folder_button);
             this.inbox_tab.Controls.Add(this.label16);
             this.inbox_tab.Controls.Add(this.forward_button);
@@ -187,10 +187,11 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(577, 3);
+            this.label18.Location = new System.Drawing.Point(123, 9);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(9, 13);
-            this.label18.TabIndex = 25;
+            this.label18.TabIndex = 32;
             this.label18.Text = "|";
             // 
             // add_to_folder_button
@@ -853,6 +854,8 @@
             // 
             // Sent_tab
             // 
+            this.Sent_tab.Controls.Add(this.search_bar5);
+            this.Sent_tab.Controls.Add(this.search5);
             this.Sent_tab.Controls.Add(this.linkLabel11);
             this.Sent_tab.Controls.Add(this.label18);
             this.Sent_tab.Controls.Add(this.linkLabel10);
@@ -860,11 +863,27 @@
             this.Sent_tab.Location = new System.Drawing.Point(4, 4);
             this.Sent_tab.Name = "Sent_tab";
             this.Sent_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.Sent_tab.Size = new System.Drawing.Size(1374, 845);
+            this.Sent_tab.Size = new System.Drawing.Size(913, 545);
             this.Sent_tab.TabIndex = 4;
             this.Sent_tab.Text = "Sent";
             this.Sent_tab.UseVisualStyleBackColor = true;
             this.Sent_tab.Click += new System.EventHandler(this.sent_data_view_Click);
+            // 
+            // linkLabel11
+            // 
+            this.linkLabel11.ActiveLinkColor = System.Drawing.Color.Red;
+            this.linkLabel11.AutoSize = true;
+            this.linkLabel11.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel11.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.linkLabel11.Location = new System.Drawing.Point(145, 9);
+            this.linkLabel11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.linkLabel11.Name = "linkLabel11";
+            this.linkLabel11.Size = new System.Drawing.Size(85, 13);
+            this.linkLabel11.TabIndex = 33;
+            this.linkLabel11.TabStop = true;
+            this.linkLabel11.Text = "forward selected";
+            this.linkLabel11.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.linkLabel11.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel11_LinkClicked);
             // 
             // linkLabel10
             // 
@@ -875,7 +894,7 @@
             this.linkLabel10.Location = new System.Drawing.Point(12, 9);
             this.linkLabel10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel10.Name = "linkLabel10";
-            this.linkLabel10.Size = new System.Drawing.Size(103, 20);
+            this.linkLabel10.Size = new System.Drawing.Size(72, 13);
             this.linkLabel10.TabIndex = 28;
             this.linkLabel10.TabStop = true;
             this.linkLabel10.Text = "view selected";
@@ -901,6 +920,8 @@
             this.sent_data_view.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.sent_data_view.Size = new System.Drawing.Size(1370, 811);
             this.sent_data_view.TabIndex = 16;
+            this.sent_data_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sent_data_view_CellClick);
+            this.sent_data_view.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sent_data_view_CellContentClick);
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -1058,31 +1079,27 @@
             this.linkLabel7.VisitedLinkColor = System.Drawing.Color.Green;
             this.linkLabel7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel7_LinkClicked);
             // 
-            // linkLabel11
+            // search_bar5
             // 
-            this.linkLabel11.ActiveLinkColor = System.Drawing.Color.Red;
-            this.linkLabel11.AutoSize = true;
-            this.linkLabel11.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel11.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.linkLabel11.Location = new System.Drawing.Point(145, 9);
-            this.linkLabel11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.linkLabel11.Name = "linkLabel11";
-            this.linkLabel11.Size = new System.Drawing.Size(126, 20);
-            this.linkLabel11.TabIndex = 33;
-            this.linkLabel11.TabStop = true;
-            this.linkLabel11.Text = "forward selected";
-            this.linkLabel11.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.linkLabel11.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel11_LinkClicked);
+            this.search_bar5.Location = new System.Drawing.Point(718, 6);
+            this.search_bar5.Name = "search_bar5";
+            this.search_bar5.Size = new System.Drawing.Size(174, 20);
+            this.search_bar5.TabIndex = 29;
             // 
-            // label18
+            // search5
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(123, 9);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(14, 20);
-            this.label18.TabIndex = 32;
-            this.label18.Text = "|";
+            this.search5.ActiveLinkColor = System.Drawing.Color.Red;
+            this.search5.AutoSize = true;
+            this.search5.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.search5.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.search5.Location = new System.Drawing.Point(673, 8);
+            this.search5.Name = "search5";
+            this.search5.Size = new System.Drawing.Size(39, 13);
+            this.search5.TabIndex = 28;
+            this.search5.TabStop = true;
+            this.search5.Text = "search";
+            this.search5.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.search5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.search5_LinkClicked);
             // 
             // driver
             // 
@@ -1211,6 +1228,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.LinkLabel linkLabel10;
         private System.Windows.Forms.LinkLabel linkLabel11;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox search_bar5;
+        private System.Windows.Forms.LinkLabel search5;
     }
 }
