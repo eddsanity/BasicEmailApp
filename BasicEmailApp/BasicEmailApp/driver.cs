@@ -103,6 +103,16 @@ namespace BasicEmailApp
                 foldSqlAdpt.Fill(folder_data_table);
                 folder_data_view.DataSource = folder_data_table;
                 folder_data_view.Columns["FOLDERID"].Visible = false;
+
+                get_emails_to_account = "select * from EMAIL where EMAIL.SENDERID = " + g_user_id;
+                show_emails_with_sender = "select Q.BODY, Q.EMAILID, [USER].FIRSTNAME as [Sent to], [SUBJECT] as [Subject], [DATE] as [Date] from [USER] inner join (" + get_emails_to_account + ") as Q";
+                show_condition = " on [USER].USERID = Q.RECEIVERID order by [DATE] DESC";
+                SqlDataAdapter sentSqlAdpt = new SqlDataAdapter(show_emails_with_sender + show_condition, conn);
+                DataTable sent_data_table = new DataTable();
+                sentSqlAdpt.Fill(sent_data_table);
+                sent_data_view.DataSource = sent_data_table;
+                sent_data_view.Columns["EMAILID"].Visible = false;
+                sent_data_view.Columns["BODY"].Visible = false;
             }
             conn.Close();
         }
@@ -467,6 +477,33 @@ namespace BasicEmailApp
             string email_id = archive_data_view.SelectedRows[0].Cells["EMAILID"].Value.ToString();
             choose_folder folder_form = new choose_folder(email_id);
             folder_form.ShowDialog();
+        }
+
+        private void sent_data_view_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel10_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (sent_data_view.SelectedRows.Count != 1) return;
+            string email_id = sent_data_view.SelectedRows[0].Cells["EMAILID"].Value.ToString();
+            view_email viewForm = new view_email(email_id);
+            viewForm.ShowDialog();
+            refreshInbox();
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel11_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (sent_data_view.SelectedRows.Count != 1) return;
+            string sender_body = sent_data_view.SelectedRows[0].Cells["BODY"].Value.ToString();
+            send_new sendForm = new send_new("", sender_body);
+            sendForm.ShowDialog();
         }
 
         private void folder_data_view_CellClick(object sender, DataGridViewCellEventArgs e)
