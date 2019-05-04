@@ -124,13 +124,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(598, 367);
             this.Controls.Add(this.view_button);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.delete_button);
             this.Controls.Add(this.folder_email_data_view);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "folder_email";
+            this.Opacity = 0.9D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "folder email";
             ((System.ComponentModel.ISupportInitialize)(this.folder_email_data_view)).EndInit();
             this.ResumeLayout(false);

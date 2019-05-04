@@ -199,7 +199,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(631, 311);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
@@ -216,8 +216,11 @@
             this.Controls.Add(this.tfolder);
             this.Controls.Add(this.tmailinglist);
             this.Controls.Add(this.temail);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "system_report";
-            this.Text = "system_report";
+            this.Opacity = 0.9D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "System report";
             this.Load += new System.EventHandler(this.system_report_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
