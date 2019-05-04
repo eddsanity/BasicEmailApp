@@ -256,7 +256,7 @@ namespace BasicEmailApp
 
         private void archive_button_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (inbox_data_view.SelectedRows == null) return;
+            if (inbox_data_view.CurrentRow == null) return;
             
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
@@ -268,15 +268,15 @@ namespace BasicEmailApp
                     string update_query_selected = "UPDATE [EMAIL] SET ARCHIVED = 1 WHERE EMAILID = " + selected_email;
                     SqlCommand validateCmd = new SqlCommand(update_query_selected, conn);
                     validateCmd.ExecuteNonQuery();
-                    refreshInbox();
                 }
+                refreshInbox();
             }
             conn.Close();
         }
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (archive_data_view.SelectedRows == null) return;
+            if (archive_data_view.CurrentRow == null) return;
 
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
@@ -288,8 +288,8 @@ namespace BasicEmailApp
                     string update_query_selected = "UPDATE [EMAIL] SET ARCHIVED = 0 WHERE EMAILID = " + selected_email;
                     SqlCommand validateCmd = new SqlCommand(update_query_selected, conn);
                     validateCmd.ExecuteNonQuery();
-                    refreshInbox();
                 }
+                refreshInbox();
             }
             conn.Close();
         }
@@ -417,7 +417,8 @@ namespace BasicEmailApp
 
         private void folder_data_view_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            folder_data_view.CurrentRow.Selected = true;
+            if(folder_data_view.CurrentRow != null)
+                folder_data_view.CurrentRow.Selected = true;
         }
 
         private void linkLabel8_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -465,6 +466,105 @@ namespace BasicEmailApp
             string email_id = archive_data_view.SelectedRows[0].Cells["EMAILID"].Value.ToString();
             choose_folder folder_form = new choose_folder(email_id);
             folder_form.ShowDialog();
+        }
+
+        private void linkLabel10_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (search_bar.Text != "")
+            {
+                SqlConnection conn = new SqlConnection(connectionString);
+                conn.Open();
+                //get table of all e-mails sent to this user THAT ARE NOT ARCHIVED
+                string get_emails_to_account = "select * from EMAIL where EMAIL.RECEIVERID = " + g_user_id + " AND EMAIL.ARCHIVED = 0";
+
+                //gets the sender's name and display the table properly
+                string show_emails_with_sender = "select Q.BODY, Q.SENDERID, Q.EMAILID , [USER].FIRSTNAME as [Sent by], [SUBJECT] as [Subject], [DATE] as [Date] from [USER] inner join (" + get_emails_to_account + ") as Q";
+                string show_condition = " on [USER].USERID = Q.SENDERID and ([USER].FIRSTNAME = '" + search_bar.Text + "' or [SUBJECT] = '" + search_bar.Text + "' or [USER].EMAIL = '"+ search_bar.Text + "') order by [DATE] DESC";
+
+                SqlDataAdapter sqlAdpt = new SqlDataAdapter(show_emails_with_sender + show_condition, conn);
+
+                //inbox_data_table has all the rows from executing show_emails_with_sender + show_condition
+                DataTable inbox_data_table = new DataTable();
+                sqlAdpt.Fill(inbox_data_table);
+                inbox_data_view.DataSource = inbox_data_table;
+                inbox_data_view.Columns["EMAILID"].Visible = false;
+                inbox_data_view.Columns["SENDERID"].Visible = false;
+                inbox_data_view.Columns["BODY"].Visible = false;
+                logged_in_as.Text = "logged in as <" + g_user_email + ">";
+                if (inbox_data_view.CurrentRow != null)
+                    inbox_data_view.CurrentRow.Selected = true;
+                conn.Close();
+            }
+            else refreshInbox();
+        }
+
+        private void linkLabel11_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            if (search_bar2.Text != "")
+            {
+                SqlConnection conn = new SqlConnection(connectionString);
+                conn.Open();
+                string show_mailinglists = "select NAMEMAILINGLIST as NAME , LISTID from MAILINGLIST where USERID =" + g_user_id + "and NAMEMAILINGLIST ='" + search_bar2.Text + "'";
+                SqlDataAdapter MailinglistSqlAdpt = new SqlDataAdapter(show_mailinglists, conn);
+                DataTable mailinglist_data_table = new DataTable();
+                MailinglistSqlAdpt.Fill(mailinglist_data_table);
+                mailinglist_data_view.DataSource = mailinglist_data_table;
+                mailinglist_data_view.Columns["LISTID"].Visible = false;
+                if (mailinglist_data_view.CurrentRow != null)
+                    mailinglist_data_view.CurrentRow.Selected = true;
+                conn.Close();
+            }
+            else refreshInbox();
+        }
+
+        private void linkLabel12_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (search_bar3.Text != "")
+            {
+                SqlConnection conn = new SqlConnection(connectionString);
+                conn.Open();
+                // show the names of the folder 
+                string show_folders = "SELECT [FOLDERID], [NAMEFOLDER] AS [Folder name] FROM [FOLDER] WHERE USERID = " + g_user_id + "and [NAMEFOLDER] ='" + search_bar3.Text + "'";
+                SqlDataAdapter foldSqlAdpt = new SqlDataAdapter(show_folders, conn);
+                DataTable folder_data_table = new DataTable();
+                foldSqlAdpt.Fill(folder_data_table);
+                folder_data_view.DataSource = folder_data_table;
+                folder_data_view.Columns["FOLDERID"].Visible = false;
+                conn.Close();
+            }
+            else refreshInbox();
+        }
+
+        private void linkLabel13_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (search_bar4.Text != "")
+            {
+                SqlConnection conn = new SqlConnection(connectionString);
+                conn.Open();
+                //all e-mails sent to this user THAT ARE ARCHIVED
+                string get_emails_to_account = "select * from EMAIL where EMAIL.RECEIVERID = " + g_user_id + " AND EMAIL.ARCHIVED = 1";
+                string show_emails_with_sender = "select Q.BODY, Q.SENDERID, Q.EMAILID , [USER].FIRSTNAME as [Sent by], [SUBJECT] as [Subject], [DATE] as [Date] from [USER] inner join (" + get_emails_to_account + ") as Q";
+                string show_condition = " on [USER].USERID = Q.SENDERID and ([USER].FIRSTNAME = '" + search_bar4.Text + "' or [SUBJECT] = '" + search_bar4.Text + "' or [USER].EMAIL = '" + search_bar4.Text + "') order by [DATE] DESC";
+                //gets the sender's name and displays the table properly
+                SqlDataAdapter ArchSqlAdpt = new SqlDataAdapter(show_emails_with_sender + show_condition, conn);
+                DataTable archive_data_table = new DataTable();
+                ArchSqlAdpt.Fill(archive_data_table);
+                archive_data_view.DataSource = archive_data_table;
+                archive_data_view.Columns["EMAILID"].Visible = false;
+                archive_data_view.Columns["SENDERID"].Visible = false;
+                archive_data_view.Columns["BODY"].Visible = false;
+                if (archive_data_view.CurrentRow != null)
+                    archive_data_view.CurrentRow.Selected = true;
+                conn.Close();
+            }
+            else refreshInbox();
+        }
+
+        private void folder_data_view_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (folder_data_view.CurrentRow != null)
+                folder_data_view.CurrentRow.Selected = true;
         }
     }
 }

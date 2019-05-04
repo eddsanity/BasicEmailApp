@@ -63,7 +63,8 @@ namespace BasicEmailApp
 
         private void folder_email_data_view_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            folder_email_data_view.CurrentRow.Selected = true;
+            if(folder_email_data_view.CurrentRow != null)
+                folder_email_data_view.CurrentRow.Selected = true;
         }
 
         private void view_button_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

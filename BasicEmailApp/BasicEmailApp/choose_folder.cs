@@ -36,7 +36,14 @@ namespace BasicEmailApp
 
         private void folder_data_view_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            folder_data_view.CurrentRow.Selected = true;
+            if(folder_data_view.CurrentRow != null)
+                folder_data_view.CurrentRow.Selected = true;
+        }
+
+        private void folder_data_view_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (folder_data_view.CurrentRow != null)
+                folder_data_view.CurrentRow.Selected = true;
         }
 
         public choose_folder(string email_id)
@@ -60,6 +67,8 @@ namespace BasicEmailApp
                 foldSqlAdpt.Fill(folder_data_table);
                 folder_data_view.DataSource = folder_data_table;
                 folder_data_view.Columns["FOLDERID"].Visible = false;
+                if (folder_data_view.CurrentRow != null)
+                    folder_data_view.CurrentRow.Selected = true;
             }
             conn.Close();
         }
