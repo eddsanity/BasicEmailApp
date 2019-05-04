@@ -50,14 +50,14 @@
             this.Sender,
             this.Subject,
             this.DATE});
-            this.folder_email_data_view.Location = new System.Drawing.Point(-2, 30);
-            this.folder_email_data_view.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.folder_email_data_view.Location = new System.Drawing.Point(-1, 19);
             this.folder_email_data_view.Name = "folder_email_data_view";
             this.folder_email_data_view.ReadOnly = true;
             this.folder_email_data_view.RowHeadersWidth = 20;
             this.folder_email_data_view.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.folder_email_data_view.Size = new System.Drawing.Size(899, 531);
+            this.folder_email_data_view.Size = new System.Drawing.Size(599, 345);
             this.folder_email_data_view.TabIndex = 1;
+            this.folder_email_data_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.folder_email_data_view_CellClick);
             this.folder_email_data_view.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.folder_email_data_view_CellContentClick);
             // 
             // Sender
@@ -87,10 +87,9 @@
             this.delete_button.AutoSize = true;
             this.delete_button.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.delete_button.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.delete_button.Location = new System.Drawing.Point(3, 5);
-            this.delete_button.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.delete_button.Location = new System.Drawing.Point(2, 3);
             this.delete_button.Name = "delete_button";
-            this.delete_button.Size = new System.Drawing.Size(117, 20);
+            this.delete_button.Size = new System.Drawing.Size(79, 13);
             this.delete_button.TabIndex = 13;
             this.delete_button.TabStop = true;
             this.delete_button.Text = "delete selected";
@@ -100,10 +99,9 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(128, 5);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(85, 3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(14, 20);
+            this.label4.Size = new System.Drawing.Size(9, 13);
             this.label4.TabIndex = 16;
             this.label4.Text = "|";
             // 
@@ -113,10 +111,9 @@
             this.view_button.AutoSize = true;
             this.view_button.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.view_button.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.view_button.Location = new System.Drawing.Point(150, 5);
-            this.view_button.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.view_button.Location = new System.Drawing.Point(100, 3);
             this.view_button.Name = "view_button";
-            this.view_button.Size = new System.Drawing.Size(103, 20);
+            this.view_button.Size = new System.Drawing.Size(72, 13);
             this.view_button.TabIndex = 17;
             this.view_button.TabStop = true;
             this.view_button.Text = "view selected";
@@ -125,13 +122,14 @@
             // 
             // folder_email
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(897, 564);
+            this.ClientSize = new System.Drawing.Size(598, 367);
             this.Controls.Add(this.view_button);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.delete_button);
             this.Controls.Add(this.folder_email_data_view);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "folder_email";
             this.Text = "folder email";
             ((System.ComponentModel.ISupportInitialize)(this.folder_email_data_view)).EndInit();

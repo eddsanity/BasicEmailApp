@@ -63,7 +63,7 @@ namespace BasicEmailApp
 
         private void folder_email_data_view_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(folder_email_data_view.CurrentRow != null)
+            if (folder_email_data_view.CurrentRow != null)
                 folder_email_data_view.CurrentRow.Selected = true;
         }
 
@@ -73,6 +73,12 @@ namespace BasicEmailApp
             string selected_email = folder_email_data_view.CurrentRow.Cells["EMAILID"].Value.ToString();
             view_email View = new view_email(selected_email);
             View.ShowDialog();
+        }
+
+        private void folder_email_data_view_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (folder_email_data_view.CurrentRow != null)
+                folder_email_data_view.CurrentRow.Selected = true;
         }
     }
 }

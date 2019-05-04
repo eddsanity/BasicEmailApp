@@ -15,6 +15,7 @@ namespace BasicEmailApp
     {
         //gets the e-mail used after successfully logging in and saves it future use.
         static Form loginForm = Application.OpenForms["login"];
+        static Form driverForm = Application.OpenForms["driver"];
         string g_user_email = ((login)loginForm).s_email;
         string g_user_id;
         string connectionString = ((login)loginForm).connectionString;
@@ -90,6 +91,7 @@ namespace BasicEmailApp
 
                     MessageBox.Show("Email sent.", "done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // close send window
+                    ((driver)driverForm).refreshInbox();
                     this.Close();
                 }
             }

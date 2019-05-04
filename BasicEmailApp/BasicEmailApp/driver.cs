@@ -268,6 +268,7 @@ namespace BasicEmailApp
                     string update_query_selected = "UPDATE [EMAIL] SET ARCHIVED = 1 WHERE EMAILID = " + selected_email;
                     SqlCommand validateCmd = new SqlCommand(update_query_selected, conn);
                     validateCmd.ExecuteNonQuery();
+                    
                 }
                 refreshInbox();
             }
@@ -276,7 +277,7 @@ namespace BasicEmailApp
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (archive_data_view.CurrentRow == null) return;
+            if (archive_data_view.SelectedRows == null) return;
 
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
@@ -288,8 +289,8 @@ namespace BasicEmailApp
                     string update_query_selected = "UPDATE [EMAIL] SET ARCHIVED = 0 WHERE EMAILID = " + selected_email;
                     SqlCommand validateCmd = new SqlCommand(update_query_selected, conn);
                     validateCmd.ExecuteNonQuery();
+                    refreshInbox();
                 }
-                refreshInbox();
             }
             conn.Close();
         }
@@ -417,7 +418,7 @@ namespace BasicEmailApp
 
         private void folder_data_view_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(folder_data_view.CurrentRow != null)
+            if (folder_data_view.CurrentRow != null)
                 folder_data_view.CurrentRow.Selected = true;
         }
 
@@ -479,7 +480,7 @@ namespace BasicEmailApp
 
                 //gets the sender's name and display the table properly
                 string show_emails_with_sender = "select Q.BODY, Q.SENDERID, Q.EMAILID , [USER].FIRSTNAME as [Sent by], [SUBJECT] as [Subject], [DATE] as [Date] from [USER] inner join (" + get_emails_to_account + ") as Q";
-                string show_condition = " on [USER].USERID = Q.SENDERID and ([USER].FIRSTNAME = '" + search_bar.Text + "' or [SUBJECT] = '" + search_bar.Text + "' or [USER].EMAIL = '"+ search_bar.Text + "') order by [DATE] DESC";
+                string show_condition = " on [USER].USERID = Q.SENDERID and ([USER].FIRSTNAME = '" + search_bar.Text + "' or [SUBJECT] = '" + search_bar.Text + "' or [USER].EMAIL = '" + search_bar.Text + "') order by [DATE] DESC";
 
                 SqlDataAdapter sqlAdpt = new SqlDataAdapter(show_emails_with_sender + show_condition, conn);
 
@@ -562,6 +563,12 @@ namespace BasicEmailApp
         }
 
         private void folder_data_view_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (folder_data_view.CurrentRow != null)
+                folder_data_view.CurrentRow.Selected = true;
+        }
+
+        private void folder_data_view_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (folder_data_view.CurrentRow != null)
                 folder_data_view.CurrentRow.Selected = true;
