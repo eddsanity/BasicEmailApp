@@ -15,6 +15,7 @@ namespace BasicEmailApp
     {
         //gets the e-mail used after successfully logging in and saves it future use.
         static Form loginForm = Application.OpenForms["login"];
+        static Form driverForm = Application.OpenForms["driver"];
         string g_user_email = ((login)loginForm).s_email;
         string g_user_id;
         string connectionString = ((login)loginForm).connectionString;
@@ -61,7 +62,7 @@ namespace BasicEmailApp
                 string user_id_query = "select USERID from [USER] where EMAIL = '" + receiver_email.Text + "';";
                 SqlCommand validateCmd = new SqlCommand(user_id_query, conn);
                 string receiver_user_id = Convert.ToString(validateCmd.ExecuteScalar());
-                bool receiverEmailValid = (receiver_user_id.Length != 0) && (receiver_user_id != g_user_id);
+                bool receiverEmailValid = (receiver_user_id.Length != 0);
                 if (!receiverEmailValid)
                 {
                     MessageBox.Show("Invalid receiver email.", "failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -90,6 +91,7 @@ namespace BasicEmailApp
 
                     MessageBox.Show("Email sent.", "done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // close send window
+                    ((driver)driverForm).refreshInbox();
                     this.Close();
                 }
             }
@@ -115,6 +117,7 @@ namespace BasicEmailApp
                     }
                     MessageBox.Show("Email sent to '" + mailing_list.Text + "' mailing list.", "done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // close send window
+                    ((driver)driverForm).refreshInbox();
                     this.Close();
                 }
             }
