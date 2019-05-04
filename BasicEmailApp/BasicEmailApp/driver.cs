@@ -277,7 +277,7 @@ namespace BasicEmailApp
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (archive_data_view.SelectedRows == null) return;
+            if (archive_data_view.CurrentRow == null) return;
 
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
@@ -289,8 +289,8 @@ namespace BasicEmailApp
                     string update_query_selected = "UPDATE [EMAIL] SET ARCHIVED = 0 WHERE EMAILID = " + selected_email;
                     SqlCommand validateCmd = new SqlCommand(update_query_selected, conn);
                     validateCmd.ExecuteNonQuery();
-                    refreshInbox();
                 }
+                refreshInbox();
             }
             conn.Close();
         }
@@ -469,7 +469,19 @@ namespace BasicEmailApp
             folder_form.ShowDialog();
         }
 
-        private void linkLabel10_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void folder_data_view_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (folder_data_view.CurrentRow != null)
+                folder_data_view.CurrentRow.Selected = true;
+        }
+
+        private void folder_data_view_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (folder_data_view.CurrentRow != null)
+                folder_data_view.CurrentRow.Selected = true;
+        }
+
+        private void search_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (search_bar.Text != "")
             {
@@ -499,9 +511,8 @@ namespace BasicEmailApp
             else refreshInbox();
         }
 
-        private void linkLabel11_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void search2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
             if (search_bar2.Text != "")
             {
                 SqlConnection conn = new SqlConnection(connectionString);
@@ -519,7 +530,7 @@ namespace BasicEmailApp
             else refreshInbox();
         }
 
-        private void linkLabel12_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void search3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (search_bar3.Text != "")
             {
@@ -537,7 +548,7 @@ namespace BasicEmailApp
             else refreshInbox();
         }
 
-        private void linkLabel13_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void search4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (search_bar4.Text != "")
             {
@@ -560,18 +571,6 @@ namespace BasicEmailApp
                 conn.Close();
             }
             else refreshInbox();
-        }
-
-        private void folder_data_view_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (folder_data_view.CurrentRow != null)
-                folder_data_view.CurrentRow.Selected = true;
-        }
-
-        private void folder_data_view_CellClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            if (folder_data_view.CurrentRow != null)
-                folder_data_view.CurrentRow.Selected = true;
         }
     }
 }

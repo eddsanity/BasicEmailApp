@@ -62,7 +62,7 @@ namespace BasicEmailApp
                 string user_id_query = "select USERID from [USER] where EMAIL = '" + receiver_email.Text + "';";
                 SqlCommand validateCmd = new SqlCommand(user_id_query, conn);
                 string receiver_user_id = Convert.ToString(validateCmd.ExecuteScalar());
-                bool receiverEmailValid = (receiver_user_id.Length != 0) && (receiver_user_id != g_user_id);
+                bool receiverEmailValid = (receiver_user_id.Length != 0);
                 if (!receiverEmailValid)
                 {
                     MessageBox.Show("Invalid receiver email.", "failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -117,6 +117,7 @@ namespace BasicEmailApp
                     }
                     MessageBox.Show("Email sent to '" + mailing_list.Text + "' mailing list.", "done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // close send window
+                    ((driver)driverForm).refreshInbox();
                     this.Close();
                 }
             }
