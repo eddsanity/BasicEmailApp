@@ -14,7 +14,7 @@ namespace BasicEmailApp
     public partial class Login : Form
     {
         public string s_email = "";
-        string serverName = "DESKTOP-QF9IM65";
+        string serverName = "DESKTOP-A32LPMS";
         public string connectionString;
         public Login()
         {

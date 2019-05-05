@@ -72,7 +72,6 @@ namespace BasicEmailApp
                 get = "select count(EMAILID) from EMAIL e , [USER] u where RECEIVERID = USERID and u.EMAIL like '%@outlook.com%' ";
                 comm = new SqlCommand(get, conn);
                 label37.Text = Convert.ToString(comm.ExecuteScalar());
-
                 get = "select count(ATTACHMENTID) from ATTACHMENT a , EMAIL e , [USER] u where a.EMAILID = e.EMAILID and SENDERID =" + g_userId + "and RECEIVERID = u.[USERID] and u.EMAIL like '%@gmail.com%'";
                 comm = new SqlCommand(get, conn);
                 label18.Text = Convert.ToString(comm.ExecuteScalar());

@@ -140,10 +140,10 @@ namespace BasicEmailApp
             refresh_inbox();
 
 
-            //TODO: SQL querIES to load all the data needed for all tabs
+            //[DONE] TODO: SQL querIES to load all the data needed for all tabs
             //[DONE] TODO: Load messages and their senders into the inbox_data_view and sort them from most recent to oldest
-            //TODO: Load folders in their respective way in the Folders tab
-            //TODO: Load mailing list in its respective way in the Mailing List tab
+            //[DONE] TODO: Load folders in their respective way in the Folders tab
+            //[DONE] TODO: Load mailing list in its respective way in the Mailing List tab
             //[DONE] TODO: Load archived messages into archived inbox
         }
 
@@ -656,6 +656,12 @@ namespace BasicEmailApp
         {
             UserReport userReport = new UserReport();
             userReport.ShowDialog();
+        }
+
+        private void generateR_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            user_report us = new user_report();
+            us.ShowDialog();
         }
     }
 }
