@@ -657,11 +657,5 @@ namespace BasicEmailApp
             UserReport userReport = new UserReport();
             userReport.ShowDialog();
         }
-
-        private void generateR_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            user_report us = new user_report();
-            us.ShowDialog();
-        }
     }
 }
