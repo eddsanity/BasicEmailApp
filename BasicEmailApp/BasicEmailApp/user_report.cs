@@ -69,7 +69,7 @@ namespace BasicEmailApp
                 get = "select count(EMAILID) from EMAIL e , [USER] u where RECEIVERID = " + g_userId + " and SENDERID  = u.USERID and u.EMAIL like '%@live.com%' ";
                 comm = new SqlCommand(get, conn);
                 label32.Text = Convert.ToString(comm.ExecuteScalar());
-                get = "select count(EMAILID) from EMAIL e , [USER] u where RECEIVERID = USERID and u.EMAIL like '%@outlook.com%' ";
+                get = "select count(EMAILID) from EMAIL e , [USER] u where RECEIVERID = " + g_userId + " and SENDERID  = u.USERID and u.EMAIL like '%@outlook.com%' ";
                 comm = new SqlCommand(get, conn);
                 label37.Text = Convert.ToString(comm.ExecuteScalar());
                 get = "select count(ATTACHMENTID) from ATTACHMENT a , EMAIL e , [USER] u where a.EMAILID = e.EMAILID and SENDERID =" + g_userId + "and RECEIVERID = u.[USERID] and u.EMAIL like '%@gmail.com%'";
@@ -120,7 +120,7 @@ namespace BasicEmailApp
                 comm = new SqlCommand(get, conn);
                 label46.Text = Convert.ToString(comm.ExecuteScalar());
 
-                get = "select count(ATTACHMENTID) from ATTACHMENT a , EMAIL e , [USER] u where a.EMAILID = e.EMAILID and (e.SENDERID = " + g_userId + " or e.RECEIVERID = " + g_userId + ")";
+                get = "select count(ATTACHMENTID) from ATTACHMENT a , EMAIL e where a.EMAILID = e.EMAILID and (e.SENDERID = " + g_userId + " or e.RECEIVERID = " + g_userId + ")";
                 comm = new SqlCommand(get, conn);
                 label48.Text = Convert.ToString(comm.ExecuteScalar());
 
