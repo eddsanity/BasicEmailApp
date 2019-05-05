@@ -141,6 +141,7 @@ namespace BasicEmailApp
                 label40.Text = Convert.ToString(comm.ExecuteScalar());
                 temp = Convert.ToInt32(label40.Text);
                 avg = (double)temp / (double)usernum;
+                avg = Math.Round(avg, 2);
                 label39.Text = avg.ToString();
 
                 get = "select count(EMAILID) from EMAIL e , [USER] u where SENDERID = USERID";
@@ -148,6 +149,7 @@ namespace BasicEmailApp
                 label42.Text = Convert.ToString(comm.ExecuteScalar());
                 temp = Convert.ToInt32(label42.Text);
                 avg = (double)temp / (double)usernum;
+                avg = Math.Round(avg, 2);
                 label41.Text = avg.ToString();
 
                 get = "select count(LISTID) from MAILINGLIST";
@@ -155,6 +157,7 @@ namespace BasicEmailApp
                 label44.Text = Convert.ToString(comm.ExecuteScalar());
                 temp = Convert.ToInt32(label44.Text);
                 avg = (double)temp / (double)usernum;
+                avg = Math.Round(avg, 2);
                 label43.Text = avg.ToString();
 
                 get = "select count(FOLDERID) from FOLDER";
@@ -162,6 +165,7 @@ namespace BasicEmailApp
                 label46.Text = Convert.ToString(comm.ExecuteScalar());
                 temp = Convert.ToInt32(label46.Text);
                 avg = (double)temp / (double)usernum;
+                avg = Math.Round(avg, 2);
                 label45.Text = avg.ToString();
 
                 get = "select count(ATTACHMENTID) from ATTACHMENT a , EMAIL e , [USER] u where a.EMAILID = e.EMAILID and e.SENDERID = u.USERID";
@@ -169,11 +173,8 @@ namespace BasicEmailApp
                 label48.Text = Convert.ToString(comm.ExecuteScalar());
                 temp = Convert.ToInt32(label48.Text);
                 avg = (double)temp / (double)usernum;
+                avg = Math.Round(avg, 2);
                 label47.Text = avg.ToString();
-
-
-
-
             }
             conn.Close();
         }
