@@ -1,6 +1,6 @@
 ﻿namespace BasicEmailApp
 {
-    partial class driver
+    partial class Driver
     {
         /// <summary>
         /// Required designer variable.
@@ -30,9 +30,8 @@
         {
             this.tab_control = new System.Windows.Forms.TabControl();
             this.inbox_tab = new System.Windows.Forms.TabPage();
-            this.search_bar = new System.Windows.Forms.TextBox();
+            this.searchBar = new System.Windows.Forms.TextBox();
             this.search = new System.Windows.Forms.LinkLabel();
-            this.label18 = new System.Windows.Forms.Label();
             this.add_to_folder_button = new System.Windows.Forms.LinkLabel();
             this.label16 = new System.Windows.Forms.Label();
             this.forward_button = new System.Windows.Forms.LinkLabel();
@@ -44,37 +43,37 @@
             this.view_button = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
             this.delete_button = new System.Windows.Forms.LinkLabel();
-            this.inbox_data_view = new System.Windows.Forms.DataGridView();
+            this.inboxDataView = new System.Windows.Forms.DataGridView();
             this.Sender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mailing_list_tab = new System.Windows.Forms.TabPage();
-            this.search_bar2 = new System.Windows.Forms.TextBox();
+            this.searchBar2 = new System.Windows.Forms.TextBox();
             this.search2 = new System.Windows.Forms.LinkLabel();
             this.label12 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.mailinglist_data_view = new System.Windows.Forms.DataGridView();
+            this.mailinglistDataView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.folders_tab = new System.Windows.Forms.TabPage();
-            this.search_bar3 = new System.Windows.Forms.TextBox();
+            this.searchBar3 = new System.Windows.Forms.TextBox();
             this.search3 = new System.Windows.Forms.LinkLabel();
             this.label15 = new System.Windows.Forms.Label();
             this.linkLabel8 = new System.Windows.Forms.LinkLabel();
             this.label14 = new System.Windows.Forms.Label();
             this.delete_selected_folder_button = new System.Windows.Forms.LinkLabel();
             this.add_folder_button = new System.Windows.Forms.LinkLabel();
-            this.folder_data_view = new System.Windows.Forms.DataGridView();
+            this.folderDataView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.archive_tab = new System.Windows.Forms.TabPage();
-            this.search_bar4 = new System.Windows.Forms.TextBox();
+            this.searchBar4 = new System.Windows.Forms.TextBox();
             this.search4 = new System.Windows.Forms.LinkLabel();
             this.label17 = new System.Windows.Forms.Label();
             this.linkLabel9 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.archive_data_view = new System.Windows.Forms.DataGridView();
+            this.archiveDataView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,9 +86,12 @@
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.label10 = new System.Windows.Forms.Label();
             this.Sent_tab = new System.Windows.Forms.TabPage();
+            this.searchBar5 = new System.Windows.Forms.TextBox();
+            this.search5 = new System.Windows.Forms.LinkLabel();
             this.linkLabel11 = new System.Windows.Forms.LinkLabel();
+            this.label18 = new System.Windows.Forms.Label();
             this.linkLabel10 = new System.Windows.Forms.LinkLabel();
-            this.sent_data_view = new System.Windows.Forms.DataGridView();
+            this.sentDataView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,26 +100,25 @@
             this.send_button = new System.Windows.Forms.LinkLabel();
             this.edit_button = new System.Windows.Forms.LinkLabel();
             this.sep4 = new System.Windows.Forms.Label();
-            this.logged_in_as = new System.Windows.Forms.Label();
+            this.loggedInAs = new System.Windows.Forms.Label();
             this.sep1 = new System.Windows.Forms.Label();
-            this.status_label = new System.Windows.Forms.Label();
+            this.statusLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.linkLabel7 = new System.Windows.Forms.LinkLabel();
-            this.search_bar5 = new System.Windows.Forms.TextBox();
-            this.search5 = new System.Windows.Forms.LinkLabel();
+            this.generateR = new System.Windows.Forms.LinkLabel();
             this.tab_control.SuspendLayout();
             this.inbox_tab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inbox_data_view)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inboxDataView)).BeginInit();
             this.mailing_list_tab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mailinglist_data_view)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mailinglistDataView)).BeginInit();
             this.folders_tab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.folder_data_view)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.folderDataView)).BeginInit();
             this.archive_tab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.archive_data_view)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.archiveDataView)).BeginInit();
             this.Sent_tab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sent_data_view)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sentDataView)).BeginInit();
             this.SuspendLayout();
             // 
             // tab_control
@@ -141,7 +142,7 @@
             // 
             this.inbox_tab.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.inbox_tab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.inbox_tab.Controls.Add(this.search_bar);
+            this.inbox_tab.Controls.Add(this.searchBar);
             this.inbox_tab.Controls.Add(this.search);
             this.inbox_tab.Controls.Add(this.add_to_folder_button);
             this.inbox_tab.Controls.Add(this.label16);
@@ -154,7 +155,7 @@
             this.inbox_tab.Controls.Add(this.view_button);
             this.inbox_tab.Controls.Add(this.label4);
             this.inbox_tab.Controls.Add(this.delete_button);
-            this.inbox_tab.Controls.Add(this.inbox_data_view);
+            this.inbox_tab.Controls.Add(this.inboxDataView);
             this.inbox_tab.Location = new System.Drawing.Point(4, 4);
             this.inbox_tab.Name = "inbox_tab";
             this.inbox_tab.Padding = new System.Windows.Forms.Padding(3);
@@ -164,10 +165,10 @@
             // 
             // search_bar
             // 
-            this.search_bar.Location = new System.Drawing.Point(730, 0);
-            this.search_bar.Name = "search_bar";
-            this.search_bar.Size = new System.Drawing.Size(174, 20);
-            this.search_bar.TabIndex = 27;
+            this.searchBar.Location = new System.Drawing.Point(730, 0);
+            this.searchBar.Name = "search_bar";
+            this.searchBar.Size = new System.Drawing.Size(174, 20);
+            this.searchBar.TabIndex = 27;
             // 
             // search
             // 
@@ -183,16 +184,6 @@
             this.search.Text = "search";
             this.search.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.search.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.search_LinkClicked);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(123, 9);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(9, 13);
-            this.label18.TabIndex = 32;
-            this.label18.Text = "|";
             // 
             // add_to_folder_button
             // 
@@ -331,23 +322,23 @@
             // 
             // inbox_data_view
             // 
-            this.inbox_data_view.AllowUserToAddRows = false;
-            this.inbox_data_view.AllowUserToResizeColumns = false;
-            this.inbox_data_view.AllowUserToResizeRows = false;
-            this.inbox_data_view.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.inbox_data_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.inbox_data_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.inboxDataView.AllowUserToAddRows = false;
+            this.inboxDataView.AllowUserToResizeColumns = false;
+            this.inboxDataView.AllowUserToResizeRows = false;
+            this.inboxDataView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.inboxDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.inboxDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Sender,
             this.Subject,
             this.DATE});
-            this.inbox_data_view.Location = new System.Drawing.Point(0, 18);
-            this.inbox_data_view.Name = "inbox_data_view";
-            this.inbox_data_view.ReadOnly = true;
-            this.inbox_data_view.RowHeadersWidth = 20;
-            this.inbox_data_view.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.inbox_data_view.Size = new System.Drawing.Size(913, 527);
-            this.inbox_data_view.TabIndex = 0;
-            this.inbox_data_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.inbox_data_view_CellClick);
+            this.inboxDataView.Location = new System.Drawing.Point(0, 18);
+            this.inboxDataView.Name = "inbox_data_view";
+            this.inboxDataView.ReadOnly = true;
+            this.inboxDataView.RowHeadersWidth = 20;
+            this.inboxDataView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.inboxDataView.Size = new System.Drawing.Size(913, 527);
+            this.inboxDataView.TabIndex = 0;
+            this.inboxDataView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.inbox_data_view_CellClick);
             // 
             // Sender
             // 
@@ -376,11 +367,11 @@
             // mailing_list_tab
             // 
             this.mailing_list_tab.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.mailing_list_tab.Controls.Add(this.search_bar2);
+            this.mailing_list_tab.Controls.Add(this.searchBar2);
             this.mailing_list_tab.Controls.Add(this.search2);
             this.mailing_list_tab.Controls.Add(this.label12);
             this.mailing_list_tab.Controls.Add(this.label1);
-            this.mailing_list_tab.Controls.Add(this.mailinglist_data_view);
+            this.mailing_list_tab.Controls.Add(this.mailinglistDataView);
             this.mailing_list_tab.Controls.Add(this.linkLabel6);
             this.mailing_list_tab.Controls.Add(this.linkLabel5);
             this.mailing_list_tab.Controls.Add(this.linkLabel4);
@@ -393,10 +384,10 @@
             // 
             // search_bar2
             // 
-            this.search_bar2.Location = new System.Drawing.Point(729, 0);
-            this.search_bar2.Name = "search_bar2";
-            this.search_bar2.Size = new System.Drawing.Size(174, 20);
-            this.search_bar2.TabIndex = 29;
+            this.searchBar2.Location = new System.Drawing.Point(729, 0);
+            this.searchBar2.Name = "search_bar2";
+            this.searchBar2.Size = new System.Drawing.Size(174, 20);
+            this.searchBar2.TabIndex = 29;
             // 
             // search2
             // 
@@ -433,21 +424,21 @@
             // 
             // mailinglist_data_view
             // 
-            this.mailinglist_data_view.AllowUserToAddRows = false;
-            this.mailinglist_data_view.AllowUserToResizeColumns = false;
-            this.mailinglist_data_view.AllowUserToResizeRows = false;
-            this.mailinglist_data_view.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.mailinglist_data_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.mailinglist_data_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.mailinglistDataView.AllowUserToAddRows = false;
+            this.mailinglistDataView.AllowUserToResizeColumns = false;
+            this.mailinglistDataView.AllowUserToResizeRows = false;
+            this.mailinglistDataView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.mailinglistDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.mailinglistDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4});
-            this.mailinglist_data_view.Location = new System.Drawing.Point(0, 19);
-            this.mailinglist_data_view.Name = "mailinglist_data_view";
-            this.mailinglist_data_view.ReadOnly = true;
-            this.mailinglist_data_view.RowHeadersWidth = 20;
-            this.mailinglist_data_view.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.mailinglist_data_view.Size = new System.Drawing.Size(913, 527);
-            this.mailinglist_data_view.TabIndex = 3;
-            this.mailinglist_data_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mailinglist_data_view_CellClick);
+            this.mailinglistDataView.Location = new System.Drawing.Point(0, 19);
+            this.mailinglistDataView.Name = "mailinglist_data_view";
+            this.mailinglistDataView.ReadOnly = true;
+            this.mailinglistDataView.RowHeadersWidth = 20;
+            this.mailinglistDataView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.mailinglistDataView.Size = new System.Drawing.Size(913, 527);
+            this.mailinglistDataView.TabIndex = 3;
+            this.mailinglistDataView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mailinglist_data_view_CellClick);
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -502,14 +493,14 @@
             // folders_tab
             // 
             this.folders_tab.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.folders_tab.Controls.Add(this.search_bar3);
+            this.folders_tab.Controls.Add(this.searchBar3);
             this.folders_tab.Controls.Add(this.search3);
             this.folders_tab.Controls.Add(this.label15);
             this.folders_tab.Controls.Add(this.linkLabel8);
             this.folders_tab.Controls.Add(this.label14);
             this.folders_tab.Controls.Add(this.delete_selected_folder_button);
             this.folders_tab.Controls.Add(this.add_folder_button);
-            this.folders_tab.Controls.Add(this.folder_data_view);
+            this.folders_tab.Controls.Add(this.folderDataView);
             this.folders_tab.Location = new System.Drawing.Point(4, 4);
             this.folders_tab.Name = "folders_tab";
             this.folders_tab.Size = new System.Drawing.Size(913, 545);
@@ -518,10 +509,10 @@
             // 
             // search_bar3
             // 
-            this.search_bar3.Location = new System.Drawing.Point(729, 3);
-            this.search_bar3.Name = "search_bar3";
-            this.search_bar3.Size = new System.Drawing.Size(174, 20);
-            this.search_bar3.TabIndex = 31;
+            this.searchBar3.Location = new System.Drawing.Point(729, 3);
+            this.searchBar3.Name = "search_bar3";
+            this.searchBar3.Size = new System.Drawing.Size(174, 20);
+            this.searchBar3.TabIndex = 31;
             // 
             // search3
             // 
@@ -603,22 +594,22 @@
             // 
             // folder_data_view
             // 
-            this.folder_data_view.AllowUserToAddRows = false;
-            this.folder_data_view.AllowUserToResizeColumns = false;
-            this.folder_data_view.AllowUserToResizeRows = false;
-            this.folder_data_view.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.folder_data_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.folder_data_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.folderDataView.AllowUserToAddRows = false;
+            this.folderDataView.AllowUserToResizeColumns = false;
+            this.folderDataView.AllowUserToResizeRows = false;
+            this.folderDataView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.folderDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.folderDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn7});
-            this.folder_data_view.Location = new System.Drawing.Point(3, 22);
-            this.folder_data_view.Name = "folder_data_view";
-            this.folder_data_view.ReadOnly = true;
-            this.folder_data_view.RowHeadersWidth = 20;
-            this.folder_data_view.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.folder_data_view.Size = new System.Drawing.Size(913, 527);
-            this.folder_data_view.TabIndex = 16;
-            this.folder_data_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.folder_data_view_CellClick_1);
-            this.folder_data_view.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.folder_data_view_CellContentClick);
+            this.folderDataView.Location = new System.Drawing.Point(3, 22);
+            this.folderDataView.Name = "folder_data_view";
+            this.folderDataView.ReadOnly = true;
+            this.folderDataView.RowHeadersWidth = 20;
+            this.folderDataView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.folderDataView.Size = new System.Drawing.Size(913, 527);
+            this.folderDataView.TabIndex = 16;
+            this.folderDataView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.folder_data_view_CellClick_1);
+            this.folderDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.folder_data_view_CellContentClick);
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -631,12 +622,12 @@
             // archive_tab
             // 
             this.archive_tab.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.archive_tab.Controls.Add(this.search_bar4);
+            this.archive_tab.Controls.Add(this.searchBar4);
             this.archive_tab.Controls.Add(this.search4);
             this.archive_tab.Controls.Add(this.label17);
             this.archive_tab.Controls.Add(this.linkLabel9);
             this.archive_tab.Controls.Add(this.linkLabel1);
-            this.archive_tab.Controls.Add(this.archive_data_view);
+            this.archive_tab.Controls.Add(this.archiveDataView);
             this.archive_tab.Controls.Add(this.label8);
             this.archive_tab.Controls.Add(this.view_archived);
             this.archive_tab.Controls.Add(this.linkLabel2);
@@ -653,10 +644,10 @@
             // 
             // search_bar4
             // 
-            this.search_bar4.Location = new System.Drawing.Point(729, 0);
-            this.search_bar4.Name = "search_bar4";
-            this.search_bar4.Size = new System.Drawing.Size(174, 20);
-            this.search_bar4.TabIndex = 35;
+            this.searchBar4.Location = new System.Drawing.Point(729, 0);
+            this.searchBar4.Name = "search_bar4";
+            this.searchBar4.Size = new System.Drawing.Size(174, 20);
+            this.searchBar4.TabIndex = 35;
             // 
             // search4
             // 
@@ -714,23 +705,23 @@
             // 
             // archive_data_view
             // 
-            this.archive_data_view.AllowUserToAddRows = false;
-            this.archive_data_view.AllowUserToResizeColumns = false;
-            this.archive_data_view.AllowUserToResizeRows = false;
-            this.archive_data_view.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.archive_data_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.archive_data_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.archiveDataView.AllowUserToAddRows = false;
+            this.archiveDataView.AllowUserToResizeColumns = false;
+            this.archiveDataView.AllowUserToResizeRows = false;
+            this.archiveDataView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.archiveDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.archiveDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
-            this.archive_data_view.Location = new System.Drawing.Point(0, 18);
-            this.archive_data_view.Name = "archive_data_view";
-            this.archive_data_view.ReadOnly = true;
-            this.archive_data_view.RowHeadersWidth = 20;
-            this.archive_data_view.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.archive_data_view.Size = new System.Drawing.Size(913, 527);
-            this.archive_data_view.TabIndex = 15;
-            this.archive_data_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.archive_data_view_CellClick);
+            this.archiveDataView.Location = new System.Drawing.Point(0, 18);
+            this.archiveDataView.Name = "archive_data_view";
+            this.archiveDataView.ReadOnly = true;
+            this.archiveDataView.RowHeadersWidth = 20;
+            this.archiveDataView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.archiveDataView.Size = new System.Drawing.Size(913, 527);
+            this.archiveDataView.TabIndex = 15;
+            this.archiveDataView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.archive_data_view_CellClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -854,12 +845,12 @@
             // 
             // Sent_tab
             // 
-            this.Sent_tab.Controls.Add(this.search_bar5);
+            this.Sent_tab.Controls.Add(this.searchBar5);
             this.Sent_tab.Controls.Add(this.search5);
             this.Sent_tab.Controls.Add(this.linkLabel11);
             this.Sent_tab.Controls.Add(this.label18);
             this.Sent_tab.Controls.Add(this.linkLabel10);
-            this.Sent_tab.Controls.Add(this.sent_data_view);
+            this.Sent_tab.Controls.Add(this.sentDataView);
             this.Sent_tab.Location = new System.Drawing.Point(4, 4);
             this.Sent_tab.Name = "Sent_tab";
             this.Sent_tab.Padding = new System.Windows.Forms.Padding(3);
@@ -868,6 +859,28 @@
             this.Sent_tab.Text = "Sent";
             this.Sent_tab.UseVisualStyleBackColor = true;
             this.Sent_tab.Click += new System.EventHandler(this.sent_data_view_Click);
+            // 
+            // search_bar5
+            // 
+            this.searchBar5.Location = new System.Drawing.Point(718, 6);
+            this.searchBar5.Name = "search_bar5";
+            this.searchBar5.Size = new System.Drawing.Size(174, 20);
+            this.searchBar5.TabIndex = 29;
+            // 
+            // search5
+            // 
+            this.search5.ActiveLinkColor = System.Drawing.Color.Red;
+            this.search5.AutoSize = true;
+            this.search5.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.search5.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.search5.Location = new System.Drawing.Point(673, 8);
+            this.search5.Name = "search5";
+            this.search5.Size = new System.Drawing.Size(39, 13);
+            this.search5.TabIndex = 28;
+            this.search5.TabStop = true;
+            this.search5.Text = "search";
+            this.search5.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.search5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.search5_LinkClicked);
             // 
             // linkLabel11
             // 
@@ -884,6 +897,16 @@
             this.linkLabel11.Text = "forward selected";
             this.linkLabel11.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.linkLabel11.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel11_LinkClicked);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(123, 9);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(9, 13);
+            this.label18.TabIndex = 32;
+            this.label18.Text = "|";
             // 
             // linkLabel10
             // 
@@ -903,25 +926,25 @@
             // 
             // sent_data_view
             // 
-            this.sent_data_view.AllowUserToAddRows = false;
-            this.sent_data_view.AllowUserToResizeColumns = false;
-            this.sent_data_view.AllowUserToResizeRows = false;
-            this.sent_data_view.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.sent_data_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.sent_data_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.sentDataView.AllowUserToAddRows = false;
+            this.sentDataView.AllowUserToResizeColumns = false;
+            this.sentDataView.AllowUserToResizeRows = false;
+            this.sentDataView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.sentDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.sentDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn8});
-            this.sent_data_view.Location = new System.Drawing.Point(0, 34);
-            this.sent_data_view.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.sent_data_view.Name = "sent_data_view";
-            this.sent_data_view.ReadOnly = true;
-            this.sent_data_view.RowHeadersWidth = 20;
-            this.sent_data_view.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.sent_data_view.Size = new System.Drawing.Size(1370, 811);
-            this.sent_data_view.TabIndex = 16;
-            this.sent_data_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sent_data_view_CellClick);
-            this.sent_data_view.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sent_data_view_CellContentClick);
+            this.sentDataView.Location = new System.Drawing.Point(0, 34);
+            this.sentDataView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.sentDataView.Name = "sent_data_view";
+            this.sentDataView.ReadOnly = true;
+            this.sentDataView.RowHeadersWidth = 20;
+            this.sentDataView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.sentDataView.Size = new System.Drawing.Size(1370, 811);
+            this.sentDataView.TabIndex = 16;
+            this.sentDataView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sent_data_view_CellClick);
+            this.sentDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sent_data_view_CellContentClick);
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -1012,12 +1035,12 @@
             // 
             // logged_in_as
             // 
-            this.logged_in_as.AutoSize = true;
-            this.logged_in_as.Location = new System.Drawing.Point(12, 9);
-            this.logged_in_as.Name = "logged_in_as";
-            this.logged_in_as.Size = new System.Drawing.Size(10, 13);
-            this.logged_in_as.TabIndex = 10;
-            this.logged_in_as.Text = ".";
+            this.loggedInAs.AutoSize = true;
+            this.loggedInAs.Location = new System.Drawing.Point(12, 9);
+            this.loggedInAs.Name = "logged_in_as";
+            this.loggedInAs.Size = new System.Drawing.Size(10, 13);
+            this.loggedInAs.TabIndex = 10;
+            this.loggedInAs.Text = ".";
             // 
             // sep1
             // 
@@ -1031,11 +1054,11 @@
             // 
             // status_label
             // 
-            this.status_label.AutoSize = true;
-            this.status_label.Location = new System.Drawing.Point(621, 9);
-            this.status_label.Name = "status_label";
-            this.status_label.Size = new System.Drawing.Size(0, 13);
-            this.status_label.TabIndex = 12;
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Location = new System.Drawing.Point(621, 9);
+            this.statusLabel.Name = "status_label";
+            this.statusLabel.Size = new System.Drawing.Size(0, 13);
+            this.statusLabel.TabIndex = 12;
             // 
             // label2
             // 
@@ -1079,27 +1102,18 @@
             this.linkLabel7.VisitedLinkColor = System.Drawing.Color.Green;
             this.linkLabel7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel7_LinkClicked);
             // 
-            // search_bar5
+            // generateR
             // 
-            this.search_bar5.Location = new System.Drawing.Point(718, 6);
-            this.search_bar5.Name = "search_bar5";
-            this.search_bar5.Size = new System.Drawing.Size(174, 20);
-            this.search_bar5.TabIndex = 29;
-            // 
-            // search5
-            // 
-            this.search5.ActiveLinkColor = System.Drawing.Color.Red;
-            this.search5.AutoSize = true;
-            this.search5.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.search5.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.search5.Location = new System.Drawing.Point(673, 8);
-            this.search5.Name = "search5";
-            this.search5.Size = new System.Drawing.Size(39, 13);
-            this.search5.TabIndex = 28;
-            this.search5.TabStop = true;
-            this.search5.Text = "search";
-            this.search5.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.search5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.search5_LinkClicked);
+            this.generateR.AutoSize = true;
+            this.generateR.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.generateR.Location = new System.Drawing.Point(816, 9);
+            this.generateR.Name = "generateR";
+            this.generateR.Size = new System.Drawing.Size(81, 13);
+            this.generateR.TabIndex = 18;
+            this.generateR.TabStop = true;
+            this.generateR.Text = "Generate report";
+            this.generateR.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.generateR.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.generateR_LinkClicked);
             // 
             // driver
             // 
@@ -1108,13 +1122,14 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(909, 604);
+            this.Controls.Add(this.generateR);
             this.Controls.Add(this.linkLabel7);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.status_label);
+            this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.sep1);
-            this.Controls.Add(this.logged_in_as);
+            this.Controls.Add(this.loggedInAs);
             this.Controls.Add(this.sep4);
             this.Controls.Add(this.edit_button);
             this.Controls.Add(this.send_button);
@@ -1131,19 +1146,19 @@
             this.tab_control.ResumeLayout(false);
             this.inbox_tab.ResumeLayout(false);
             this.inbox_tab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inbox_data_view)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inboxDataView)).EndInit();
             this.mailing_list_tab.ResumeLayout(false);
             this.mailing_list_tab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mailinglist_data_view)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mailinglistDataView)).EndInit();
             this.folders_tab.ResumeLayout(false);
             this.folders_tab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.folder_data_view)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.folderDataView)).EndInit();
             this.archive_tab.ResumeLayout(false);
             this.archive_tab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.archive_data_view)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.archiveDataView)).EndInit();
             this.Sent_tab.ResumeLayout(false);
             this.Sent_tab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sent_data_view)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sentDataView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1154,17 +1169,17 @@
         private System.Windows.Forms.TabControl tab_control;
         private System.Windows.Forms.TabPage inbox_tab;
         private System.Windows.Forms.TabPage mailing_list_tab;
-        private System.Windows.Forms.DataGridView inbox_data_view;
+        private System.Windows.Forms.DataGridView inboxDataView;
         private System.Windows.Forms.LinkLabel refresh_button;
         private System.Windows.Forms.TabPage folders_tab;
         private System.Windows.Forms.Label sep3;
         private System.Windows.Forms.LinkLabel send_button;
         private System.Windows.Forms.LinkLabel edit_button;
         private System.Windows.Forms.Label sep4;
-        private System.Windows.Forms.Label logged_in_as;
+        private System.Windows.Forms.Label loggedInAs;
         private System.Windows.Forms.Label sep1;
         private System.Windows.Forms.LinkLabel delete_button;
-        private System.Windows.Forms.Label status_label;
+        private System.Windows.Forms.Label statusLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage archive_tab;
         private System.Windows.Forms.Label label3;
@@ -1176,7 +1191,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.LinkLabel view_button;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView archive_data_view;
+        private System.Windows.Forms.DataGridView archiveDataView;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.LinkLabel view_archived;
@@ -1189,7 +1204,7 @@
         private System.Windows.Forms.LinkLabel linkLabel6;
         private System.Windows.Forms.LinkLabel linkLabel5;
         private System.Windows.Forms.LinkLabel linkLabel4;
-        private System.Windows.Forms.DataGridView mailinglist_data_view;
+        private System.Windows.Forms.DataGridView mailinglistDataView;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sender;
@@ -1201,7 +1216,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.LinkLabel linkLabel7;
-        private System.Windows.Forms.DataGridView folder_data_view;
+        private System.Windows.Forms.DataGridView folderDataView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.LinkLabel add_folder_button;
         private System.Windows.Forms.Label label14;
@@ -1212,23 +1227,24 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.LinkLabel linkLabel9;
-        private System.Windows.Forms.TextBox search_bar;
+        private System.Windows.Forms.TextBox searchBar;
         private System.Windows.Forms.LinkLabel search;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox search_bar2;
+        private System.Windows.Forms.TextBox searchBar2;
         private System.Windows.Forms.LinkLabel search2;
-        private System.Windows.Forms.TextBox search_bar3;
+        private System.Windows.Forms.TextBox searchBar3;
         private System.Windows.Forms.LinkLabel search3;
-        private System.Windows.Forms.TextBox search_bar4;
+        private System.Windows.Forms.TextBox searchBar4;
         private System.Windows.Forms.LinkLabel search4;
         private System.Windows.Forms.TabPage Sent_tab;
-        private System.Windows.Forms.DataGridView sent_data_view;
+        private System.Windows.Forms.DataGridView sentDataView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.LinkLabel linkLabel10;
         private System.Windows.Forms.LinkLabel linkLabel11;
-        private System.Windows.Forms.TextBox search_bar5;
+        private System.Windows.Forms.TextBox searchBar5;
         private System.Windows.Forms.LinkLabel search5;
+        private System.Windows.Forms.LinkLabel generateR;
     }
 }

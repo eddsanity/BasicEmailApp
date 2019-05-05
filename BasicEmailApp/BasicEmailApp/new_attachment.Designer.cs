@@ -1,6 +1,6 @@
 ﻿namespace BasicEmailApp
 {
-    partial class new_attachment
+    partial class NewAttachment
     {
         /// <summary>
         /// Required designer variable.
@@ -81,13 +81,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(291, 91);
             this.Controls.Add(this.AddAttachBtn);
             this.Controls.Add(this.URLTextBox);
             this.Controls.Add(this.TypeTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "new_attachment";
+            this.Opacity = 0.9D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New attachment";
             this.ResumeLayout(false);
             this.PerformLayout();

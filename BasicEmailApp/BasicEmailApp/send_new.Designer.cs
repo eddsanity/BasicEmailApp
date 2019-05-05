@@ -1,6 +1,6 @@
 ﻿namespace BasicEmailApp
 {
-    partial class send_new
+    partial class SendNew
     {
         /// <summary>
         /// Required designer variable.

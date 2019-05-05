@@ -1,6 +1,6 @@
 ﻿namespace BasicEmailApp
 {
-    partial class view_email
+    partial class ViewEmail
     {
         /// <summary>
         /// Required designer variable.
@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.view_body = new System.Windows.Forms.RichTextBox();
+            this.viewBody = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.view_from = new System.Windows.Forms.Label();
-            this.view_subject = new System.Windows.Forms.Label();
+            this.viewForm = new System.Windows.Forms.Label();
+            this.viewSubject = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.view_date = new System.Windows.Forms.Label();
-            this.attachments_data_view = new System.Windows.Forms.DataGridView();
+            this.viewDate = new System.Windows.Forms.Label();
+            this.attachmentDataView = new System.Windows.Forms.DataGridView();
             this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.URL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.download_attachment_button = new System.Windows.Forms.LinkLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.attachments_data_view)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attachmentDataView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -53,15 +53,15 @@
             // 
             // view_body
             // 
-            this.view_body.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.view_body.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.view_body.Cursor = System.Windows.Forms.Cursors.Default;
-            this.view_body.Location = new System.Drawing.Point(12, 44);
-            this.view_body.Name = "view_body";
-            this.view_body.ReadOnly = true;
-            this.view_body.Size = new System.Drawing.Size(438, 317);
-            this.view_body.TabIndex = 2;
-            this.view_body.Text = "";
+            this.viewBody.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.viewBody.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.viewBody.Cursor = System.Windows.Forms.Cursors.Default;
+            this.viewBody.Location = new System.Drawing.Point(12, 44);
+            this.viewBody.Name = "view_body";
+            this.viewBody.ReadOnly = true;
+            this.viewBody.Size = new System.Drawing.Size(438, 317);
+            this.viewBody.TabIndex = 2;
+            this.viewBody.Text = "";
             // 
             // label4
             // 
@@ -74,19 +74,19 @@
             // 
             // view_from
             // 
-            this.view_from.AutoSize = true;
-            this.view_from.Location = new System.Drawing.Point(62, 4);
-            this.view_from.Name = "view_from";
-            this.view_from.Size = new System.Drawing.Size(0, 13);
-            this.view_from.TabIndex = 8;
+            this.viewForm.AutoSize = true;
+            this.viewForm.Location = new System.Drawing.Point(62, 4);
+            this.viewForm.Name = "view_from";
+            this.viewForm.Size = new System.Drawing.Size(0, 13);
+            this.viewForm.TabIndex = 8;
             // 
             // view_subject
             // 
-            this.view_subject.AutoSize = true;
-            this.view_subject.Location = new System.Drawing.Point(62, 21);
-            this.view_subject.Name = "view_subject";
-            this.view_subject.Size = new System.Drawing.Size(0, 13);
-            this.view_subject.TabIndex = 9;
+            this.viewSubject.AutoSize = true;
+            this.viewSubject.Location = new System.Drawing.Point(62, 21);
+            this.viewSubject.Name = "view_subject";
+            this.viewSubject.Size = new System.Drawing.Size(0, 13);
+            this.viewSubject.TabIndex = 9;
             // 
             // label2
             // 
@@ -99,29 +99,29 @@
             // 
             // view_date
             // 
-            this.view_date.AutoSize = true;
-            this.view_date.Location = new System.Drawing.Point(289, 4);
-            this.view_date.Name = "view_date";
-            this.view_date.Size = new System.Drawing.Size(0, 13);
-            this.view_date.TabIndex = 21;
+            this.viewDate.AutoSize = true;
+            this.viewDate.Location = new System.Drawing.Point(289, 4);
+            this.viewDate.Name = "view_date";
+            this.viewDate.Size = new System.Drawing.Size(0, 13);
+            this.viewDate.TabIndex = 21;
             // 
             // attachments_data_view
             // 
-            this.attachments_data_view.AllowUserToAddRows = false;
-            this.attachments_data_view.AllowUserToResizeColumns = false;
-            this.attachments_data_view.AllowUserToResizeRows = false;
-            this.attachments_data_view.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.attachments_data_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.attachments_data_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.attachmentDataView.AllowUserToAddRows = false;
+            this.attachmentDataView.AllowUserToResizeColumns = false;
+            this.attachmentDataView.AllowUserToResizeRows = false;
+            this.attachmentDataView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.attachmentDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.attachmentDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Type,
             this.URL});
-            this.attachments_data_view.Location = new System.Drawing.Point(12, 380);
-            this.attachments_data_view.Name = "attachments_data_view";
-            this.attachments_data_view.ReadOnly = true;
-            this.attachments_data_view.RowHeadersWidth = 20;
-            this.attachments_data_view.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.attachments_data_view.Size = new System.Drawing.Size(438, 109);
-            this.attachments_data_view.TabIndex = 24;
+            this.attachmentDataView.Location = new System.Drawing.Point(12, 380);
+            this.attachmentDataView.Name = "attachments_data_view";
+            this.attachmentDataView.ReadOnly = true;
+            this.attachmentDataView.RowHeadersWidth = 20;
+            this.attachmentDataView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.attachmentDataView.Size = new System.Drawing.Size(438, 109);
+            this.attachmentDataView.TabIndex = 24;
             // 
             // Type
             // 
@@ -161,13 +161,13 @@
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(464, 500);
             this.Controls.Add(this.download_attachment_button);
-            this.Controls.Add(this.attachments_data_view);
-            this.Controls.Add(this.view_date);
+            this.Controls.Add(this.attachmentDataView);
+            this.Controls.Add(this.viewDate);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.view_subject);
-            this.Controls.Add(this.view_from);
+            this.Controls.Add(this.viewSubject);
+            this.Controls.Add(this.viewForm);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.view_body);
+            this.Controls.Add(this.viewBody);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "view_email";
@@ -175,7 +175,7 @@
             this.ShowInTaskbar = false;
             this.Text = "viewing ";
             this.TopMost = true;
-            ((System.ComponentModel.ISupportInitialize)(this.attachments_data_view)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attachmentDataView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,13 +184,13 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox view_body;
+        private System.Windows.Forms.RichTextBox viewBody;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label view_from;
-        private System.Windows.Forms.Label view_subject;
+        private System.Windows.Forms.Label viewForm;
+        private System.Windows.Forms.Label viewSubject;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label view_date;
-        private System.Windows.Forms.DataGridView attachments_data_view;
+        private System.Windows.Forms.Label viewDate;
+        private System.Windows.Forms.DataGridView attachmentDataView;
         private System.Windows.Forms.DataGridViewTextBoxColumn Type;
         private System.Windows.Forms.DataGridViewTextBoxColumn URL;
         private System.Windows.Forms.LinkLabel download_attachment_button;

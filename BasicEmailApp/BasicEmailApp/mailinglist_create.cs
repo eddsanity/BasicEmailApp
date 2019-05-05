@@ -11,29 +11,31 @@ using System.Data.SqlClient;
 
 namespace BasicEmailApp
 {
-    public partial class mailinglist_create : Form
+    public partial class MailinglistCreate : Form
     {
         static Form driverForm = Application.OpenForms["driver"];
         static Form loginForm = Application.OpenForms["login"];
-        string g_user_id;
-        string connectionString = ((login)loginForm).connectionString;
-        public mailinglist_create(string id)
+        string g_userId;
+        string connectionString = ((Login)loginForm).connectionString;
+        public MailinglistCreate(string id)
         {
             InitializeComponent();
-            g_user_id = id;
+            g_userId = id;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            if(conn.State == ConnectionState.Open)
+            mailinglistName.Text = mailinglistName.Text.Replace("'", "''");
+            if (conn.State == ConnectionState.Open)
             {
-                string add_mailing_list = "insert into MAILINGLIST(USERID , NAMEMAILINGLIST) values(" + g_user_id + ", '" + mailinglist_name.Text + "')";
-                SqlCommand comm = new SqlCommand(add_mailing_list, conn);
+                string addMailinglist = "insert into MAILINGLIST(USERID , NAMEMAILINGLIST) values(" + g_userId + ", '" + mailinglistName.Text + "')";
+                SqlCommand comm = new SqlCommand(addMailinglist, conn);
                 comm.ExecuteNonQuery();
+                mailinglistName.Text = mailinglistName.Text.Replace("''", "'");
                 mailinglist_msg.Text = "Successfully created!";
-                ((driver)driverForm).refreshInbox();
+                ((Driver)driverForm).refresh_inbox();
             }
             conn.Close();
             this.Close();

@@ -11,18 +11,18 @@ using System.Data.SqlClient;
 
 namespace BasicEmailApp
 {
-    public partial class mailinglist_edit : Form
+    public partial class MailinglistEdit : Form
     {
-        string Listid;
-        string g_user_id;
+        string g_listId;
+        string g_userId;
         static Form driverForm = Application.OpenForms["driver"];
         static Form loginForm = Application.OpenForms["login"];
-        string connectionString = ((login)loginForm).connectionString;
-        public mailinglist_edit(string id, string listid)
+        string connectionString = ((Login)loginForm).connectionString;
+        public MailinglistEdit(string id, string listId)
         {
             InitializeComponent();
-            g_user_id = id;
-            Listid = listid;
+            g_userId = id;
+            g_listId = listId;
         }
 
         private void mailinglist_edit_Load(object sender, EventArgs e)
@@ -34,39 +34,39 @@ namespace BasicEmailApp
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            string get_mailinglist_users = "select u.EMAIL as Email , u.USERID from [USER] u ,MAILINGLISTUSERS m where u.USERID = m.USERID and m.LISTID=" + Listid;
-            SqlDataAdapter sqlAdpt = new SqlDataAdapter(get_mailinglist_users, conn);
-            DataTable users_table = new DataTable();
-            sqlAdpt.Fill(users_table);
-            users_in_mailinglist.DataSource = users_table;
-            users_in_mailinglist.Columns["USERID"].Visible = false;
-            if (users_in_mailinglist.CurrentRow != null)
-                users_in_mailinglist.CurrentRow.Selected = true;
+            string getMailinglistUser = "select u.EMAIL as Email , u.USERID from [USER] u ,MAILINGLISTUSERS m where u.USERID = m.USERID and m.LISTID=" + g_listId;
+            SqlDataAdapter sqlAdpt = new SqlDataAdapter(getMailinglistUser, conn);
+            DataTable userDataTable = new DataTable();
+            sqlAdpt.Fill(userDataTable);
+            userDataView.DataSource = userDataTable;
+            userDataView.Columns["USERID"].Visible = false;
+            if (userDataView.CurrentRow != null)
+                userDataView.CurrentRow.Selected = true;
             conn.Close();
         }
         private void update_basic_info_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            string user_email = email.Text;
-            string check = "select count(EMAIL) from [USER] where (EMAIL = '" + user_email + "')";
-            SqlCommand comm = new SqlCommand(check, conn);
-            int check1 = Convert.ToInt16(comm.ExecuteScalar());
+            string userEmail = email.Text.Replace("'", "''");
+            string check = "select count(EMAIL) from [USER] where (EMAIL = '" + userEmail + "')";
+            SqlCommand command = new SqlCommand(check, conn);
+            int check1 = Convert.ToInt16(command.ExecuteScalar());
             if (check1 == 1)
             {
-                string get_user_id = "select USERID from [USER] where EMAIL = '" + user_email + "'";
-                comm = new SqlCommand(get_user_id, conn);
-                string user_id = Convert.ToString(comm.ExecuteScalar());
-                check = "select count(USERID) from MAILINGLISTUSERS where LISTID =" + Listid + "and USERID = " + user_id;
-                comm = new SqlCommand(check, conn);
-                check1 = Convert.ToInt16(comm.ExecuteScalar());
+                string getUserId = "select USERID from [USER] where EMAIL = '" + userEmail + "'";
+                command = new SqlCommand(getUserId, conn);
+                string userId = Convert.ToString(command.ExecuteScalar());
+                check = "select count(USERID) from MAILINGLISTUSERS where LISTID =" + g_listId + "and USERID = " + userId;
+                command = new SqlCommand(check, conn);
+                check1 = Convert.ToInt16(command.ExecuteScalar());
                 if (check1 != 1)
                 {
-                    string add_user = "insert into MAILINGLISTUSERS(LISTID , USERID) values (" + Listid + "," + user_id + ")";
+                    string addUser = "insert into MAILINGLISTUSERS(LISTID , USERID) values (" + g_listId + "," + userId + ")";
                     //MessageBox.Show(add_user, "update failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    comm = new SqlCommand(add_user, conn);
-                    comm.ExecuteNonQuery();
-                    user_msg.Text = "Email successfully added!";
+                    command = new SqlCommand(addUser, conn);
+                    command.ExecuteNonQuery();
+                    userMsg.Text = "Email successfully added!";
                     conn.Close();
                 }
                 else
@@ -85,25 +85,25 @@ namespace BasicEmailApp
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            if (users_in_mailinglist.CurrentRow == null)
+            if (userDataView.CurrentRow == null)
             {
                 MessageBox.Show("Select an Email to delete", "Delete user failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                if (users_in_mailinglist.SelectedRows.Count > 0)
+                if (userDataView.SelectedRows.Count > 0)
                 {
-                    for (int i = 0; i < users_in_mailinglist.SelectedRows.Count; i++)
+                    for (int i = 0; i < userDataView.SelectedRows.Count; i++)
                     {
-                        string selected_email = users_in_mailinglist.SelectedRows[i].Cells["USERID"].Value.ToString();
-                        string delete_selected_query = "delete from MAILINGLISTUSERS where USERID = " + selected_email + " and LISTID = " + Listid;
-                        SqlCommand comm = new SqlCommand(delete_selected_query, conn);
-                        comm.ExecuteNonQuery();
+                        string selectedEmail = userDataView.SelectedRows[i].Cells["USERID"].Value.ToString();
+                        string deleteSelectedEmail = "delete from MAILINGLISTUSERS where USERID = " + selectedEmail + " and LISTID = " + g_listId;
+                        SqlCommand command = new SqlCommand(deleteSelectedEmail, conn);
+                        command.ExecuteNonQuery();
                     }
-                    user_msg.Text = "Delete successful!";
+                    userMsg.Text = "Delete successful!";
                     refresh();
-                    if (users_in_mailinglist.CurrentRow != null)
-                        users_in_mailinglist.CurrentRow.Selected = true;
+                    if (userDataView.CurrentRow != null)
+                        userDataView.CurrentRow.Selected = true;
 
                 }
             }
@@ -119,12 +119,13 @@ namespace BasicEmailApp
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            if (newname.Text != "")
+            newName.Text = newName.Text.Replace("'", "''");
+            if (newName.Text != "")
             {
-                string change_name = "update MAILINGLIST set NAMEMAILINGLIST = '" + newname.Text + "' where LISTID =" + Listid;
-                SqlCommand comm = new SqlCommand(change_name, conn);
-                comm.ExecuteNonQuery();
-                ((driver)driverForm).refreshInbox();
+                string changeName = "update MAILINGLIST set NAMEMAILINGLIST = '" + newName.Text + "' where LISTID =" + g_listId;
+                SqlCommand command = new SqlCommand(changeName, conn);
+                command.ExecuteNonQuery();
+                ((Driver)driverForm).refresh_inbox();
                 conn.Close();
             }
             this.Close();
@@ -132,8 +133,8 @@ namespace BasicEmailApp
 
         private void users_in_mailinglist_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (users_in_mailinglist.CurrentRow != null)
-                users_in_mailinglist.CurrentRow.Selected = true;
+            if (userDataView.CurrentRow != null)
+                userDataView.CurrentRow.Selected = true;
         }
     }
 }

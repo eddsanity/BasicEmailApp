@@ -1,6 +1,6 @@
 ﻿namespace BasicEmailApp
 {
-    partial class mailinglist_create
+    partial class MailinglistCreate
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.mailinglist_name = new System.Windows.Forms.TextBox();
+            this.mailinglistName = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.mailinglist_msg = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -45,11 +45,11 @@
             // 
             // mailinglist_name
             // 
-            this.mailinglist_name.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.mailinglist_name.Location = new System.Drawing.Point(12, 25);
-            this.mailinglist_name.Name = "mailinglist_name";
-            this.mailinglist_name.Size = new System.Drawing.Size(290, 20);
-            this.mailinglist_name.TabIndex = 1;
+            this.mailinglistName.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.mailinglistName.Location = new System.Drawing.Point(12, 25);
+            this.mailinglistName.Name = "mailinglist_name";
+            this.mailinglistName.Size = new System.Drawing.Size(290, 20);
+            this.mailinglistName.TabIndex = 1;
             // 
             // button2
             // 
@@ -80,7 +80,7 @@
             this.ClientSize = new System.Drawing.Size(317, 86);
             this.Controls.Add(this.mailinglist_msg);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.mailinglist_name);
+            this.Controls.Add(this.mailinglistName);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "mailinglist_create";
@@ -94,7 +94,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox mailinglist_name;
+        private System.Windows.Forms.TextBox mailinglistName;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label mailinglist_msg;
     }

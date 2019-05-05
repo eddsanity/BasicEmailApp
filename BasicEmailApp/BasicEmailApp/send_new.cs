@@ -11,15 +11,15 @@ using System.Data.SqlClient;
 
 namespace BasicEmailApp
 {
-    public partial class send_new : Form
+    public partial class SendNew : Form
     {
         //gets the e-mail used after successfully logging in and saves it future use.
         static Form loginForm = Application.OpenForms["login"];
         static Form driverForm = Application.OpenForms["driver"];
-        string g_user_email = ((login)loginForm).s_email;
+        string g_user_email = ((Login)loginForm).s_email;
         string g_user_id;
-        string connectionString = ((login)loginForm).connectionString;
-        public send_new(string sender_email = "", string sender_body = "")
+        string connectionString = ((Login)loginForm).connectionString;
+        public SendNew(string sender_email = "", string sender_body = "")
         {
             InitializeComponent();
 
@@ -33,8 +33,8 @@ namespace BasicEmailApp
             {
                 // get userID from email
                 string user_id_query = "select USERID from [USER] where EMAIL = '" + g_user_email + "';";
-                SqlCommand validateCmd = new SqlCommand(user_id_query, conn);
-                g_user_id = Convert.ToString(validateCmd.ExecuteScalar());
+                SqlCommand command = new SqlCommand(user_id_query, conn);
+                g_user_id = Convert.ToString(command.ExecuteScalar());
 
                 // fill combobox with mailing lists
                 string mailing_lists_query = "select NAMEMAILINGLIST, LISTID from MAILINGLIST where USERID = " + g_user_id + ";";
@@ -50,6 +50,8 @@ namespace BasicEmailApp
 
         private void button1_Click(object sender, EventArgs e)
         {
+            subject.Text = subject.Text.Replace("'", "''");
+            message_body.Text = message_body.Text.Replace("'", "''");
             string send_query = "insert into EMAIL(SENDERID, SUBJECT, BODY, DATE, ARCHIVED, RECEIVERID) " +
                                 "values (" + g_user_id + ", '" + subject.Text + "', '" + message_body.Text + "', GETDATE(), 0, ";
 
@@ -60,17 +62,19 @@ namespace BasicEmailApp
             {
                 // get receiver userID from email
                 string user_id_query = "select USERID from [USER] where EMAIL = '" + receiver_email.Text + "';";
-                SqlCommand validateCmd = new SqlCommand(user_id_query, conn);
-                string receiver_user_id = Convert.ToString(validateCmd.ExecuteScalar());
+                SqlCommand command = new SqlCommand(user_id_query, conn);
+                string receiver_user_id = Convert.ToString(command.ExecuteScalar());
                 bool receiverEmailValid = (receiver_user_id.Length != 0);
                 if (!receiverEmailValid)
                 {
+                    subject.Text = subject.Text.Replace("''", "'");
+                    message_body.Text = message_body.Text.Replace("''", "'");
                     MessageBox.Show("Invalid receiver email.", "failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
                     // send to receiver email
-                    SqlCommand command = new SqlCommand(send_query + receiver_user_id + ");", conn);
+                    command = new SqlCommand(send_query + receiver_user_id + ");", conn);
                     command.ExecuteNonQuery();
                     // get EmailID
                     string latest_email_query = "select EMAILID from EMAIL where SENDERID=" + g_user_id +
@@ -88,10 +92,11 @@ namespace BasicEmailApp
                         SqlCommand add_attachement_command = new SqlCommand(attachment_query, conn);
                         add_attachement_command.ExecuteNonQuery();
                     }
-
+                    subject.Text = subject.Text.Replace("''", "'");
+                    message_body.Text = message_body.Text.Replace("''", "'");
                     MessageBox.Show("Email sent.", "done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // close send window
-                    ((driver)driverForm).refreshInbox();
+                    ((Driver)driverForm).refresh_inbox();
                     this.Close();
                 }
             }
@@ -115,9 +120,11 @@ namespace BasicEmailApp
                         SqlCommand command = new SqlCommand(send_query + receiver_user_id + ");", conn);
                         command.ExecuteNonQuery();
                     }
+                    subject.Text = subject.Text.Replace("''", "'");
+                    message_body.Text = message_body.Text.Replace("''", "'");
                     MessageBox.Show("Email sent to '" + mailing_list.Text + "' mailing list.", "done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // close send window
-                    ((driver)driverForm).refreshInbox();
+                    ((Driver)driverForm).refresh_inbox();
                     this.Close();
                 }
             }
@@ -127,7 +134,7 @@ namespace BasicEmailApp
 
         private void add_attachment_button_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            new_attachment attachForm = new new_attachment();
+            NewAttachment attachForm = new NewAttachment();
             attachForm.ShowDialog();
         }
 

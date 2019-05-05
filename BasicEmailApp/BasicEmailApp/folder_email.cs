@@ -11,74 +11,74 @@ using System.Data.SqlClient;
 
 namespace BasicEmailApp
 {
-    public partial class folder_email : Form
+    public partial class FolderEmail : Form
     {
         static Form loginForm = Application.OpenForms["login"];
-        string connectionString = ((login)loginForm).connectionString;
-        string g_folder_id;
+        string connectionString = ((Login)loginForm).connectionString;
+        string g_folderId;
 
-        public folder_email(string folder_id)
+        public FolderEmail(string folderId)
         {
             InitializeComponent();
-            g_folder_id = folder_id;
-            refreshFolder();
+            g_folderId = folderId;
+            refresh_folder();
         }
 
-        private void refreshFolder()
+        private void refresh_folder()
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             if (conn.State == ConnectionState.Open)
             {
-                string get_emails_in_folder = "SELECT [EMAIL].EMAILID, [USER].FIRSTNAME AS [Sent by], [EMAIL].SUBJECT AS [Subject], [EMAIL].DATE AS [Date] " + 
+                string getEmailInFolder = "SELECT [EMAIL].EMAILID, [USER].FIRSTNAME AS [Sent by], [EMAIL].SUBJECT AS [Subject], [EMAIL].DATE AS [Date] " + 
                     "FROM [USER], [FOLDEREMAIL], [EMAIL]";
-                string join_condition = "WHERE [FOLDEREMAIL].EMAILID = [EMAIL].EMAILID AND [EMAIL].RECEIVERID = [USER].USERID AND [FOLDEREMAIL].FOLDERID = " + g_folder_id;
+                string joinCondition = "WHERE [FOLDEREMAIL].EMAILID = [EMAIL].EMAILID AND [EMAIL].RECEIVERID = [USER].USERID AND [FOLDEREMAIL].FOLDERID = " + g_folderId;
 
-                SqlDataAdapter sqlAdpt = new SqlDataAdapter(get_emails_in_folder + join_condition, conn);
+                SqlDataAdapter sqlAdpt = new SqlDataAdapter(getEmailInFolder + joinCondition, conn);
 
-                DataTable folder_email_data_table = new DataTable();
-                sqlAdpt.Fill(folder_email_data_table);
-                folder_email_data_view.DataSource = folder_email_data_table;
-                folder_email_data_view.Columns["EMAILID"].Visible = false;
+                DataTable folderEmailDataTable = new DataTable();
+                sqlAdpt.Fill(folderEmailDataTable);
+                folderEmailDataView.DataSource = folderEmailDataTable;
+                folderEmailDataView.Columns["EMAILID"].Visible = false;
 
             }
         }
 
         private void delete_button_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (folder_email_data_view.SelectedRows == null || folder_email_data_view.SelectedRows.Count == 0) return;
+            if (folderEmailDataView.SelectedRows == null || folderEmailDataView.SelectedRows.Count == 0) return;
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            for (int i = 0; i < folder_email_data_view.SelectedRows.Count; i++)
+            for (int i = 0; i < folderEmailDataView.SelectedRows.Count; i++)
             {
-                string email_id = folder_email_data_view.SelectedRows[i].Cells["EMAILID"].Value.ToString();
-                string delete_email_query = "DELETE FROM [FOLDEREMAIL] WHERE EMAILID = " + email_id;
-                SqlCommand ValidateCmd = new SqlCommand(delete_email_query, conn);
-                ValidateCmd.ExecuteNonQuery();
+                string emailId = folderEmailDataView.SelectedRows[i].Cells["EMAILID"].Value.ToString();
+                string deleteEmailQuery = "DELETE FROM [FOLDEREMAIL] WHERE EMAILID = " + emailId;
+                SqlCommand command = new SqlCommand(deleteEmailQuery, conn);
+                command.ExecuteNonQuery();
             }
             conn.Close();
-            refreshFolder();
+            refresh_folder();
             MessageBox.Show("deleted successfuly");
         }
 
         private void folder_email_data_view_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (folder_email_data_view.CurrentRow != null)
-                folder_email_data_view.CurrentRow.Selected = true;
+            if (folderEmailDataView.CurrentRow != null)
+                folderEmailDataView.CurrentRow.Selected = true;
         }
 
         private void view_button_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (folder_email_data_view.SelectedRows == null || folder_email_data_view.SelectedRows.Count != 1) return;
-            string selected_email = folder_email_data_view.CurrentRow.Cells["EMAILID"].Value.ToString();
-            view_email View = new view_email(selected_email);
-            View.ShowDialog();
+            if (folderEmailDataView.SelectedRows == null || folderEmailDataView.SelectedRows.Count != 1) return;
+            string selectedEmail = folderEmailDataView.CurrentRow.Cells["EMAILID"].Value.ToString();
+            ViewEmail view = new ViewEmail(selectedEmail);
+            view.ShowDialog();
         }
 
         private void folder_email_data_view_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (folder_email_data_view.CurrentRow != null)
-                folder_email_data_view.CurrentRow.Selected = true;
+            if (folderEmailDataView.CurrentRow != null)
+                folderEmailDataView.CurrentRow.Selected = true;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace BasicEmailApp
 {
-    partial class edit_account
+    partial class EditAccount
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.basic_lastname = new System.Windows.Forms.TextBox();
+            this.basicLastName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.basic_firstname = new System.Windows.Forms.TextBox();
+            this.basicFirstName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.emMsg = new System.Windows.Forms.Label();
             this.pwdMsg = new System.Windows.Forms.Label();
-            this.password_nPwd2 = new System.Windows.Forms.TextBox();
+            this.passwordPwd2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.password_nPwd = new System.Windows.Forms.TextBox();
+            this.passwordPwd = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.basic_email = new System.Windows.Forms.TextBox();
+            this.basicEmail = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.update_basic_info = new System.Windows.Forms.Button();
             this.password_oPwd = new System.Windows.Forms.TextBox();
@@ -46,7 +46,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.lb = new System.Windows.Forms.Label();
-            this.basic_pwd = new System.Windows.Forms.TextBox();
+            this.basicPwd = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lb2 = new System.Windows.Forms.Label();
@@ -59,12 +59,12 @@
             // 
             // basic_lastname
             // 
-            this.basic_lastname.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.basic_lastname.Location = new System.Drawing.Point(30, 105);
-            this.basic_lastname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.basic_lastname.Name = "basic_lastname";
-            this.basic_lastname.Size = new System.Drawing.Size(229, 26);
-            this.basic_lastname.TabIndex = 25;
+            this.basicLastName.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.basicLastName.Location = new System.Drawing.Point(30, 105);
+            this.basicLastName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.basicLastName.Name = "basic_lastname";
+            this.basicLastName.Size = new System.Drawing.Size(229, 26);
+            this.basicLastName.TabIndex = 25;
             // 
             // label5
             // 
@@ -78,12 +78,12 @@
             // 
             // basic_firstname
             // 
-            this.basic_firstname.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.basic_firstname.Location = new System.Drawing.Point(30, 40);
-            this.basic_firstname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.basic_firstname.Name = "basic_firstname";
-            this.basic_firstname.Size = new System.Drawing.Size(229, 26);
-            this.basic_firstname.TabIndex = 23;
+            this.basicFirstName.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.basicFirstName.Location = new System.Drawing.Point(30, 40);
+            this.basicFirstName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.basicFirstName.Name = "basic_firstname";
+            this.basicFirstName.Size = new System.Drawing.Size(229, 26);
+            this.basicFirstName.TabIndex = 23;
             // 
             // label4
             // 
@@ -117,14 +117,14 @@
             // 
             // password_nPwd2
             // 
-            this.password_nPwd2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.password_nPwd2.Location = new System.Drawing.Point(30, 105);
-            this.password_nPwd2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.password_nPwd2.Name = "password_nPwd2";
-            this.password_nPwd2.Size = new System.Drawing.Size(229, 26);
-            this.password_nPwd2.TabIndex = 19;
-            this.password_nPwd2.UseSystemPasswordChar = true;
-            this.password_nPwd2.Leave += new System.EventHandler(this.password_nPwd2_Leave);
+            this.passwordPwd2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.passwordPwd2.Location = new System.Drawing.Point(30, 105);
+            this.passwordPwd2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.passwordPwd2.Name = "password_nPwd2";
+            this.passwordPwd2.Size = new System.Drawing.Size(229, 26);
+            this.passwordPwd2.TabIndex = 19;
+            this.passwordPwd2.UseSystemPasswordChar = true;
+            this.passwordPwd2.Leave += new System.EventHandler(this.password_nPwd2_Leave);
             // 
             // label3
             // 
@@ -138,13 +138,13 @@
             // 
             // password_nPwd
             // 
-            this.password_nPwd.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.password_nPwd.Location = new System.Drawing.Point(30, 40);
-            this.password_nPwd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.password_nPwd.Name = "password_nPwd";
-            this.password_nPwd.Size = new System.Drawing.Size(229, 26);
-            this.password_nPwd.TabIndex = 17;
-            this.password_nPwd.UseSystemPasswordChar = true;
+            this.passwordPwd.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.passwordPwd.Location = new System.Drawing.Point(30, 40);
+            this.passwordPwd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.passwordPwd.Name = "password_nPwd";
+            this.passwordPwd.Size = new System.Drawing.Size(229, 26);
+            this.passwordPwd.TabIndex = 17;
+            this.passwordPwd.UseSystemPasswordChar = true;
             // 
             // label2
             // 
@@ -158,12 +158,12 @@
             // 
             // basic_email
             // 
-            this.basic_email.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.basic_email.Location = new System.Drawing.Point(30, 170);
-            this.basic_email.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.basic_email.Name = "basic_email";
-            this.basic_email.Size = new System.Drawing.Size(229, 26);
-            this.basic_email.TabIndex = 15;
+            this.basicEmail.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.basicEmail.Location = new System.Drawing.Point(30, 170);
+            this.basicEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.basicEmail.Name = "basic_email";
+            this.basicEmail.Size = new System.Drawing.Size(229, 26);
+            this.basicEmail.TabIndex = 15;
             // 
             // label1
             // 
@@ -226,15 +226,15 @@
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.tabPage1.Controls.Add(this.lb);
-            this.tabPage1.Controls.Add(this.basic_pwd);
+            this.tabPage1.Controls.Add(this.basicPwd);
             this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.basic_email);
+            this.tabPage1.Controls.Add(this.basicEmail);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.emMsg);
-            this.tabPage1.Controls.Add(this.basic_lastname);
+            this.tabPage1.Controls.Add(this.basicLastName);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.basic_firstname);
+            this.tabPage1.Controls.Add(this.basicFirstName);
             this.tabPage1.Controls.Add(this.update_basic_info);
             this.tabPage1.Location = new System.Drawing.Point(28, 4);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -256,13 +256,13 @@
             // 
             // basic_pwd
             // 
-            this.basic_pwd.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.basic_pwd.Location = new System.Drawing.Point(30, 230);
-            this.basic_pwd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.basic_pwd.Name = "basic_pwd";
-            this.basic_pwd.Size = new System.Drawing.Size(229, 26);
-            this.basic_pwd.TabIndex = 30;
-            this.basic_pwd.UseSystemPasswordChar = true;
+            this.basicPwd.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.basicPwd.Location = new System.Drawing.Point(30, 230);
+            this.basicPwd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.basicPwd.Name = "basic_pwd";
+            this.basicPwd.Size = new System.Drawing.Size(229, 26);
+            this.basicPwd.TabIndex = 30;
+            this.basicPwd.UseSystemPasswordChar = true;
             // 
             // label7
             // 
@@ -283,10 +283,10 @@
             this.tabPage2.Controls.Add(this.password_oPwd);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.password_nPwd);
+            this.tabPage2.Controls.Add(this.passwordPwd);
             this.tabPage2.Controls.Add(this.pwdMsg);
             this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.password_nPwd2);
+            this.tabPage2.Controls.Add(this.passwordPwd2);
             this.tabPage2.Location = new System.Drawing.Point(28, 4);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage2.Name = "tabPage2";
@@ -354,24 +354,24 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox basic_lastname;
+        private System.Windows.Forms.TextBox basicLastName;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox basic_firstname;
+        private System.Windows.Forms.TextBox basicFirstName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label emMsg;
         private System.Windows.Forms.Label pwdMsg;
-        private System.Windows.Forms.TextBox password_nPwd2;
+        private System.Windows.Forms.TextBox passwordPwd2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox password_nPwd;
+        private System.Windows.Forms.TextBox passwordPwd;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox basic_email;
+        private System.Windows.Forms.TextBox basicEmail;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button update_basic_info;
         private System.Windows.Forms.TextBox password_oPwd;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TextBox basic_pwd;
+        private System.Windows.Forms.TextBox basicPwd;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button2;

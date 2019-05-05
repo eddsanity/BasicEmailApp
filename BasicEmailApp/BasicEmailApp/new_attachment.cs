@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace BasicEmailApp
 {
-    public partial class new_attachment : Form
+    public partial class NewAttachment : Form
     {
-        public new_attachment()
+        public NewAttachment()
         {
             InitializeComponent();
         }
 
         private void AddAttachBtn_Click(object sender, EventArgs e)
         {
-            send_new sendEmailForm = (send_new)Application.OpenForms["send_new"];
+            SendNew sendEmailForm = (SendNew)Application.OpenForms["send_new"];
             sendEmailForm.add_attachment(TypeTextBox.Text, URLTextBox.Text);
             this.Close();
         }
