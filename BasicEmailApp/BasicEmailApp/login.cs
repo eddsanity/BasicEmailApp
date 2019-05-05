@@ -11,12 +11,12 @@ using System.Data.SqlClient;
 
 namespace BasicEmailApp
 {
-    public partial class login : Form
+    public partial class Login : Form
     {
         public string s_email = "";
         string serverName = "DESKTOP-A32LPMS";
         public string connectionString;
-        public login()
+        public Login()
         {
             InitializeComponent();
             connectionString = "Data Source=" + serverName + ";Initial Catalog=emailApp;Integrated Security=True";
@@ -25,7 +25,7 @@ namespace BasicEmailApp
         private void l_regButton_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //shows the register form.
-            register registerForm = new register();
+            Register registerForm = new Register();
             registerForm.ShowDialog();
         }
 
@@ -38,16 +38,16 @@ namespace BasicEmailApp
             if (conn.State == ConnectionState.Open)
             {
                 //check if an account with this e-mail and this password exist
-                string check_account = "select count(EMAIL) from [USER] where (EMAIL = '" + l_email.Text + "') AND PASSWORD = '" + l_pwd.Text + "'";
-                SqlCommand validateCmd = new SqlCommand(check_account, conn);
-                int account_checker = Convert.ToInt16(validateCmd.ExecuteScalar());
-                if (account_checker == 1)
+                string checkAccount = "select count(EMAIL) from [USER] where (EMAIL = '" + l_email.Text + "') AND PASSWORD = '" + l_pwd.Text + "'";
+                SqlCommand command = new SqlCommand(checkAccount, conn);
+                int accountChecker = Convert.ToInt16(command.ExecuteScalar());
+                if (accountChecker == 1)
                 {
                     l_email.Text = l_email.Text.Replace("''", "'");
                     l_pwd.Text = l_pwd.Text.Replace("''", "'");
                     s_email = l_email.Text;
                     this.Hide();
-                    driver driverForm = new driver();
+                    Driver driverForm = new Driver();
                     driverForm.ShowDialog();
                 }
                 else
@@ -70,8 +70,8 @@ namespace BasicEmailApp
 
         private void generateR_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            system_report sr = new system_report();
-            sr.ShowDialog();
+            SystemReport systemReport = new SystemReport();
+            systemReport.ShowDialog();
         }
     }
 }

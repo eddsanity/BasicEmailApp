@@ -1,6 +1,6 @@
 ﻿namespace BasicEmailApp
 {
-    partial class choose_folder
+    partial class ChooseEmail
     {
         /// <summary>
         /// Required designer variable.
@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.folder_data_view = new System.Windows.Forms.DataGridView();
+            this.folderDataView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.add_folder_button = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.folder_data_view)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.folderDataView)).BeginInit();
             this.SuspendLayout();
             // 
             // folder_data_view
             // 
-            this.folder_data_view.AllowUserToAddRows = false;
-            this.folder_data_view.AllowUserToResizeColumns = false;
-            this.folder_data_view.AllowUserToResizeRows = false;
-            this.folder_data_view.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.folder_data_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.folder_data_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.folderDataView.AllowUserToAddRows = false;
+            this.folderDataView.AllowUserToResizeColumns = false;
+            this.folderDataView.AllowUserToResizeRows = false;
+            this.folderDataView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.folderDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.folderDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn7});
-            this.folder_data_view.Location = new System.Drawing.Point(-1, 0);
-            this.folder_data_view.Name = "folder_data_view";
-            this.folder_data_view.ReadOnly = true;
-            this.folder_data_view.RowHeadersWidth = 20;
-            this.folder_data_view.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.folder_data_view.Size = new System.Drawing.Size(562, 291);
-            this.folder_data_view.TabIndex = 17;
-            this.folder_data_view.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.folder_data_view_CellClick);
-            this.folder_data_view.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.folder_data_view_CellContentClick);
+            this.folderDataView.Location = new System.Drawing.Point(-1, 0);
+            this.folderDataView.Name = "folder_data_view";
+            this.folderDataView.ReadOnly = true;
+            this.folderDataView.RowHeadersWidth = 20;
+            this.folderDataView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.folderDataView.Size = new System.Drawing.Size(562, 291);
+            this.folderDataView.TabIndex = 17;
+            this.folderDataView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.folder_data_view_CellClick);
+            this.folderDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.folder_data_view_CellContentClick);
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -84,14 +84,14 @@
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(559, 320);
             this.Controls.Add(this.add_folder_button);
-            this.Controls.Add(this.folder_data_view);
+            this.Controls.Add(this.folderDataView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "choose_folder";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "choose folder";
-            ((System.ComponentModel.ISupportInitialize)(this.folder_data_view)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.folderDataView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,7 +99,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView folder_data_view;
+        private System.Windows.Forms.DataGridView folderDataView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.Button add_folder_button;
     }

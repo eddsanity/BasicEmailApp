@@ -11,27 +11,28 @@ using System.Data.SqlClient;
 
 namespace BasicEmailApp
 {
-    public partial class add_folder : Form
+    public partial class AddFolder : Form
     {
         static Form loginForm = Application.OpenForms["login"];
-        string connectionString = ((login)loginForm).connectionString;
-        string g_user_id;
-        public add_folder(string user_id)
+        string connectionString = ((Login)loginForm).connectionString;
+        string g_userID;
+
+        public AddFolder(string userID)
         {
             InitializeComponent();
-            g_user_id = user_id;
+            g_userID = userID;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
-            folder_name.Text = folder_name.Text.Replace("'", "''");
-            string add_folder_query = "INSERT INTO [FOLDER] (NAMEFOLDER, USERID) VALUES ('" + folder_name.Text + "'," + g_user_id + ");";
-            SqlCommand validateCmd = new SqlCommand(add_folder_query, conn);
-            validateCmd.ExecuteNonQuery();
+            folderName.Text = folderName.Text.Replace("'", "''");
+            string addFolderQuery = "INSERT INTO [FOLDER] (NAMEFOLDER, USERID) VALUES ('" + folderName.Text + "'," + g_userID + ");";
+            SqlCommand command = new SqlCommand(addFolderQuery, conn);
+            command.ExecuteNonQuery();
             conn.Close();
-            folder_name.Text = folder_name.Text.Replace("''", "'");
+            folderName.Text = folderName.Text.Replace("''", "'");
             MessageBox.Show("Folder added successfully");
             Close();
         }

@@ -11,15 +11,15 @@ using System.Data.SqlClient;
 
 namespace BasicEmailApp
 {
-    public partial class register : Form
+    public partial class Register : Form
     {
         bool emailIsTaken = true;
         bool pwdIsValid = false;
         bool usernameIsTaken = true;
 
         static Form loginForm = Application.OpenForms["login"];
-        string connectionString = ((login)loginForm).connectionString;
-        public register()
+        string connectionString = ((Login)loginForm).connectionString;
+        public Register()
         {
             InitializeComponent();
         }
@@ -116,10 +116,10 @@ namespace BasicEmailApp
             {
                 if (!invalidChar)
                 {
-                    string validate_email_query = "select count(EMAIL) from [USER] where EMAIL = '" + r_email.Text + "'";
-                    SqlCommand validateCmd = new SqlCommand(validate_email_query, conn);
-                    int email_checker = Convert.ToInt16(validateCmd.ExecuteScalar());
-                    if (email_checker > 0 || r_email.Text == "" || d < 2)
+                    string validateEmailQuery = "select count(EMAIL) from [USER] where EMAIL = '" + r_email.Text + "'";
+                    SqlCommand command = new SqlCommand(validateEmailQuery, conn);
+                    int emailChecker = Convert.ToInt16(command.ExecuteScalar());
+                    if (emailChecker > 0 || r_email.Text == "" || d < 2)
                     {
                         emailIsTaken = true;
                         emMsg.ForeColor = Color.Red;
@@ -150,10 +150,10 @@ namespace BasicEmailApp
             r_username.Text = r_username.Text.Replace("'", "''");
             if (conn.State == ConnectionState.Open)
             {
-                string validate_username_query = "select count(USERNAME) from [USER] where USERNAME = '" + r_username.Text + "'";
-                SqlCommand validateCmd = new SqlCommand(validate_username_query, conn);
-                int username_checker = Convert.ToInt16(validateCmd.ExecuteScalar());
-                if (username_checker > 0 || r_username.Text == "")
+                string validateUsernameQuery = "select count(USERNAME) from [USER] where USERNAME = '" + r_username.Text + "'";
+                SqlCommand command = new SqlCommand(validateUsernameQuery, conn);
+                int usernameChecker = Convert.ToInt16(command.ExecuteScalar());
+                if (usernameChecker > 0 || r_username.Text == "")
                 {
                     usernameIsTaken = true;
                     usrMsg.ForeColor = Color.Red;

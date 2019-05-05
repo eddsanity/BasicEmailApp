@@ -1,6 +1,6 @@
 ﻿namespace BasicEmailApp
 {
-    partial class system_report
+    partial class SystemReport
     {
         /// <summary>
         /// Required designer variable.

@@ -1,6 +1,6 @@
 ﻿namespace BasicEmailApp
 {
-    partial class new_attachment
+    partial class NewAttachment
     {
         /// <summary>
         /// Required designer variable.

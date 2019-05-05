@@ -11,16 +11,15 @@ using System.Data.SqlClient;
 
 namespace BasicEmailApp
 {
-    public partial class system_report : Form
+    public partial class SystemReport : Form
     {
         static Form loginForm = Application.OpenForms["login"];
-        string connectionString = ((login)loginForm).connectionString;
-        public system_report()
+        string connectionString = ((Login)loginForm).connectionString;
+        public SystemReport()
         {
             InitializeComponent();
 
         }
-
 
         private void system_report_Load_1(object sender, EventArgs e)
         {

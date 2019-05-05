@@ -1,6 +1,6 @@
 ﻿namespace BasicEmailApp
 {
-    partial class add_folder
+    partial class AddFolder
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.add_button = new System.Windows.Forms.Button();
-            this.folder_name = new System.Windows.Forms.TextBox();
+            this.folderName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -49,11 +49,11 @@
             // 
             // folder_name
             // 
-            this.folder_name.Location = new System.Drawing.Point(77, 22);
-            this.folder_name.Margin = new System.Windows.Forms.Padding(2);
-            this.folder_name.Name = "folder_name";
-            this.folder_name.Size = new System.Drawing.Size(152, 20);
-            this.folder_name.TabIndex = 2;
+            this.folderName.Location = new System.Drawing.Point(77, 22);
+            this.folderName.Margin = new System.Windows.Forms.Padding(2);
+            this.folderName.Name = "folder_name";
+            this.folderName.Size = new System.Drawing.Size(152, 20);
+            this.folderName.TabIndex = 2;
             // 
             // label1
             // 
@@ -74,7 +74,7 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(235, 83);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.folder_name);
+            this.Controls.Add(this.folderName);
             this.Controls.Add(this.add_button);
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -91,7 +91,7 @@
         #endregion
 
         private System.Windows.Forms.Button add_button;
-        private System.Windows.Forms.TextBox folder_name;
+        private System.Windows.Forms.TextBox folderName;
         private System.Windows.Forms.Label label1;
     }
 }

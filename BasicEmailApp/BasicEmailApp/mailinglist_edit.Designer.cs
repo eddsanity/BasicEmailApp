@@ -1,6 +1,6 @@
 ﻿namespace BasicEmailApp
 {
-    partial class mailinglist_edit
+    partial class MailinglistEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.newname = new System.Windows.Forms.TextBox();
-            this.users_in_mailinglist = new System.Windows.Forms.DataGridView();
+            this.newName = new System.Windows.Forms.TextBox();
+            this.userDataView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.email = new System.Windows.Forms.TextBox();
             this.update_basic_info = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.user_msg = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.users_in_mailinglist)).BeginInit();
+            this.userMsg = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.userDataView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -52,29 +52,29 @@
             // 
             // newname
             // 
-            this.newname.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.newname.Location = new System.Drawing.Point(12, 25);
-            this.newname.Name = "newname";
-            this.newname.Size = new System.Drawing.Size(482, 20);
-            this.newname.TabIndex = 1;
+            this.newName.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.newName.Location = new System.Drawing.Point(12, 25);
+            this.newName.Name = "newname";
+            this.newName.Size = new System.Drawing.Size(482, 20);
+            this.newName.TabIndex = 1;
             // 
             // users_in_mailinglist
             // 
-            this.users_in_mailinglist.AllowUserToAddRows = false;
-            this.users_in_mailinglist.AllowUserToResizeColumns = false;
-            this.users_in_mailinglist.AllowUserToResizeRows = false;
-            this.users_in_mailinglist.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.users_in_mailinglist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.users_in_mailinglist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.userDataView.AllowUserToAddRows = false;
+            this.userDataView.AllowUserToResizeColumns = false;
+            this.userDataView.AllowUserToResizeRows = false;
+            this.userDataView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.userDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.userDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4});
-            this.users_in_mailinglist.Location = new System.Drawing.Point(12, 115);
-            this.users_in_mailinglist.Name = "users_in_mailinglist";
-            this.users_in_mailinglist.ReadOnly = true;
-            this.users_in_mailinglist.RowHeadersWidth = 20;
-            this.users_in_mailinglist.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.users_in_mailinglist.Size = new System.Drawing.Size(485, 344);
-            this.users_in_mailinglist.TabIndex = 2;
-            this.users_in_mailinglist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.users_in_mailinglist_CellClick);
+            this.userDataView.Location = new System.Drawing.Point(12, 115);
+            this.userDataView.Name = "users_in_mailinglist";
+            this.userDataView.ReadOnly = true;
+            this.userDataView.RowHeadersWidth = 20;
+            this.userDataView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.userDataView.Size = new System.Drawing.Size(485, 344);
+            this.userDataView.TabIndex = 2;
+            this.userDataView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.users_in_mailinglist_CellClick);
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -142,33 +142,33 @@
             // 
             // user_msg
             // 
-            this.user_msg.AutoSize = true;
-            this.user_msg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.user_msg.Location = new System.Drawing.Point(12, 101);
-            this.user_msg.Name = "user_msg";
-            this.user_msg.Size = new System.Drawing.Size(0, 13);
-            this.user_msg.TabIndex = 18;
+            this.userMsg.AutoSize = true;
+            this.userMsg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.userMsg.Location = new System.Drawing.Point(12, 101);
+            this.userMsg.Name = "user_msg";
+            this.userMsg.Size = new System.Drawing.Size(0, 13);
+            this.userMsg.TabIndex = 18;
             // 
             // mailinglist_edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(509, 503);
-            this.Controls.Add(this.user_msg);
+            this.Controls.Add(this.userMsg);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.update_basic_info);
             this.Controls.Add(this.email);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.users_in_mailinglist);
-            this.Controls.Add(this.newname);
+            this.Controls.Add(this.userDataView);
+            this.Controls.Add(this.newName);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "mailinglist_edit";
             this.Opacity = 0.9D;
             this.Text = "Edit Mailing List";
             this.Load += new System.EventHandler(this.mailinglist_edit_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.users_in_mailinglist)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userDataView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,14 +177,14 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox newname;
-        private System.Windows.Forms.DataGridView users_in_mailinglist;
+        private System.Windows.Forms.TextBox newName;
+        private System.Windows.Forms.DataGridView userDataView;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox email;
         private System.Windows.Forms.Button update_basic_info;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label user_msg;
+        private System.Windows.Forms.Label userMsg;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }
